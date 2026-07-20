@@ -1,0 +1,447 @@
+<title>추적 현황 — 2026년 7월 20일</title>
+<style>
+  :root {
+    --paper: #F7F8FA;
+    --ink: #17202B;
+    --muted: #5B6672;
+    --accent: #1F55C4;
+    --accent-soft: #EBF0FA;
+    --hairline: #DDE2E9;
+    --chip-bg: #EDF1F6;
+    --up: #C4372E;
+    --up-soft: #F8E9E7;
+    --down: #1F55C4;
+    --down-soft: #EBF0FA;
+    --serif: "Noto Serif KR", "Nanum Myeongjo", "Batang", "AppleMyungjo", serif;
+    --sans: "Pretendard", "Pretendard Variable", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #10151C;
+      --ink: #E8ECF2;
+      --muted: #96A0AC;
+      --accent: #6E9BFF;
+      --accent-soft: #18202E;
+      --hairline: #232B36;
+      --chip-bg: #1A222C;
+      --up: #FF8177;
+      --up-soft: #2A1917;
+      --down: #6E9BFF;
+      --down-soft: #18202E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #10151C;
+    --ink: #E8ECF2;
+    --muted: #96A0AC;
+    --accent: #6E9BFF;
+    --accent-soft: #18202E;
+    --hairline: #232B36;
+    --chip-bg: #1A222C;
+    --up: #FF8177;
+    --up-soft: #2A1917;
+    --down: #6E9BFF;
+    --down-soft: #18202E;
+  }
+  :root[data-theme="light"] {
+    --paper: #F7F8FA;
+    --ink: #17202B;
+    --muted: #5B6672;
+    --accent: #1F55C4;
+    --accent-soft: #EBF0FA;
+    --hairline: #DDE2E9;
+    --chip-bg: #EDF1F6;
+    --up: #C4372E;
+    --up-soft: #F8E9E7;
+    --down: #1F55C4;
+    --down-soft: #EBF0FA;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+  }
+  .page {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1.4rem;
+  }
+  .masthead .kicker {
+    margin: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .masthead h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 5.5vw, 2.3rem);
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+  .masthead .dateline {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cat-header {
+    margin: 2.4rem 0 0.4rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .cat-header .count {
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .empty {
+    margin: 0.4rem 0 0;
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--hairline);
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .case {
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--hairline);
+  }
+  .case-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+  .case-head h3 {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.5;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  .status {
+    display: inline-block;
+    padding: 0.05rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .status.open { background: var(--accent-soft); color: var(--accent); }
+  .status.done { background: var(--chip-bg); color: var(--muted); }
+  .case-meta {
+    margin: 0.3rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .case-act { margin: 0.45rem 0 0; font-size: 0.9rem; }
+  .act-tag {
+    display: inline-block;
+    vertical-align: 0.08em;
+    margin-right: 0.45rem;
+    padding: 0.02rem 0.45rem;
+    border-radius: 4px;
+    background: var(--up-soft);
+    color: var(--up);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+  .case-now { margin: 0.45rem 0 0; font-size: 0.95rem; }
+  .timeline {
+    margin: 0.65rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 3.2rem 1fr;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .timeline .tl-d {
+    font-weight: 700;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .timeline .tl-t { color: var(--muted); }
+  .timeline .tl-more {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .case-note {
+    margin: 0.55rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .closed summary {
+    cursor: pointer;
+    padding: 0.7rem 0;
+    border-top: 1px solid var(--hairline);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted);
+    list-style: none;
+  }
+  .closed summary::-webkit-details-marker { display: none; }
+  .closed summary::before { content: "▸ "; }
+  .closed[open] summary::before { content: "▾ "; }
+
+  .meta {
+    margin-top: 3.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--ink);
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .meta p { margin: 0 0 0.4rem; }
+
+  @media (max-width: 480px) {
+    .timeline li { grid-template-columns: 2.8rem 1fr; }
+  }
+</style>
+
+<div class="page">
+  <header class="masthead">
+    <p class="kicker">TRACKING BOARD</p>
+    <h1>추적 현황</h1>
+    <p class="dateline">2026년 7월 20일 (월) · 12:13 KST 갱신 · <a href="https://junho5541-bit.github.io/daily-briefing/">오늘의 브리핑</a> · <a href="https://junho5541-bit.github.io/daily-briefing/archive.html">지난 브리핑</a></p>
+  </header>
+
+  <h2 class="cat-header">주식·투자 <span class="count">추적 중 6건</span></h2>
+
+  <article class="case">
+    <div class="case-head"><h3>SK하이닉스 2분기 실적</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/20 · 다음 확인: 발표일 24일 vs 29일 혼재 → 실적 발표 시 컨센서스 부합 여부</p>
+    <p class="case-act"><span class="act-tag">대응 시점</span>실적 발표가 이번 주 코스피·반도체 반등 여부의 최대 관전 포인트로 지목됨</p>
+    <p class="case-now">발표일 공식 미확정 — 24일·29일 매체 혼재(기존 7/22설은 소멸). 컨센서스 영업이익 64.7조원(YoY +602.8%), 한투는 8% 하회 전망하며 목표주가 380만 유지(7/13). Barclays는 나스닥 ADR 목표가 $330(비중확대) 제시(7/15).</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/20</span><span class="tl-t">발표일 보도 24일(파이낸셜뉴스)·29일(하나증권 콘퍼런스콜) 혼재 지속, 회사 공식 확정 전. Barclays ADR 목표 $330 배경 재확인</span></li>
+      <li><span class="tl-d">7/20</span><span class="tl-t">미결 추적 큐에 등록 — 발표일 상충 보도 병존</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>빅테크 2분기 실적·AI 캐펙스 발표</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/20 · 다음 확인: 알파벳·테슬라 7/22 → MS·메타 7/29 → 애플·아마존 7/30 (capex 가이던스)</p>
+    <p class="case-act"><span class="act-tag">대응 시점</span>캐펙스 상향/하향이 삼성전자·SK하이닉스 메모리·파운드리 수요 전망에 직결</p>
+    <p class="case-now">알파벳·MS·아마존·메타 4개사 올해 capex 합계 약 7,250억달러(2027년 9,000억달러 전망). 키미 K3 여파로 'AI 투자 수익성' 의구심 재부각 — 캐펙스 가이던스가 반도체 반등의 실체 검증대. 모건스탠리는 투자 증가분의 20~30%가 비용 인플레 반영일 수 있다고 분석.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/20</span><span class="tl-t">등록 — 빅테크 실적 시즌 개막, capex 검증 국면</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>미 FOMC 금리 결정</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/20 · 다음 확인: 2026-07-29 (7/28~29 회의)</p>
+    <p class="case-now">0.25%p 인상 확률 45~50%로 급등(7/14, CME 페드워치). 유가 급등·월러 매파 발언 여파. 신임 워시 의장 첫 시험대.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/20</span><span class="tl-t">등록 — 인상 확률 급등 국면</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>미국 HBM 대중 추가 수출규제 검토</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/20 · 다음 확인: 상무부 결정 발표 (시점 미정)</p>
+    <p class="case-now">검토 단계. 마이크론 관련 보도(7/16)에서 거론. 하이닉스·삼전 HBM 매출에 직접 변수.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/20</span><span class="tl-t">등록</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>CXMT 상하이 STAR 상장</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/20 · 다음 확인: 2026-07-27 상장</p>
+    <p class="case-now">7/20 온라인 청약 당첨 결과 발표 — 공모가 주당 8.66위안, 당첨률 약 0.47%. 상장일 7/27 확정. 85억달러(일부 43억달러 보도) IPO. 중국 D램 범용 자본 확충 → 국내 메모리 저가 공세 변수.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/20</span><span class="tl-t">청약 결과 발표(공모가 8.66위안·당첨률 0.47%)·상장일 7/27 확정</span></li>
+      <li><span class="tl-d">7/20</span><span class="tl-t">등록</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>삼성 갤럭시 언팩(런던)</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/20 · 다음 확인: 2026-07-22 22:00 KST 공개 → 신제품 흥행·주가 반응</p>
+    <p class="case-now">7/22 런던서 갤럭시 언팩 2026 개최 확정 — Z 폴드8 울트라(폴더블)·첫 AI 글래스 공개 예고. 온라인 생중계. HBM 연결은 약함 — 삼성전자 보유 관점의 제품(MX) 이벤트.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/20</span><span class="tl-t">개최 일시·생중계 확정 재확인</span></li>
+      <li><span class="tl-d">7/20</span><span class="tl-t">등록</span></li>
+    </ul>
+  </article>
+
+  <h2 class="cat-header">부동산·주거·대출 <span class="count">추적 중 5건</span></h2>
+
+  <article class="case">
+    <div class="case-head"><h3>대통령 주재 부동산 종합토론회</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/20 · 다음 확인: 2026-07-23 (생중계)</p>
+    <p class="case-now">대출·세제·공급 로드맵(정책대출·보유세·DSR) 발표 예정. 종합안·세제개편안은 7월 말~8월 초 발표 전망. 7/20 정부안 윤곽 사전 보도.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/20</span><span class="tl-t">토론회 앞두고 정부안 윤곽 보도 — 3기 신도시 착공 최대 2년 조기화·도심(과천·태릉) 공급 가속, '거시건전성 관리부담금'(대출규모 비례) 도입 검토, 종부세 '자산가액' 전환, 청년 대출규제 완화·이주비 대출 규제 제외 등</span></li>
+      <li><span class="tl-d">7/20</span><span class="tl-t">등록</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>신생아특례대출·정책대출 규제</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/14 · 다음 확인: 7/23 토론회 이후 종합안 발표 (세제개편안 7월 말~8월 초)</p>
+    <p class="case-act"><span class="act-tag">대응 시점</span>종합안 발표 시 — 소득요건·금리·DSR 산정 변경이 상환·갱신 조건에 직접 닿음</p>
+    <p class="case-now">현행 — 부부합산 연소득 1.3억(맞벌이 2억)·순자산 3.37억 이하 / 디딤돌(구입)·버팀목(전세), 추가 출산 시 특례금리 최장 15년. 2026 소득요건 상향안은 철회·기존 유지. 은행 창구 대출 여건 축소·금리 상승 국면(주담대 8%대 근접 관측) — 정책대출 자체는 이번 한도 축소 대상 미포함이나 전반 여건 악화.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/20</span><span class="tl-t">은행권 대출 여건 추가 축소·금리 상승 — 우리은행 주담대·전세대출 월 취급한도 30억→10억, 5대 은행 주담대 신규 취급 전월比 약 25%↓, 고정금리 4.77~7.49%로 8%대 근접 관측. '거시건전성 관리부담금' 검토 재부각</span></li>
+      <li><span class="tl-d">7/19</span><span class="tl-t">점검 — 신규 전개 없음</span></li>
+      <li><span class="tl-d">7/16</span><span class="tl-t">세제 토론회 — 종부세 '자산가액' 중심 전환, 초고가(40억 이상) 별도 과세, 양도세 실거주 반영 차등 논의(제안 단계)</span></li>
+      <li><span class="tl-d">7/15</span><span class="tl-t">금융위 토론회 — DSR 일시소득 반영기준 강화(2년→3년 평균), 가계대출 증가율 목표 연 1.5% 유지, 고DSR·고LTV 추가 자본적립 의무 추진 논의. '거시건전성 관리부담금' 최초 거론</span></li>
+      <li><span class="tl-d">7/14</span><span class="tl-t">국무회의 3개 분야 21개 논의 과제 공식 공개 (재건축 용적률 상향+대출규제 완화, 청년 대출·정책모기지 완화 검토, 종부세 재정비 등)</span></li>
+      <li><span class="tl-d">7/10</span><span class="tl-t">은행권(KB 등) 수도권 포함 전국 주담대 한도 6억→3억 선제 축소</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>신안산선 (광명 구간 개통)</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/14 · 다음 확인: 본선 공사 재개(2028년 말 예정) → 개통 2028~2029</p>
+    <p class="case-now">광명 공사현장 붕괴사고(2025-04-11) 여파로 개통 약 2년 지연. 본선 2028년 말 공사 재개·개통 목표(2028~2029 전망).</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/19</span><span class="tl-t">점검 — 변동 없음 (공정률 등 신규 보도 미확인)</span></li>
+      <li><span class="tl-d">4/14</span><span class="tl-t">국토부 사고원인(시공·설계·감리 부실) 발표(4/2), 재개 목표 보도</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>광명시흥 3기 신도시 (보상·착공)</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/14 · 다음 확인: 2026-07-31 보상 협의 착수 → 2027년 말 착공 (조기화 논의 중)</p>
+    <p class="case-now">LH가 보상을 4개월 앞당겨 착수 — 7/31~연말 일괄보상 협의(약 1만3천명). 1271만㎡·6.7만가구(공공주택 3.7만호). 2027년 말 착공, 2029 첫 분양, 2031 입주 목표. 정부가 3기 신도시 착공 최대 2년 앞당김 방향 제시(검토 단계) → 착공 조기화 가능성.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/20</span><span class="tl-t">정부 토론회서 '3기 신도시 착공 최대 2년 앞당김' 방향 제시(검토 단계) — 2027년 말 착공 목표 조기화 가능성</span></li>
+      <li><span class="tl-d">7/19</span><span class="tl-t">점검 — 변동 없음</span></li>
+      <li><span class="tl-d">7/14</span><span class="tl-t">보상 4개월 조기 착수 보도</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>광명 재건축·재개발 (철산·하안 등)</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/14 · 다음 확인: 철산13 시공사 선정(하반기, 8월경 입찰) / 하안주공 1·2단지 정비구역 지정</p>
+    <p class="case-now">철산주공13단지 조합설립 인가(4/29), 하반기 시공자 입찰 예정. 철산10·11(철산자이더브리에) 입주 시작. 하안주공 6·7·9·10·11·12단지 정비구역 지정·사업시행자 지정 완료(2025-12), 8단지 조합방식, 1·2단지 추진위원회 단계.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/19</span><span class="tl-t">하안주공 단지별 단계 배경 백필, 신규 전개 없음</span></li>
+      <li><span class="tl-d">5/7</span><span class="tl-t">철산13 조합설립 인가·하반기 입찰 예정 보도</span></li>
+    </ul>
+  </article>
+
+  <h2 class="cat-header">IT·개발 <span class="count">추적 중 1건</span></h2>
+
+  <article class="case">
+    <div class="case-head"><h3>GitHub Models 서비스 종료</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/20 · 다음 확인: 2차 브라운아웃 7/23 → 완전 종료 7/30</p>
+    <p class="case-act"><span class="act-tag">대응 시점</span>7/30 이전 — 의존 코드가 있다면 마이그레이션 완료 필요</p>
+    <p class="case-now">실무 마이그레이션 마감 임박 (IT·개발 실무 직접 영향).</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/20</span><span class="tl-t">등록</span></li>
+    </ul>
+  </article>
+
+  <details class="closed">
+    <summary>종결 사안 2건</summary>
+    <article class="case">
+      <div class="case-head"><h3>Claude Fable 5 사용 한도 축소 시행</h3><span class="status done">종결 7/20</span></div>
+      <p class="case-now">7/20 시행 확인 — Max·Team Premium 기존 한도 50%로 제한, 일반 사용 33% 축소, Pro·Team Standard는 크레딧+$100(API 요금 전환).</p>
+      <ul class="timeline">
+        <li><span class="tl-d">7/20</span><span class="tl-t">시행 확인 — 종결</span></li>
+        <li><span class="tl-d">7/19</span><span class="tl-t">등록</span></li>
+      </ul>
+    </article>
+    <article class="case">
+      <div class="case-head"><h3>구글 제미나이 3.5 프로 출시</h3><span class="status done">종결 7/20</span></div>
+      <p class="case-now">추적 중단 — 프로필 재설정으로 IT 추적 기준이 "실무 마감만"으로 변경, 출시 예고는 뉴스로만 다룸. (마지막 확인: 성능 미달로 수개월 지연, 구체 일정 미제시)</p>
+      <ul class="timeline">
+        <li><span class="tl-d">7/20</span><span class="tl-t">프로필 재설정(추적 기준 변경)으로 추적 중단</span></li>
+        <li><span class="tl-d">7/16</span><span class="tl-t">등록 — 출시 지연 보도</span></li>
+      </ul>
+    </article>
+  </details>
+
+  <h2 class="cat-header">육아·가족 정책 <span class="count">추적 중 4건</span></h2>
+
+  <article class="case">
+    <div class="case-head"><h3>부모급여</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/14 · 다음 확인: 별도 인상 발표 여부 (시점 미정)</p>
+    <p class="case-now">0세 월 100만원·1세 월 50만원 (2026년, 일반 정책자료 기준 — 확정 보도 미확인).</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/19</span><span class="tl-t">점검 — 변동 없음</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>아동수당 확대</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/14 · 다음 확인: 연령 상향 단계 시행 (2030년까지 매년 1세씩 → 만 13세 미만, 법 개정 완료)</p>
+    <p class="case-now">만 9세 미만 월 10만원 확대 시행 — 4/24부터 지급 개시(1~3월분 소급). 비수도권·인구감소지역은 월 5천~2만원 추가.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/19</span><span class="tl-t">점검 — 변동 없음</span></li>
+      <li><span class="tl-d">4/24</span><span class="tl-t">확대 지급 개시</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>양육비 선지급제</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/14 · 다음 확인: 2026-10-09 소득기준(중위 150%) 폐지 시행</p>
+    <p class="case-now">시행 1년차 — 한부모 자녀 1인당 월 20만원(18세까지). 1년간 6,900여 가구·167억원 지급. 10/9부터 소득·재산 조사 없이 지원, 대상 약 8천 가구로 확대 예정.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/19</span><span class="tl-t">점검 — 변동 없음</span></li>
+      <li><span class="tl-d">7/7</span><span class="tl-t">1년차 실적 보도</span></li>
+    </ul>
+  </article>
+
+  <article class="case">
+    <div class="case-head"><h3>단기 육아휴직(1~2주 단위) 시행</h3><span class="status open">추적 중</span></div>
+    <p class="case-meta">등록 7/20 · 다음 확인: 2026-08-20 시행 여부</p>
+    <p class="case-act"><span class="act-tag">대응 시점</span>시행 확정 시 — 영유아 양육 중 단기 휴직 활용 가능</p>
+    <p class="case-now">1~2주 단위 단기 육아휴직 8/20 시행 예정 (하반기 정책, 예고 기사 7/1자). 세부 요건·신청 절차 미확인.</p>
+    <ul class="timeline">
+      <li><span class="tl-d">7/20</span><span class="tl-t">등록 — 8/20 시행 예정</span></li>
+    </ul>
+  </article>
+
+  <footer class="meta">
+    <p>결과가 나올 때까지 추적 중인 사안과 상시 관찰 사안의 현황판입니다. 매일 브리핑 생성 시 함께 갱신됩니다.</p>
+    <p class="disclaimer">본 페이지는 보도 내용을 정리한 것으로 투자 자문이 아닙니다.</p>
+  </footer>
+</div>
