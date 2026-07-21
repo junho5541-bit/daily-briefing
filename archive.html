@@ -1,117 +1,91 @@
+<!--
+지난 브리핑(판 아카이브) 페이지 (v2 — briefing-page.html과 동일한 디자인 계열).
+-->
 <title>데일리 뉴스 브리핑 — 지난 브리핑</title>
 <style>
   :root {
-    --paper: #F7F8FA;
-    --ink: #17202B;
-    --muted: #5B6672;
-    --accent: #1F55C4;
-    --accent-soft: #EBF0FA;
-    --hairline: #DDE2E9;
-    --serif: "Noto Serif KR", "Nanum Myeongjo", "Batang", "AppleMyungjo", serif;
+    --paper: #F1F3F6;
+    --surface: #FFFFFF;
+    --ink: #141B26;
+    --muted: #5D6774;
+    --faint: #8A94A1;
+    --accent: #1D55C6;
+    --hairline: #E2E6EC;
+    --shadow: 0 1px 2px rgba(20,27,38,0.05), 0 10px 30px -18px rgba(20,27,38,0.25);
     --sans: "Pretendard", "Pretendard Variable", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper: #10151C;
-      --ink: #E8ECF2;
-      --muted: #96A0AC;
-      --accent: #6E9BFF;
-      --accent-soft: #18202E;
-      --hairline: #232B36;
+      --paper: #0B0F15;
+      --surface: #161D28;
+      --ink: #E9EDF3;
+      --muted: #9AA4B0;
+      --faint: #68727E;
+      --accent: #7AA2FF;
+      --hairline: #232C38;
+      --shadow: 0 1px 2px rgba(0,0,0,0.4);
     }
   }
   :root[data-theme="dark"] {
-    --paper: #10151C;
-    --ink: #E8ECF2;
-    --muted: #96A0AC;
-    --accent: #6E9BFF;
-    --accent-soft: #18202E;
-    --hairline: #232B36;
+    --paper: #0B0F15;
+    --surface: #161D28;
+    --ink: #E9EDF3;
+    --muted: #9AA4B0;
+    --faint: #68727E;
+    --accent: #7AA2FF;
+    --hairline: #232C38;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4);
   }
   :root[data-theme="light"] {
-    --paper: #F7F8FA;
-    --ink: #17202B;
-    --muted: #5B6672;
-    --accent: #1F55C4;
-    --accent-soft: #EBF0FA;
-    --hairline: #DDE2E9;
+    --paper: #F1F3F6;
+    --surface: #FFFFFF;
+    --ink: #141B26;
+    --muted: #5D6774;
+    --faint: #8A94A1;
+    --accent: #1D55C6;
+    --hairline: #E2E6EC;
+    --shadow: 0 1px 2px rgba(20,27,38,0.05), 0 10px 30px -18px rgba(20,27,38,0.25);
   }
 
+  * { box-sizing: border-box; }
   body {
     background: var(--paper);
     color: var(--ink);
     font-family: var(--sans);
-    font-size: 1.0625rem;
-    line-height: 1.75;
+    font-size: 0.9375rem;
+    line-height: 1.6;
     margin: 0;
     -webkit-text-size-adjust: 100%;
   }
-  .page {
-    max-width: 42rem;
-    margin: 0 auto;
-    padding: 2.5rem 1.25rem 4rem;
-  }
-
+  .page { max-width: 44rem; margin: 0 auto; padding: 0 0.95rem 3.5rem; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; text-underline-offset: 3px; }
-  a:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-    border-radius: 2px;
-  }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
-  .masthead {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 1.4rem;
-  }
-  .masthead .kicker {
-    margin: 0;
-    font-size: 0.75rem;
-    letter-spacing: 0.14em;
-    color: var(--accent);
-    font-weight: 600;
-  }
-  .masthead h1 {
-    margin: 0;
-    font-family: var(--serif);
-    font-weight: 700;
-    font-size: clamp(1.7rem, 5.5vw, 2.3rem);
-    line-height: 1.25;
-  }
-  .masthead .dateline {
-    margin: 0;
-    font-size: 0.875rem;
-    color: var(--muted);
-  }
+  .masthead { padding: 1.5rem 0 1rem; }
+  .masthead .kicker { margin: 0 0 0.2rem; font-size: 0.66rem; letter-spacing: 0.18em; color: var(--accent); font-weight: 800; }
+  .masthead h1 { margin: 0; font-size: 1.5rem; font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; }
+  .masthead .dateline { margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--muted); }
 
-  .editions {
-    margin: 2rem 0 0;
-    padding: 0;
-    list-style: none;
+  .editions-card {
+    margin-top: 1.2rem;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 16px;
+    padding: 0.35rem 1.1rem;
+    box-shadow: var(--shadow);
   }
-  .editions li { border-bottom: 1px solid var(--hairline); }
+  .editions { margin: 0; padding: 0; list-style: none; }
+  .editions li { border-top: 1px solid var(--hairline); }
+  .editions li:first-child { border-top: 0; }
   .editions a {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    padding: 0.95rem 0.3rem;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+    padding: 0.8rem 0.15rem;
     color: var(--ink);
   }
-  .editions a:hover {
-    text-decoration: none;
-    background: var(--accent-soft);
-    color: var(--accent);
-  }
-  .ed-date { font-weight: 600; }
-  .ed-time {
-    color: var(--muted);
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-  }
+  .editions a:hover { text-decoration: none; color: var(--accent); }
+  .ed-date { font-weight: 700; font-size: 0.92rem; }
+  .ed-time { color: var(--faint); font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 0.82rem; }
 </style>
 
 <div class="page">
@@ -120,16 +94,18 @@
     <h1>지난 브리핑</h1>
     <p class="dateline">최근 10개 판을 보관합니다 · <a href="https://junho5541-bit.github.io/daily-briefing/">최신 브리핑 보기</a> · <a href="https://junho5541-bit.github.io/daily-briefing/tracking.html">추적 현황</a></p>
   </header>
-  <ul class="editions">
-    <li><a href="2026-07-21-0753.html"><span class="ed-date">2026년 7월 21일 (화)</span><span class="ed-time">07:53 판</span></a></li>
-    <li><a href="2026-07-20-1213.html"><span class="ed-date">2026년 7월 20일 (월)</span><span class="ed-time">12:13 판</span></a></li>
-    <li><a href="2026-07-20-0830.html"><span class="ed-date">2026년 7월 20일 (월)</span><span class="ed-time">08:30 판</span></a></li>
-    <li><a href="2026-07-19-0830.html"><span class="ed-date">2026년 7월 19일 (일)</span><span class="ed-time">08:30 판</span></a></li>
-    <li><a href="2026-07-18-0758.html"><span class="ed-date">2026년 7월 18일 (토)</span><span class="ed-time">07:58 판</span></a></li>
-    <li><a href="2026-07-17-0754.html"><span class="ed-date">2026년 7월 17일 (금)</span><span class="ed-time">07:54 판</span></a></li>
-    <li><a href="2026-07-16-0807.html"><span class="ed-date">2026년 7월 16일 (목)</span><span class="ed-time">08:07 판</span></a></li>
-    <li><a href="2026-07-15-0931.html"><span class="ed-date">2026년 7월 15일 (수)</span><span class="ed-time">09:31 판</span></a></li>
-    <li><a href="2026-07-14-1358.html"><span class="ed-date">2026년 7월 14일 (화)</span><span class="ed-time">13:58 판</span></a></li>
-    <li><a href="2026-07-14-0830.html"><span class="ed-date">2026년 7월 14일 (화)</span><span class="ed-time">08:30 판</span></a></li>
-  </ul>
+  <div class="editions-card">
+    <ul class="editions">
+      <li><a href="2026-07-21-1353.html"><span class="ed-date">2026년 7월 21일 (화)</span><span class="ed-time">13:53 판 (제2판)</span></a></li>
+      <li><a href="2026-07-21-0753.html"><span class="ed-date">2026년 7월 21일 (화)</span><span class="ed-time">07:53 판</span></a></li>
+      <li><a href="2026-07-20-1213.html"><span class="ed-date">2026년 7월 20일 (월)</span><span class="ed-time">12:13 판 (제2판)</span></a></li>
+      <li><a href="2026-07-20-0830.html"><span class="ed-date">2026년 7월 20일 (월)</span><span class="ed-time">08:30 판</span></a></li>
+      <li><a href="2026-07-19-0830.html"><span class="ed-date">2026년 7월 19일 (일)</span><span class="ed-time">08:30 판</span></a></li>
+      <li><a href="2026-07-18-0758.html"><span class="ed-date">2026년 7월 18일 (토)</span><span class="ed-time">07:58 판</span></a></li>
+      <li><a href="2026-07-17-0754.html"><span class="ed-date">2026년 7월 17일 (금)</span><span class="ed-time">07:54 판</span></a></li>
+      <li><a href="2026-07-16-0807.html"><span class="ed-date">2026년 7월 16일 (목)</span><span class="ed-time">08:07 판</span></a></li>
+      <li><a href="2026-07-15-0931.html"><span class="ed-date">2026년 7월 15일 (수)</span><span class="ed-time">09:31 판</span></a></li>
+      <li><a href="2026-07-14-1358.html"><span class="ed-date">2026년 7월 14일 (화)</span><span class="ed-time">13:58 판 (제2판)</span></a></li>
+    </ul>
+  </div>
 </div>
