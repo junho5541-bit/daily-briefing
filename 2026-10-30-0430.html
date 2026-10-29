@@ -1,0 +1,1076 @@
+<title>데일리 뉴스 브리핑 — 2026-10-30</title>
+<style>
+  :root {
+    --paper: #F1F3F6;
+    --surface: #FFFFFF;
+    --ink: #141B26;
+    --muted: #5D6774;
+    --faint: #8A94A1;
+    --accent: #1D55C6;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E9EFFA;
+    --hairline: #E2E6EC;
+    --chip-bg: #EEF1F5;
+    --up: #D8402F;
+    --up-soft: #FBEBE8;
+    --down: #1E5AD0;
+    --down-soft: #E9EFFA;
+    --ok: #17784A;
+    --ok-soft: #E4F3EA;
+    --warn: #9A6A00;
+    --warn-soft: #F7EFDC;
+    --shadow: 0 1px 2px rgba(20,27,38,0.05), 0 10px 30px -18px rgba(20,27,38,0.25);
+    --sans: "Pretendard", "Pretendard Variable", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0B0F15;
+      --surface: #161D28;
+      --ink: #E9EDF3;
+      --muted: #9AA4B0;
+      --faint: #68727E;
+      --accent: #7AA2FF;
+      --accent-ink: #0B0F15;
+      --accent-soft: #1B2638;
+      --hairline: #232C38;
+      --chip-bg: #1E2733;
+      --up: #FF7B6E;
+      --up-soft: #2E1A17;
+      --down: #7AA2FF;
+      --down-soft: #1B2638;
+      --ok: #5CC98F;
+      --ok-soft: #142720;
+      --warn: #E3B341;
+      --warn-soft: #2A2413;
+      --shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0B0F15;
+    --surface: #161D28;
+    --ink: #E9EDF3;
+    --muted: #9AA4B0;
+    --faint: #68727E;
+    --accent: #7AA2FF;
+    --accent-ink: #0B0F15;
+    --accent-soft: #1B2638;
+    --hairline: #232C38;
+    --chip-bg: #1E2733;
+    --up: #FF7B6E;
+    --up-soft: #2E1A17;
+    --down: #7AA2FF;
+    --down-soft: #1B2638;
+    --ok: #5CC98F;
+    --ok-soft: #142720;
+    --warn: #E3B341;
+    --warn-soft: #2A2413;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4);
+  }
+  :root[data-theme="light"] {
+    --paper: #F1F3F6;
+    --surface: #FFFFFF;
+    --ink: #141B26;
+    --muted: #5D6774;
+    --faint: #8A94A1;
+    --accent: #1D55C6;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E9EFFA;
+    --hairline: #E2E6EC;
+    --chip-bg: #EEF1F5;
+    --up: #D8402F;
+    --up-soft: #FBEBE8;
+    --down: #1E5AD0;
+    --down-soft: #E9EFFA;
+    --ok: #17784A;
+    --ok-soft: #E4F3EA;
+    --warn: #9A6A00;
+    --warn-soft: #F7EFDC;
+    --shadow: 0 1px 2px rgba(20,27,38,0.05), 0 10px 30px -18px rgba(20,27,38,0.25);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+  }
+  .page { max-width: 44rem; margin: 0 auto; padding: 0 0.95rem 3.5rem; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+  /* 제호 */
+  .masthead { padding: 1.5rem 0 1rem; }
+  .masthead .kicker { margin: 0 0 0.2rem; font-size: 0.66rem; letter-spacing: 0.18em; color: var(--accent); font-weight: 800; }
+  .masthead h1 { margin: 0; font-size: 1.5rem; font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; }
+  .masthead .dateline { margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .masthead .ed {
+    display: inline-block; margin-right: 0.4rem; padding: 0.05rem 0.5rem;
+    border-radius: 999px; background: var(--accent); color: var(--accent-ink);
+    font-size: 0.7rem; font-weight: 800;
+  }
+
+  /* 퀵내비 */
+  .quicknav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; gap: 0.4rem; overflow-x: auto;
+    padding: 0.6rem 0.95rem; margin: 0 -0.95rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--hairline);
+    scrollbar-width: none;
+  }
+  .quicknav::-webkit-scrollbar { display: none; }
+  .quicknav a {
+    flex: none; padding: 0.26rem 0.75rem; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--hairline);
+    color: var(--muted); font-size: 0.76rem; font-weight: 700; white-space: nowrap;
+  }
+  .quicknav a:hover { text-decoration: none; color: var(--accent); border-color: var(--accent); }
+  .quicknav a.track-link { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+  /* 공통 */
+  section { margin-top: 1.7rem; scroll-margin-top: 3.4rem; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 16px;
+    padding: 1rem 1.1rem;
+    box-shadow: var(--shadow);
+  }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; margin: 0 0 0.7rem; }
+  .sec-head h2 { margin: 0; font-size: 1.06rem; font-weight: 800; letter-spacing: -0.01em; }
+  .sec-head .sub { font-size: 0.72rem; color: var(--faint); font-variant-numeric: tabular-nums; text-align: right; }
+  .sec-note { margin: 0.5rem 0 0; font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+  .fold-sum { cursor: pointer; user-select: none; font-size: 0.76rem; font-weight: 700; color: var(--accent); list-style: none; }
+  .fold-sum::-webkit-details-marker { display: none; }
+  .fold-sum::before { content: "▸ "; }
+  details[open] > .fold-sum::before { content: "▾ "; }
+
+  /* 오늘의 핵심 */
+  .lede .card { background: linear-gradient(180deg, var(--accent-soft), var(--surface) 140%); border-color: transparent; }
+  .lede ol { margin: 0; padding: 0; list-style: none; counter-reset: lede; display: flex; flex-direction: column; gap: 0.65rem; }
+  .lede li {
+    counter-increment: lede;
+    /* grid 금지 — 본문의 인라인 <b> 등이 각자 grid item이 되어 1열(1.5rem)에 갇힌다 (2026-07-30·31판 깨짐) */
+    position: relative; padding-left: 2rem;
+    font-size: 0.92rem; line-height: 1.58; font-weight: 500;
+  }
+  .lede li::before {
+    content: counter(lede);
+    position: absolute; left: 0; top: 0.13rem;
+    width: 1.25rem; height: 1.25rem;
+    border-radius: 999px; background: var(--accent); color: var(--accent-ink);
+    font-size: 0.72rem; font-weight: 800; display: grid; place-items: center;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* 오늘 체크 */
+  .today-check ul { margin: 0; padding: 0; list-style: none; }
+  .today-check li { padding: 0.5rem 0; border-top: 1px solid var(--hairline); font-size: 0.87rem; line-height: 1.6; }
+  .today-check li:first-child { border-top: 0; padding-top: 0.1rem; }
+  .tc-time { display: inline-block; min-width: 3.6rem; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; font-size: 0.82rem; }
+
+  /* 주간 리캡 (토요일판) */
+  .weekly p { margin: 0 0 0.65rem; font-size: 0.89rem; line-height: 1.65; }
+  .weekly p:last-child { margin-bottom: 0; }
+
+  /* 시장 — 가로 스크롤 카드 */
+  .market-row {
+    display: flex; gap: 0.5rem; overflow-x: auto;
+    padding: 0.1rem 0.95rem 0.5rem; margin: 0 -0.95rem;
+    scroll-snap-type: x proximity; scrollbar-width: none;
+  }
+  .market-row::-webkit-scrollbar { display: none; }
+  .m-cell {
+    flex: none; min-width: 7rem; scroll-snap-align: start;
+    background: var(--surface); border: 1px solid var(--hairline); border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 0.6rem 0.75rem;
+    display: flex; flex-direction: column; gap: 0.02rem;
+  }
+  .m-cell .k { font-size: 0.66rem; color: var(--faint); font-weight: 700; letter-spacing: 0.05em; white-space: nowrap; }
+  .m-cell .v { font-size: 1.02rem; font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; letter-spacing: -0.01em; }
+  .m-cell .c { font-size: 0.76rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .c.up, .chg.up { color: var(--up); }
+  .c.down, .chg.down { color: var(--down); }
+  .c.flat, .chg.flat { color: var(--muted); }
+
+  /* 내 종목 — 숫자 히어로 + 스파크라인 */
+  .stock-cards { display: flex; flex-direction: column; gap: 0.65rem; }
+  .stock-card { padding: 1rem 1.1rem 0.9rem; }
+  .stock-id { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; }
+  .stock-id .name { font-size: 0.86rem; font-weight: 700; color: var(--muted); }
+  .stock-id .price { font-size: 0.78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .stock-hero { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.1rem; }
+  .stock-hero .chg { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; line-height: 1.15; }
+  .stock-hero .cume { font-size: 0.76rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .stock-hero .cume b.up { color: var(--up); } .stock-hero .cume b.down { color: var(--down); }
+  .spark { margin-top: 0.55rem; }
+  .spark svg { display: block; width: 100%; height: 46px; }
+  .spark .line { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .spark .area { opacity: 0.12; }
+  .spark.up .line, .spark.up .dot { stroke: var(--up); } .spark.up .area { fill: var(--up); }
+  .spark.down .line, .spark.down .dot { stroke: var(--down); } .spark.down .area { fill: var(--down); }
+  .spark.flat .line, .spark.flat .dot { stroke: var(--muted); } .spark.flat .area { fill: var(--muted); }
+  .spark .dot { fill: var(--surface); stroke-width: 2; }
+  .spark-cap { margin: 0.25rem 0 0; font-size: 0.68rem; color: var(--faint); font-variant-numeric: tabular-nums; display: flex; justify-content: space-between; gap: 0.5rem; }
+  .stock-why { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+  .stock-card details { margin-top: 0.55rem; }
+  .stock-points { margin: 0.5rem 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+  .stock-points li { font-size: 0.82rem; line-height: 1.55; }
+  .pt {
+    display: inline-block; margin-right: 0.4rem; padding: 0.02rem 0.42rem;
+    border-radius: 5px; background: var(--chip-bg); color: var(--muted);
+    font-size: 0.68rem; font-weight: 700; white-space: nowrap; vertical-align: 0.08em;
+  }
+  .pt-src { font-size: 0.74rem; color: var(--faint); white-space: nowrap; }
+
+  /* 주요 뉴스 */
+  .prio-head { display: flex; align-items: center; gap: 0.5rem; margin: 1.6rem 0 0.55rem; }
+  .prio-head .p {
+    flex: none; padding: 0.08rem 0.48rem; border-radius: 6px;
+    background: var(--accent); color: var(--accent-ink);
+    font-size: 0.7rem; font-weight: 800; font-variant-numeric: tabular-nums;
+  }
+  .prio-head .p.low { background: var(--chip-bg); color: var(--muted); }
+  .prio-head h3 { margin: 0; font-size: 0.98rem; font-weight: 800; }
+  .prio-head .interest { font-size: 0.72rem; color: var(--faint); }
+  .story-list { display: flex; flex-direction: column; gap: 0.6rem; }
+  .story { padding: 0.85rem 1.05rem; }
+  .story summary { cursor: pointer; user-select: none; list-style: none; }
+  .story summary::-webkit-details-marker { display: none; }
+  .story h4 { margin: 0; font-size: 0.96rem; font-weight: 750; line-height: 1.45; text-wrap: balance; }
+  .story h4 .rank { color: var(--faint); font-weight: 800; font-size: 0.82rem; margin-right: 0.35rem; font-variant-numeric: tabular-nums; }
+  .story .s-meta { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.45rem 0 0; }
+  .chip {
+    display: inline-block; padding: 0.04rem 0.48rem; border-radius: 999px;
+    background: var(--chip-bg); color: var(--muted);
+    font-size: 0.68rem; font-weight: 600; white-space: nowrap;
+  }
+  .chip.track { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+  .chip.verify { background: var(--ok-soft); color: var(--ok); font-weight: 700; }
+  .chip.single { background: var(--warn-soft); color: var(--warn); font-weight: 700; }
+  .chip.probe { background: var(--chip-bg); color: var(--muted); font-weight: 700; margin-right: 0.35rem; }
+  .impact-tag {
+    display: inline-block; padding: 0.04rem 0.48rem; border-radius: 6px;
+    font-size: 0.68rem; font-weight: 700; white-space: nowrap;
+  }
+  .impact-tag.pos { background: var(--up-soft); color: var(--up); }
+  .impact-tag.neg { background: var(--down-soft); color: var(--down); }
+  .impact-tag.neu { background: var(--chip-bg); color: var(--muted); }
+  .badge {
+    display: inline-block; padding: 0.04rem 0.42rem; border-radius: 6px;
+    font-size: 0.64rem; font-weight: 800; letter-spacing: 0.05em; white-space: nowrap;
+  }
+  .badge.new { background: var(--accent); color: var(--accent-ink); }
+  .badge.update { border: 1px solid var(--accent); color: var(--accent); }
+  .story .lead { margin: 0.45rem 0 0; font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+  .story .more { display: inline-block; margin-top: 0.4rem; font-size: 0.76rem; font-weight: 700; color: var(--accent); }
+  .story .more::before { content: "▸ 자세히"; }
+  .story[open] .more::before { content: "▾ 접기"; }
+  .story .detail { margin-top: 0.6rem; border-top: 1px solid var(--hairline); padding-top: 0.6rem; }
+  .story .detail p { margin: 0 0 0.5rem; font-size: 0.86rem; line-height: 1.6; }
+  .story .detail p:last-child { margin-bottom: 0; }
+  .story .label { font-weight: 800; color: var(--accent); font-size: 0.78em; margin-right: 0.3rem; }
+  .story .impact { font-size: 0.82rem; color: var(--muted); }
+  .story .sources { font-size: 0.78rem; color: var(--muted); line-height: 1.8; }
+
+  /* 미니 연대기 — 추적 중 사안 */
+  .mini-tl { margin: 0.55rem 0 0; padding: 0.55rem 0 0; list-style: none; border-top: 1px dashed var(--hairline); }
+  .mini-tl li {
+    position: relative; padding: 0 0 0.15rem 1.1rem;
+    font-size: 0.78rem; line-height: 1.5; color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .mini-tl li::before {
+    content: ""; position: absolute; left: 0.22rem; top: 0.42rem;
+    width: 7px; height: 7px; border-radius: 999px; background: var(--faint);
+  }
+  .mini-tl li + li::after {
+    content: ""; position: absolute; left: 0.4rem; top: -0.45rem;
+    width: 1.5px; height: 0.75rem; background: var(--hairline);
+  }
+  .mini-tl li.next { color: var(--accent); font-weight: 700; }
+  .mini-tl li.next::before { background: var(--accent); }
+  .mini-tl .tl-d { font-weight: 700; margin-right: 0.35rem; }
+
+  /* 제목 행 — 카드에 들지 못한 게재 후보 */
+  .rows { margin-top: 0.6rem; padding: 0.35rem 1.05rem; }
+  .rows ul { margin: 0; padding: 0; list-style: none; }
+  .rows li { padding: 0.6rem 0; border-top: 1px solid var(--hairline); font-size: 0.87rem; line-height: 1.5; }
+  .rows li:first-child { border-top: 0; }
+  .rows .t { font-weight: 700; }
+  .rows .rm {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem;
+    margin-top: 0.22rem; font-size: 0.74rem; color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .rows .src { color: var(--muted); }
+  .rows li.probe .t { font-weight: 600; color: var(--muted); }
+
+  /* 추적 관리 — tracking.html과 같은 칩·타임라인 체계 */
+  .tracking .track-summary { border-top: 3px solid var(--accent); font-variant-numeric: tabular-nums; }
+  .tracking .track-summary b { font-weight: 800; }
+  .ts-head { margin: 0; font-size: 1.02rem; font-weight: 750; letter-spacing: -0.01em; }
+  .ts-kinds { margin: 0.35rem 0 0; padding: 0; list-style: none; }
+  .ts-kinds li {
+    position: relative; padding-left: 0.85rem; margin-top: 0.2rem;
+    font-size: 0.86rem; color: var(--muted); line-height: 1.55;
+  }
+  .ts-kinds li::before { content: "·"; position: absolute; left: 0.2rem; color: var(--faint); }
+  .ts-kinds b { color: var(--ink); }
+  .ts-hint { color: var(--faint); font-size: 0.78rem; }
+  .ts-today {
+    margin: 0.6rem 0 0; padding-top: 0.55rem; border-top: 1px dashed var(--hairline);
+    font-size: 0.85rem; color: var(--muted);
+  }
+  .ts-today b { color: var(--accent); }
+  .tracking section { margin-top: 0.9rem; }
+  .sec-h {
+    margin: 1.1rem 0 0.1rem; font-size: 0.74rem; font-weight: 800;
+    letter-spacing: 0.07em; color: var(--faint);
+  }
+  .result { margin-top: 0.6rem; }
+  .res-head { display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap; }
+  .res-title { font-size: 0.93rem; font-weight: 750; line-height: 1.45; text-wrap: balance; }
+  .res-reg { font-size: 0.72rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .chip.v-ok { background: var(--accent); color: var(--accent-ink); font-weight: 800; }
+  .chip.v-part { background: var(--accent-soft); color: var(--accent); font-weight: 800; }
+  .chip.v-none { background: var(--up-soft); color: var(--up); font-weight: 800; }
+  .chip.v-mid { background: var(--chip-bg); color: var(--muted); font-weight: 800; }
+  .res-line { margin: 0.45rem 0 0; font-size: 0.89rem; line-height: 1.6; }
+  .res-next { margin: 0.45rem 0 0; font-size: 0.82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .next-tag {
+    display: inline-block; vertical-align: 0.08em; margin-right: 0.4rem;
+    padding: 0.02rem 0.45rem; border-radius: 5px;
+    background: var(--accent-soft); color: var(--accent);
+    font-size: 0.69rem; font-weight: 800; white-space: nowrap;
+  }
+  .res-act { margin: 0.4rem 0 0; font-size: 0.84rem; }
+  .act-tag {
+    display: inline-block; vertical-align: 0.08em; margin-right: 0.45rem;
+    padding: 0.02rem 0.45rem; border-radius: 5px;
+    background: var(--up-soft); color: var(--up);
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 0.03em; white-space: nowrap;
+  }
+  .res-more { margin-top: 0.35rem; }
+  .res-why { margin: 0.15rem 0 0; font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+  .timeline { margin: 0.5rem 0 0; padding: 0.5rem 0 0; list-style: none; border-top: 1px dashed var(--hairline); }
+  .timeline li {
+    position: relative; padding: 0 0 0.2rem 1.1rem;
+    font-size: 0.8rem; line-height: 1.55; color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .timeline li::before {
+    content: ""; position: absolute; left: 0.22rem; top: 0.45rem;
+    width: 7px; height: 7px; border-radius: 999px; background: var(--faint);
+  }
+  .timeline li + li::after {
+    content: ""; position: absolute; left: 0.4rem; top: -0.45rem;
+    width: 1.5px; height: 0.8rem; background: var(--hairline);
+  }
+  .timeline .tl-d { font-weight: 700; margin-right: 0.35rem; }
+  .up-group {
+    margin-top: 0.55rem; padding: 0.7rem 0.9rem; background: var(--surface);
+    border: 1px solid var(--hairline); border-radius: 14px; box-shadow: var(--shadow);
+  }
+  .up-date { margin: 0; font-size: 0.86rem; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .up-dow { color: var(--faint); font-weight: 700; }
+  .up-list { margin: 0.3rem 0 0; padding: 0; list-style: none; }
+  .up-list li {
+    position: relative; padding-left: 0.85rem; margin-top: 0.22rem;
+    font-size: 0.86rem; line-height: 1.55;
+  }
+  .up-list li::before { content: "·"; position: absolute; left: 0.2rem; color: var(--faint); }
+  .up-act { display: block; font-size: 0.78rem; color: var(--faint); }
+  .track-foot { margin: 0.9rem 0 0; font-size: 0.79rem; font-weight: 700; }
+
+  /* 일정 */
+  .week ul { margin: 0; padding: 0; list-style: none; }
+  .week li {
+    display: grid; grid-template-columns: 4.2rem 1fr; gap: 0.55rem;
+    padding: 0.55rem 0; border-top: 1px solid var(--hairline);
+    font-size: 0.85rem; line-height: 1.5;
+  }
+  .week li:first-child { border-top: 0; padding-top: 0.1rem; }
+  .week .wd { font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; font-size: 0.8rem; }
+
+  .meta { margin-top: 2.2rem; font-size: 0.76rem; color: var(--faint); line-height: 1.7; }
+  .meta p { margin: 0 0 0.35rem; }
+
+  @media (min-width: 640px) {
+    .stock-cards { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+  }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<div class="page">
+  <header class="masthead">
+    <p class="kicker">DAILY NEWS BRIEFING</p>
+    <h1>데일리 뉴스 브리핑</h1>
+    <p class="dateline">2026년 10월 30일 (금) · 04:30 KST 생성 · 주요 7건 + 제목 행 10건 · <a href="https://junho5541-bit.github.io/daily-briefing/archive.html">지난 브리핑</a></p>
+  </header>
+
+  <nav class="quicknav" aria-label="빠른 이동">
+    <a href="#lede">핵심</a><a href="#today">오늘 체크</a><a href="#market">시장</a><a href="#stocks">내 종목</a><a href="#stories">주요 뉴스</a><a href="#week">일정</a><a href="#tracking" class="track-link">추적 관리 49건</a>
+  </nav>
+
+  <section class="lede" id="lede" aria-label="오늘의 핵심">
+    <div class="card">
+      <div class="sec-head"><h2>오늘의 핵심</h2></div>
+      <ol>
+        <li><b>삼성전자 3분기 확정실적이 나오면서 잠정치 107조4,000억원이 사업부별로 쪼개졌다.</b> 매출 195.3조원·영업이익 107.4조원으로 분기 영업이익 100조원을 처음 넘겼고, 반도체(DS)가 매출 147.1조원·영업이익 106.5조원으로 이익의 거의 전부를 냈다. 세트(DX)는 부품 원가 상승으로 0.8조원 영업적자다. 같은 날 3분기 배당 주당 4,601원(총 약 30조원)과 2026년 총 주주환원 90~110조원, 시설투자 84.4조원이 함께 확정됐다.</li>
+        <li><b>그런데 발표 당일 주가는 내렸다.</b> 10월 29일 코스피는 1.24% 내린 5,937.66으로 하루 만에 6,000선을 반납했고(장중 6,100.11까지 올랐다 하락 전환), 삼성전자는 4%대 하락, SK하이닉스는 2.62% 상승으로 보유 두 종목의 방향이 갈렸다. 하락 사유를 적시한 보도는 아직 없다.</li>
+        <li><b>호르무즈 해협에서 유조선 3척이 기뢰에 부딪혀 불이 났고 유가가 다시 올랐다.</b> WTI는 10월 28일 102.78달러(+3%), 브렌트는 111.64달러로 110달러선을 되찾았다. 이 브리핑의 국내 수치는 10월 29일 마감, 해외 수치는 10월 28일 마감 기준이다 — 작성 시각(04:30)에 미국 10월 29일 세션이 아직 열려 있었다.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="today-check" id="today" aria-label="오늘 체크">
+    <div class="card">
+      <div class="sec-head"><h2>오늘 체크</h2></div>
+      <ul>
+        <li><span class="tc-time">05:00</span>미국 10/29 정규장 마감 — 아래 "시장 한눈에"의 해외 지표가 10/28 기준인 이유이고, 이 마감으로 10/29 종가가 확정된다</li>
+        <li><span class="tc-time">09:00</span>국내 증시 개장 — 삼성전자가 확정실적 발표 당일 4%대 내린 뒤의 자리이고, SK하이닉스 미 ADR이 10/28에 13.30% 오른 것이 국내 본주에 얼마나 넘어오는지가 관전 항목이다</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="market" id="market" aria-label="시장 한눈에">
+    <div class="sec-head"><h2>시장 한눈에</h2><span class="sub">국내 10/29(목) 마감 · 해외 10/28(수) 마감</span></div>
+    <div class="market-row">
+      <div class="m-cell"><span class="k">코스피</span><span class="v">5,937.66</span><span class="c down">-1.24%</span></div>
+      <div class="m-cell"><span class="k">나스닥</span><span class="v">26,549.85</span><span class="c up">+0.27%</span></div>
+      <div class="m-cell"><span class="k">SOX</span><span class="v">11,684.0</span><span class="c up">+1.75%</span></div>
+      <div class="m-cell"><span class="k">원달러</span><span class="v">1,336.30원</span><span class="c down">-7.20원</span></div>
+      <div class="m-cell"><span class="k">유가(브렌트)</span><span class="v">111.64달러</span><span class="c up">+2.04%</span></div>
+      <div class="m-cell"><span class="k">국고3년</span><span class="v">3.768%</span><span class="c down">-3.2bp</span></div>
+      <div class="m-cell"><span class="k">미10년</span><span class="v">—</span><span class="c flat">5.045%</span></div>
+    </div>
+    <p class="sec-note"><b>해외 지표는 10월 28일(수) 정산값이다.</b> 작성 시각 04:30 KST에 미국 10월 29일 세션이 아직 끝나지 않아(조회 시점 15:28~15:36 ET) 새 종가가 없다. 10월 29일 조회값으로 나스닥 26,125.21, SOX 11,458.4, 브렌트 110.53달러가 잡혔지만 전부 미완결이라 표에 올리지 않았다.</p>
+    <p class="sec-note"><b>전일판이 미완결로 비워 둔 10월 28일 수치 4종이 이번에 정산됐다.</b> 나스닥은 26,452.90에서 26,549.85로, SOX는 11,627.9에서 11,684.0으로, 미10년물은 4.997%에서 5.045%로, 브렌트는 111.44달러에서 111.64달러로 확정됐다. 국내 10월 28일 값도 국고3년 3.800%, 원달러 1,341.96원으로 재조회됐다.</p>
+    <p class="sec-note"><b>원/달러는 계열에 따라 약 2.5원 어긋난다.</b> 표의 1,336.30원은 10월 29일 서울 주간거래 마감 보도값이고, 시세 사이트 조회값은 1,338.80원인데 조회 시점 기준 미완결이라 병기만 한다.</p>
+    <p class="sec-note"><b>유가는 두 계열의 지표가 다르다.</b> 표의 브렌트 111.64달러는 시세 사이트 조회값이고, 보도 계열이 전한 것은 WTI 12월물 102.78달러(+3%·10월 28일 마감)다. 방향은 같다.</p>
+  </section>
+
+  <section class="stocks" id="stocks" aria-label="내 종목 오늘">
+    <div class="sec-head"><h2>내 종목 오늘</h2><span class="sub">10/29(목) 종가 기준</span></div>
+    <div class="stock-cards">
+  <div class="card stock-card">
+    <div class="stock-id"><span class="name">SK하이닉스</span><span class="price">1,526,000원</span></div>
+    <div class="stock-hero">
+      <span class="chg up">+2.62%</span>
+      <span class="cume">이번 주 +19.50% (10/23 종가 1,277,000원 대비) · 10월 -14.08% (9/30 종가 1,776,000원 대비) · 연초 대비 +125.41% (연초 677,000원 대비) · 종가 고점(6/22 2,919,000원) 대비 -47.72%</span>
+    </div>
+    <div class="spark up" aria-label="최근 종가 추이">
+      <svg viewBox="0 0 120 36" preserveAspectRatio="none" role="img">
+        <path class="area" d="M4,29.1 L15.2,28.1 L26.4,27.7 L37.6,33 L48.8,26 L60,33 L71.2,27.7 L82.4,27.9 L93.6,21.3 L104.8,6.9 L116,3 L116,36 L4,36 Z"/>
+        <polyline class="line" points="4,29.1 15.2,28.1 26.4,27.7 37.6,33 48.8,26 60,33 71.2,27.7 82.4,27.9 93.6,21.3 104.8,6.9 116,3"/>
+        <circle class="dot" cx="116" cy="3" r="3"/>
+      </svg>
+      <p class="spark-cap"><span>10/15 126.2만</span><span>종가 시리즈 11거래일 · 끝점은 브리핑 기재값</span><span>10/29 152.6만</span></p>
+    </div>
+    <p class="stock-why">당일 상승 사유를 따로 적시한 보도는 수집되지 않았다. 코스피가 1.24% 내린 날 보유 두 종목의 방향이 갈렸다는 사실만 마감 시황이 전했고, 하루 전 발표된 3분기 실적과 주주환원이 이어지는 자리다.</p>
+    <details>
+      <summary class="fold-sum">참고 포인트 5건</summary>
+      <ul class="stock-points">
+        <li><span class="pt">컨센서스</span>3분기 영업이익 증권가 추정치는 약 77조원이었는데 확정치는 83조3,338억원으로 이를 웃돌았다 (10/28 이전 집계 · <a href="https://www.hankyung.com/article/2026102814891">한국경제</a>)</li>
+        <li><span class="pt">관찰</span>2029년까지 D램·HBM이 사실상 완판이고, 2027~2028년 생산능력의 50% 이상이 14개 고객사와 맺은 5년 단위 장기공급계약(LTA) 물량이다 <span class="pt-src">(<a href="https://www.hankyung.com/article/2026102814891">한국경제</a>)</span></li>
+        <li><span class="pt">기회</span>약 100조원 규모 주주환원(현금배당 30조원 이상 + 자사주 매입·소각 60조원 이상)이 컨퍼런스콜에서 공개됐다 <span class="pt-src">(<a href="https://www.hankyung.com/article/2026102814891">한국경제</a>)</span></li>
+        <li><span class="pt">리스크</span>내년 투자를 대폭 늘리겠다는 방침은 밝혔지만 2027년 캐펙스 금액은 제시되지 않았고, 약 100조원 환원과 증설 재원이 같은 현금을 놓고 경합한다 <span class="pt-src">(<a href="https://www.hankyung.com/article/2026102814891">한국경제</a>)</span></li>
+        <li><span class="pt">수급</span>10/29 코스피는 기관의 대규모 순매도가 공통이고 외국인 방향은 매체마다 갈린다 — 외국인 3,077억원·기관 5,775억원 순매도(<a href="https://fnnews.com/news/202610291557011125">파이낸셜뉴스</a>)와 기관 4,447억원 순매도·외국인 721억원 순매수(<a href="https://www.ebn.co.kr/news/articleView.html?idxno=1729739">EBN</a>)로 엇갈린다</li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="card stock-card">
+    <div class="stock-id"><span class="name">삼성전자</span><span class="price">232,000원</span></div>
+    <div class="stock-hero">
+      <span class="chg down">-4.13%</span>
+      <span class="cume">이번 주 +7.66% (10/23 종가 215,500원 대비) · 10월 -13.59% (9/30 종가 268,500원 대비) · 연초 대비 +80.54% (연초 128,500원 대비) · 장중 고점(6/19 374,500원) 대비 -38.05%</span>
+    </div>
+    <div class="spark up" aria-label="최근 종가 추이">
+      <svg viewBox="0 0 120 36" preserveAspectRatio="none" role="img">
+        <path class="area" d="M4,33 L15.2,27.8 L26.4,25.5 L37.6,31.6 L48.8,20.3 L60,28.8 L71.2,27.8 L82.4,30.2 L93.6,21.8 L104.8,3 L116,12.4 L116,36 L4,36 Z"/>
+        <polyline class="line" points="4,33 15.2,27.8 26.4,25.5 37.6,31.6 48.8,20.3 60,28.8 71.2,27.8 82.4,30.2 93.6,21.8 104.8,3 116,12.4"/>
+        <circle class="dot" cx="116" cy="12.4" r="3"/>
+      </svg>
+      <p class="spark-cap"><span>10/15 21.0만</span><span>종가 시리즈 11거래일 · 끝점은 브리핑 기재값</span><span>10/29 23.2만</span></p>
+    </div>
+    <p class="stock-why">하락 사유를 적시한 보도는 확인되지 않았다. 확정실적이 오전 10시에 발표된 날이고, 전날 9.01% 급등한 뒤의 되돌림 구간이다.</p>
+    <details>
+      <summary class="fold-sum">참고 포인트 5건</summary>
+      <ul class="stock-points">
+        <li><span class="pt">관찰</span>HBM4 매출이 전분기 대비 3배 이상 늘었고 HBM 매출 중 HBM4 비중이 60% 수준이며, 2027년 HBM 공급 물량은 목표 가격 수준에서 협상이 끝나 완판됐다 <span class="pt-src">(<a href="https://view.asiae.co.kr/article/2026102911191454019">아시아경제</a>)</span></li>
+        <li><span class="pt">기회</span>3분기 배당이 보통주·우선주 각 주당 4,601원(총 약 30조원)으로 정해졌고, 2026년 총 주주환원은 90~110조원 계획이다 <span class="pt-src">(<a href="https://www.sisa-news.com/news/article.html?no=278311">시사뉴스</a>)</span></li>
+        <li><span class="pt">리스크</span>세트(DX) 부문이 부품 원가 상승으로 0.8조원 영업적자를 냈고, 환율 하락으로 전사 영업이익이 전분기 대비 약 10조원 줄었다 <span class="pt-src">(<a href="https://www.sisa-news.com/news/article.html?no=278311">시사뉴스</a>)</span></li>
+        <li><span class="pt">관찰</span>2026년 주주환원 중 약 35조원이 이미 집행·확정돼 잔여 55~75조원은 2027년 1월 말 이사회로 넘어갔다. 증권가 전망이던 약 80조원(KB증권)은 계획 하단 90조원에도 못 미쳤다 <span class="pt-src">(<a href="https://www.sisa-news.com/news/article.html?no=278311">시사뉴스</a>)</span></li>
+        <li><span class="pt">수급</span>10/28 외국인 순매수 1위가 삼성전자 3,859억원이었다. 10/29 종목별 수급은 아직 확인되지 않았다 <span class="pt-src">(<a href="https://www.hankyung.com/article/2026102814891">한국경제</a>)</span></li>
+      </ul>
+    </details>
+  </div>
+    </div>
+  </section>
+
+  <section class="stories" id="stories" aria-label="주요 뉴스">
+    <div class="sec-head"><h2>주요 뉴스</h2><span class="sub">섹션 순서 고정 · 카드 뒤에 제목 행</span></div>
+    <div class="prio-head"><span class="p">P1</span><h3>내 종목 직접</h3><span class="interest">주식·투자</span></div>
+  <div class="story-list">
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">1</span>삼성전자 3분기 확정실적 — 영업이익 107.4조원 확정, DS 106.5조·DX 0.8조 적자, 배당 주당 4,601원·2026년 환원 90~110조원</h4>
+      <div class="s-meta"><span class="chip">보도 10/29</span><span class="chip">P1 · 내 종목 직접</span><span class="impact-tag pos">호재 · 직접</span><span class="chip track">추적 중 · 10/12부터</span><span class="chip verify">✓ 교차 확인</span></div>
+      <p class="lead">삼성전자가 10월 29일 2026년 3분기 확정실적을 발표했다.</p>
+      <ul class="mini-tl">
+        <li><span class="tl-d">10/12</span>등록(10월 말 확정실적 예고)</li>
+        <li><span class="tl-d">10/30</span>결과 확인·종결</li>
+        <li class="next"><span class="tl-d">다음 확인</span>(종결 — 주주환원 잔여분은 2027-01-29 전후 이사회, 중간 점검 11/27 DART 분기보고서)</li>
+      </ul>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>삼성전자가 10월 29일 2026년 3분기 확정실적을 발표했다. 연결 매출 195.3조원(전분기 대비 +23.8조), 영업이익 107.4조원(+17.9조)으로 분기 영업이익 100조원을 처음 넘겼다.</p>
+      <p><b>이익의 거의 전부가 반도체에서 나왔다.</b> DS(반도체) 부문은 매출 147.1조원·영업이익 106.5조원으로 둘 다 분기 최대다. HBM4 판매 확대와 서버 SSD 수요가 메모리를 끌었고, 파운드리는 HBM 베이스다이 판매와 2nm HPC 수주로 개선됐다. 반대로 DX(세트) 부문은 부품 원가 상승으로 0.8조원 영업적자다. 환율 하락 때문에 전사 영업이익이 전분기 대비 약 10조원 줄었다는 설명도 함께 나왔다.</p>
+      <p><b>주주환원과 투자 숫자가 같은 날 확정됐다.</b> 3분기 현금배당은 보통주·우선주 각 주당 4,601원(총 약 30조원)이고, 2026년 총 주주환원 계획은 90~110조원이다. 이 가운데 약 35조원은 이미 집행·확정돼 잔여 55~75조원은 2027년 1월 말 이사회에서 정한다. 2026년 시설투자는 84.4조원(DS 76.8조·디스플레이 3.9조)이다. 회사는 4분기에도 반도체 중심 성장을 예상하고 2027년까지 강한 반도체 수요가 이어질 것으로 전망했다. 사업부별 분해와 배당 수치를 전한 기사는 발행일이 확인되지 않아, 추적 단계가 같은 날 회수한 기록과 대조해 실었다.</p>
+      <p><span class="label">왜 중요</span><b>보유 종목의 성적표가 "잠정치 한 줄"에서 "구조가 보이는 숫자"로 바뀌었다.</b> 10월 8일 잠정치는 매출과 영업이익 두 개뿐이어서 이익이 어디서 났는지 알 수 없었다. 확정치는 DS 106.5조원과 DX 0.8조원 적자로 갈라져, 이 회사의 분기 이익이 사실상 전부 반도체에서 나오고 세트는 오히려 원가 부담을 지고 있다는 사실을 보여준다. 메모리 업황이 꺾이면 완충 장치가 거의 없다는 뜻이기도 하다.</p>
+      <p><b>배당은 바로 손에 닿는 숫자다.</b> 주당 4,601원은 10월 29일 종가 232,000원 기준으로 분기 배당만 약 2% 수준이다. 다만 2026년 환원 계획 90~110조원 가운데 절반 이상이 2027년 1월 말 이사회로 넘어가, 올해 안에 전모를 알 수는 없다. 증권가가 기대하던 약 80조원(KB증권)보다는 계획 하단조차 높다.</p>
+      <p class="impact"><span class="impact-tag pos">호재 · 직접</span>경로: 분기 영업이익 107.4조원이 DS 106.5조원과 DX 0.8조원 적자로 분해되면서 반도체 이익의 크기가 확정됐고, 배당·환원 계획이 증권가 전망을 웃돌았다. 전일판은 같은 사안을 "발표 전이라 방향을 말할 재료가 없다"는 중립(직접)으로 적었는데, 오늘 달라진 것은 추정이 전부 확정 숫자로 바뀌고 배당액이 붙었다는 점이다. 다만 발표 당일 주가는 4%대 내렸고 그 사유를 적시한 보도는 아직 없다.</p>
+      <p class="sources">출처: <a href="https://view.asiae.co.kr/article/2026102911191454019">아시아경제</a>, <a href="https://www.sisa-news.com/news/article.html?no=278311">시사뉴스</a>, 한국경제, 서울경제, 파이낸셜뉴스, 삼성전자 뉴스룸</p>
+    </div>
+  </details>
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">2</span>삼성전자 컨퍼런스콜 — HBM4 매출 전분기 대비 3배 이상, HBM 매출 중 HBM4 비중 60%, 2027년 물량은 목표 가격에 완판</h4>
+      <div class="s-meta"><span class="chip">보도 10/29</span><span class="chip">P1 · 내 종목 직접</span><span class="impact-tag pos">호재 · 직접</span><span class="chip track">추적 중 · 7/30부터</span><span class="chip verify">✓ 교차 확인</span></div>
+      <p class="lead">같은 날 열린 확정실적 컨퍼런스콜에서 삼성전자는 HBM4 매출이 직전 분기 대비 3배 이상 늘었고 HBM 매출 가운데 HBM4 비중이 60% 수준이라고 밝혔다.</p>
+      <ul class="mini-tl">
+        <li><span class="tl-d">9/3</span>가격 축 일부 회수(HBM 평균 수출가 76.13달러)</li>
+        <li><span class="tl-d">10/30</span>3사 중 2사 숫자 확인</li>
+        <li class="next"><span class="tl-d">다음 확인</span>11/13 마이크론 HBM4 일정·엔비디아 HBM4E 사양</li>
+      </ul>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>같은 날 열린 확정실적 컨퍼런스콜에서 삼성전자는 HBM4 매출이 직전 분기 대비 3배 이상 늘었고 HBM 매출 가운데 HBM4 비중이 60% 수준이라고 밝혔다.</p>
+      <p><b>내년 물량은 이미 묶였다.</b> 2027년 HBM 공급 물량은 목표 가격 수준에서 협상이 끝나 완판됐고 고객사의 추가 증량 요청이 이어진다고 했다. HBM 점유율을 D램 전체 점유율 수준까지 끌어올리겠다는 목표는 3분기에 달성했다고 밝혔다.</p>
+      <p><b>수치 표기는 매체별로 조금 다르다.</b> 서울경제는 제목에서 HBM4 비중을 70%로 적었는데 내년 전망치일 가능성이 있어 시점이 다를 수 있다. 같은 매체는 삼성전자가 HBM 점유율 40%에 육박했고 장기공급계약(LTA)을 2배로 늘린다는 취지로도 보도했으나, 수집 단계에서 본문을 열지 못해 이 카드에서는 확정 사실로 쓰지 않았다.</p>
+      <p><span class="label">왜 중요</span><b>하루 전 SK하이닉스가 내놓은 숫자와 나란히 놓고 읽을 자리다.</b> SK하이닉스는 2029년까지 D램·HBM이 사실상 완판이고 2027~2028년 캐파의 절반 이상이 14개 고객사 장기계약이라고 했다. 삼성전자는 2027년 물량 완판과 HBM 점유율 회복을 말했다. 두 회사 모두 "가격 협상이 아니라 물량 배정" 국면에 들어갔다는 이야기이고, 메모리 사이클이 꺾일 때 계약이 실적을 받치는 구조가 양쪽에서 확인된 셈이다.</p>
+      <p><b>추적하던 질문의 관전 항목이 바뀐다.</b> 7월부터 "HBM4에서 SK하이닉스 점유율이 떨어지는가"를 보고 있었는데, 이틀 사이 들어온 숫자는 점유율보다 장기계약 물량과 가격이 실적을 결정한다는 쪽을 가리킨다. 보유 종목 두 개가 같은 시장에서 경쟁하는 입장이라, 한쪽의 점유율 상승이 곧 다른 쪽의 손실인지는 이 구조에서 단정하기 어렵다.</p>
+      <p class="impact"><span class="impact-tag pos">호재 · 직접</span>경로: HBM4 매출이 분기 만에 3배 이상 늘고 2027년 물량이 목표 가격에 완판됐다는 것은, 삼성전자가 HBM 경쟁에서 밀렸다는 그간의 평가를 숫자로 되돌린 대목이다. 전일판에는 콜이 열리기 전이라 이 사안의 삼성전자 쪽 라벨이 없었고 오늘 처음 붙는다. 다만 같은 날 주가는 4%대 내렸다.</p>
+      <p class="sources">출처: <a href="https://view.asiae.co.kr/article/2026102911191454019">아시아경제</a>, 한국경제, 서울경제, 파이낸셜뉴스</p>
+    </div>
+  </details>
+  </div>
+  <div class="card rows">
+    <ul>
+      <li class="tr"><span class="t">SK하이닉스 미 ADR 10/28 13.30% 급등한 164.70달러 — 3분기 실적·약 100조원 주주환원 공개 직후이고 국내 본주의 10/29 상승은 2.62%에 그쳤다</span><span class="rm"><span class="chip">보도 10/29</span><span class="chip single">⚠</span><span class="src"><a href="https://www.topstarnews.net/news/articleView.html?idxno=16261428">톱스타뉴스</a></span></span></li>
+    </ul>
+  </div>
+
+  <div class="prio-head"><span class="p">P1</span><h3>반도체 생태계</h3><span class="interest">주식·투자</span></div>
+  <div class="story-list">
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">3</span>마이크로소프트 FY27 1분기 매출 923억달러·Azure 48% 성장 — 알파벳은 2027년 자본지출 3,000억달러 이상 전망, 아마존은 미발표</h4>
+      <div class="s-meta"><span class="chip">보도 10/29</span><span class="chip">P1 · 반도체 생태계</span><span class="impact-tag pos">호재 · 간접</span><span class="chip track">추적 중 · 10/23부터</span><span class="chip single">⚠ 단일 출처</span></div>
+      <p class="lead">마이크로소프트의 2027 회계연도 1분기 매출은 923억달러로 19% 늘었고 Azure는 48% 성장했다.</p>
+      <ul class="mini-tl">
+        <li><span class="tl-d">10/23</span>등록</li>
+        <li><span class="tl-d">10/30</span>마이크로소프트만 회수</li>
+        <li class="next"><span class="tl-d">다음 확인</span>11/2 아마존 IR 보도자료로 3분기 실적·2027년 캐펙스 확인</li>
+      </ul>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>마이크로소프트의 2027 회계연도 1분기 매출은 923억달러로 19% 늘었고 Azure는 48% 성장했다. 알파벳은 3분기 매출 1,276억달러(+25%), 구글 클라우드 307억달러(+103%)를 냈고 2027년 자본지출을 3,000억달러 이상으로 전망했다.</p>
+      <p><b>투자 규모에 시장은 좋게만 반응하지 않았다.</b> 알파벳은 10-Q에서 구매 약정 9,244억달러를 공개했고 주가는 약 12% 내렸다. 아마존은 이 브리핑을 쓰는 시점(현지 10월 29일 15:30 ET)까지 발표하지 않았다.</p>
+      <p><b>출처에 한계가 있다.</b> 수치는 AI 뉴스 집계 사이트 한 곳에서 나왔고, 교차 검증 검색에서는 마이크로소프트 공식 발표나 1군 매체 보도를 확인하지 못했다. 마이크로소프트가 FY27 1분기 가이던스로 Azure 약 45% 성장을 제시했다는 사실만 별도로 확인됐다.</p>
+      <p><span class="label">왜 중요</span><b>메모리를 사 가는 쪽의 지갑 사정이 여기서 보인다.</b> 보유 종목 두 개가 파는 HBM과 서버 D램의 최종 수요는 빅테크 데이터센터 투자다. 알파벳이 2027년 자본지출을 3,000억달러 이상으로 잡고 구매 약정 9,244억달러를 공시했다는 것은, 적어도 내년까지는 주문이 끊기지 않는다는 쪽의 근거다.</p>
+      <p><b>반대 신호도 같은 자리에 있다.</b> 알파벳 주가가 투자 계획 발표 뒤 12% 내렸다는 것은 시장이 "AI 투자 규모"를 더 이상 무조건 호재로 읽지 않는다는 뜻이다. 아직 발표하지 않은 아마존은 직전 분기에 2026년 캐펙스를 2,200억달러로 올리면서 상향 사유로 메모리 비용 상승을 들었다 — 메모리 가격 상승이 수요자 비용으로 잡히기 시작한 지점이다.</p>
+      <p class="impact"><span class="impact-tag pos">호재 · 간접</span>경로: 알파벳의 2027년 자본지출 3,000억달러 이상 전망과 Azure 48% 성장은 AI 데이터센터 투자가 이어진다는 근거이고, 이는 HBM·서버 D램 주문으로 연결된다. 전일판에는 이 사안의 라벨이 없었고 오늘 처음 붙는다. 다만 수치가 집계 사이트 단일 출처라 확정 사실로 쓰기 전에 아마존 발표(11/2 확인 예정)와 함께 다시 대조해야 한다.</p>
+      <p class="sources">출처: <a href="https://aiweekly.co/ai-news-today">aiweekly.co</a></p>
+    </div>
+  </details>
+  </div>
+  <div class="card rows">
+    <ul>
+      <li class="tr"><span class="t">4분기 범용 D램 계약가 10~15%·낸드 15~20% 상승 전망(TrendForce) — 상승 폭은 둔화하지만 AI 서버 수요로 상승세는 이어진다</span><span class="rm"><span class="chip">보도 10/28</span><span class="chip single">⚠</span><span class="src"><a href="https://www.ebn.co.kr/news/articleView.html?idxno=1729479">EBN</a></span></span></li>
+    </ul>
+  </div>
+
+  <div class="prio-head"><span class="p">P1</span><h3>거시·시장</h3><span class="interest">주식·투자</span></div>
+  <div class="story-list">
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">4</span>코스피 1.24% 내린 5,937.66 — 하루 만에 6,000선 반납, 장중 6,100.11까지 올랐다 하락 전환</h4>
+      <div class="s-meta"><span class="chip">보도 10/29</span><span class="chip">P1 · 거시·시장</span><span class="impact-tag neg">악재 · 직접</span><span class="chip verify">✓ 교차 확인</span></div>
+      <p class="lead">10월 29일 코스피는 전 거래일 대비 74.78포인트(1.24%) 내린 5,937.66으로 마감해 하루 만에 6,000선을 내줬다.</p>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>10월 29일 코스피는 전 거래일 대비 74.78포인트(1.24%) 내린 5,937.66으로 마감해 하루 만에 6,000선을 내줬다. 장중에는 6,100.11까지 올랐다가 하락으로 돌아섰고, 전날 급등에 따른 차익실현 매물이 원인으로 보도됐다. 코스닥도 2.34% 내린 753.23이었다.</p>
+      <p><b>보유 두 종목의 방향이 갈렸다.</b> 삼성전자는 4%대 하락, SK하이닉스는 2.62% 상승이다. 같은 날 LG에너지솔루션은 8.60% 내렸고 KB금융은 1.82% 올랐다.</p>
+      <p><b>수급은 매체마다 다르게 집계됐다.</b> 기관의 대규모 순매도는 모든 보도에서 공통이지만 외국인 방향은 엇갈린다. 파이낸셜뉴스는 외국인 3,077억원·기관 5,775억원 순매도로, EBN과 필드뉴스는 기관 4,447억원 순매도·외국인 721억원 순매수로 전했다. 원/달러는 7.20원 내린 1,336.30원으로 주가가 빠진 날에 원화가 강해졌다.</p>
+      <p><span class="label">왜 중요</span><b>전일판에서 "어제의 급등이 하루짜리인지 오늘 자리에서 판가름난다"고 적었던 질문의 답이 이것이다.</b> 사상 처음 6,000선 위에서 마감한 다음 날 지수는 바로 그 선을 내줬다. 보유 종목 기준으로 보면 이번 주 누적은 SK하이닉스 +19.50%, 삼성전자 +7.66%로 여전히 크게 플러스이고, 10월 전체로는 각각 -14.08%, -13.59%다. 한 주의 급등이 한 달의 손실을 아직 다 메우지 못한 상태다.</p>
+      <p><b>외국인 수급이 매체마다 반대로 적힌 날이다.</b> 순매수인지 순매도인지가 갈리면 "외국인이 돌아섰다"는 식의 해석은 오늘 쓸 수 없다. 한국거래소 확정치로 가리기 전까지는 기관의 대규모 순매도만 사실로 두는 것이 안전하다.</p>
+      <p class="impact"><span class="impact-tag neg">악재 · 직접</span>경로: 지수가 1.24% 내리는 동안 삼성전자가 4%대 빠지면서 전날 급등분의 절반 가까이를 되돌렸다. 전일판은 같은 사안을 "사상 최고치 경신"이라는 호재(직접)로 적었고, 오늘 달라진 것은 상승 촉매였던 실적 재료가 소진되고 차익실현이 들어왔다는 점이다. SK하이닉스는 같은 날 올라 두 종목이 반대로 움직였다.</p>
+      <p class="sources">출처: <a href="https://fnnews.com/news/202610291557011125">파이낸셜뉴스</a>, <a href="https://www.ebn.co.kr/news/articleView.html?idxno=1729739">EBN</a>, 센트럴뉴스, 필드뉴스</p>
+    </div>
+  </details>
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">5</span>호르무즈 해협서 유조선 3척 기뢰 접촉·화재 — WTI 102.78달러(+3%)·브렌트 111.64달러로 유가 재상승</h4>
+      <div class="s-meta"><span class="chip">보도 10/29</span><span class="chip">P1 · 거시·시장</span><span class="impact-tag neg">악재 · 간접</span><span class="chip track">추적 중 · 7/25부터</span><span class="chip verify">✓ 교차 확인</span></div>
+      <p class="lead">이란 혁명수비대는 유조선 3척이 승인되지 않은 경로로 호르무즈 해협을 빠져나가려다 지난 24시간 사이 기뢰에 부딪혀 불이 났다고 밝혔다.</p>
+      <ul class="mini-tl">
+        <li>10/26~10/27 브렌트 110달러선 하향 이탈</li>
+        <li><span class="tl-d">10/30</span>재돌파와 기뢰 사고</li>
+        <li class="next"><span class="tl-d">다음 확인</span>11/4 브렌트 종가 계열·호르무즈 협상</li>
+      </ul>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>이란 혁명수비대는 유조선 3척이 승인되지 않은 경로로 호르무즈 해협을 빠져나가려다 지난 24시간 사이 기뢰에 부딪혀 불이 났다고 밝혔다. 일부 보도는 4척이라고 전했다. 선박 이름과 인명 피해는 공개되지 않았고 독립적으로 확인되지 않았다 — 수치는 이란 측 주장이다. 이란 외무장관은 외교적 해법을 계속 검토 중이며 중재국들이 미국-이란 합의를 위해 움직이고 있다고 했다.</p>
+      <p><b>유가는 이틀 만에 방향을 뒤집었다.</b> 10월 28일 12월물 WTI는 2.88달러(3%) 오른 배럴당 102.78달러로 마감했고 브렌트는 111.64달러(+2.04%)로 110달러선을 되찾았다. 바로 전날인 27일에는 중동 평화 회담 진전 기대로 WTI가 99.90달러까지 내렸던 자리다.</p>
+      <p><span class="label">왜 중요</span><b>유가 100달러대는 물가와 금리를 통해 두 군데로 닿는다.</b> 주식 쪽에서는 물가 압력이 금리 인하를 늦추고 할인율을 높여 성장주 밸류에이션에 부담이 된다. 미 연준은 10월 28일 기준금리를 3.75~4.00%로 동결하면서도 12월 인상 확률이 83~85%로 반영된 상태인데, 유가가 다시 오르면 그 방향이 굳는다.</p>
+      <p><b>대출 쪽에서도 같은 경로를 탄다.</b> 정책대출을 상환 중인 가구 입장에서 유가발 물가 압력은 국내 금리의 하방을 막는 요인이다. 다만 한국은행 기준금리는 10월 22일 결정대로 연 3.00% 동결이고 국고 3년물은 3.768%로 오히려 3.2bp 내려, 아직 국내 금리에 반영된 흔적은 없다.</p>
+      <p><b>해상 운송 자체도 변수다.</b> 호르무즈는 원유 수송의 길목이라 봉쇄나 사고가 길어지면 운임과 보험료가 함께 오른다. 다만 지금 들어온 정보는 이란 측 발표뿐이고 선박 피해 규모도 공개되지 않았다.</p>
+      <p class="impact"><span class="impact-tag neg">악재 · 간접</span>경로: 유가 재상승이 물가 압력으로 이어지고 그만큼 금리 인하 시점이 밀리면, 반도체 주식의 밸류에이션 할인율과 변동형 대출금리 양쪽에 상방 압력이 된다. 전일판에서는 이 사안이 추적 항목에만 있었고 라벨이 없었는데, 오늘 기뢰 사고라는 촉발 사건과 110달러선 회복이 함께 들어오면서 처음 라벨을 붙인다.</p>
+      <p class="sources">출처: <a href="https://www.ksat.com/news/world/2026/10/29/iran-says-3-oil-tankers-struck-mines-and-other-mideast-news/">AP(KSAT 게재)</a>, <a href="https://www.etoday.co.kr/news/view/2641391">이투데이</a>, CBS News, 와우TV</p>
+    </div>
+  </details>
+  </div>
+
+  <div class="prio-head"><span class="p">P2</span><h3>부동산·주거</h3><span class="interest">부동산·주거·대출</span></div>
+  <div class="story-list">
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">6</span>한국부동산원 10월 4주 — 서울 상승폭 2주 연속 둔화(0.09%), 경기 0.20%로 서울 추월, 광명 연초 이후 17.62%</h4>
+      <div class="s-meta"><span class="chip">보도 10/29</span><span class="chip">P2 · 부동산·주거</span><span class="chip verify">✓ 교차 확인</span></div>
+      <p class="lead">한국부동산원이 10월 29일 발표한 10월 4주(26일 기준) 주간 아파트 동향에서 서울 매매가는 0.09% 올라 90주 연속 상승했지만 상승폭은 줄었다.</p>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>한국부동산원이 10월 29일 발표한 10월 4주(26일 기준) 주간 아파트 동향에서 서울 매매가는 0.09% 올라 90주 연속 상승했지만 상승폭은 줄었다. 10월 12일 0.16%, 19일 0.13%에 이어 2주 연속 둔화다. 강남 11개구는 평균 -0.02%로 내렸고 강북 14개구는 +0.22%였다.</p>
+      <p><b>경기가 서울을 앞질렀다.</b> 수도권 +0.14%, 경기 +0.20%, 인천 -0.01%다. 광명은 연초 이후 누적 +17.62%로 경기 상위권이고, 수원 영통 17.47%, 안양 동안 16.90%, 성남 분당 16.86%가 뒤를 잇는다.</p>
+      <p><b>전세는 오름폭이 커졌다.</b> 서울 전세는 +0.17%다. 함께 보도된 분석에서는 서울 인접 신규택지 6곳 공급 7만6,700호(기발표 포함 10만3,900호)가 2030년 착공 목표라 단기 가격 안정 효과는 제한적이라고 봤다.</p>
+      <p><span class="label">왜 중요</span><b>거주 지역의 숫자가 전국 흐름과 반대로 움직이고 있다.</b> 서울이 두 주 연속 둔화하는 동안 경기가 서울을 앞섰고, 광명은 연초 대비 17.62%로 경기에서 가장 많이 오른 축에 든다. 1주택 실거주 가구에게 이 숫자는 당장 현금이 되지 않지만, 상급지 갈아타기나 대출 한도 산정의 기준이 되는 값이다.</p>
+      <p><b>전세 상승폭 확대는 다른 방향의 신호다.</b> 매매가 둔화와 전세 상승이 같이 나타나면 매수 대기 수요가 전세로 밀려 있다는 해석이 가능하다. 다만 이번 보도에 그 해석이 명시되지는 않았고, 신규택지 공급이 2030년 착공이라 단기 완화 효과를 기대하기 어렵다는 분석만 붙었다.</p>
+      <p><b>정책 쪽은 조용한 주다.</b> 대출 규제·신생아특례대출·세제에서 10월 29~30일 신규 확정이나 시행 발표는 확인되지 않았다. 다음 확인 지점은 10월 31일 수도권 주택공급 정례브리핑이고, 광명 사업장이 목록에 들어가는지가 관전 항목이다.</p>
+      <p class="sources">출처: <a href="https://www.etoday.co.kr/news/view/2641933">이투데이</a>, MBC, 국제뉴스, 딜사이트, 민주신문</p>
+    </div>
+  </details>
+  </div>
+
+  <div class="prio-head"><span class="p">P3</span><h3>IT·개발</h3><span class="interest">IT·개발</span></div>
+  <div class="card rows">
+    <ul>
+      <li class="tr"><span class="t">OpenAI Evals 내일(10/31) 읽기 전용 전환 — Evals 대시보드·API와 Agent Builder는 11/30 종료이고 평가 기록은 그 전에 내보내야 되돌릴 수 있다</span><span class="rm"><span class="chip">보도 6/3</span><span class="src"><a href="https://developers.openai.com/api/docs/deprecations">OpenAI Deprecations</a></span></span></li>
+      <li class="tr"><span class="t">Google, Gemini 4 Carbon 공개 — Artificial Analysis 지능지수 59점으로 1위라 보도됐으나 접근은 선별된 보안 방어 담당자로 제한되고 일반 출시 시점은 미정</span><span class="rm"><span class="chip">보도 10/28</span><span class="chip single">⚠</span><span class="src"><a href="https://venturebeat.com/technology/google-unveils-gemini-4-carbon-retaking-the-worlds-no-1-spot-on-updated-harder-benchmarks-but-access-is-limited">VentureBeat</a></span></span></li>
+      <li class="tr"><span class="t">카카오, 임베딩 모델 '카나나-2-임베딩' 2종을 Hugging Face에 오픈소스 공개 — 한국어 특화 AI 검색 모델 2종도 함께</span><span class="rm"><span class="chip">보도 10/29</span><span class="chip verify">✓</span><span class="src"><a href="https://etoday.co.kr/news/view/2641548">이투데이</a></span></span></li>
+      <li class="tr"><span class="t">코딩 도구 내장 브라우저 취약점 'EMBRACE' 공개 — Cursor·GitHub Copilot은 10월 중 수정했고 OpenAI Codex와 VS Code는 아직 미패치</span><span class="rm"><span class="chip">보도 10/29</span><span class="chip single">⚠</span><span class="src"><a href="https://aiweekly.co/ai-news-today">aiweekly.co</a></span></span></li>
+      <li class="tr"><span class="t">삼성전자 사내 AI 코딩 에이전트 '코드메이트' 사용 개발자 1만 명 돌파 — 월간 토큰 약 1조4,500억 개로 5월 대비 3.5배, 온프레미스 운영에 MCP로 도구 연결</span><span class="rm"><span class="chip">보도 10/29</span><span class="chip single">⚠</span><span class="src"><a href="https://biz.heraldcorp.com/article/10919491">헤럴드경제</a></span></span></li>
+      <li class="tr"><span class="t">OpenAI, GPT-4o·GPT-4.1 계열 API 2027-01-14 제거 공지 — 파인튜닝 모델도 기반 모델과 같은 일정이고 대체는 gpt-6-luna</span><span class="rm"><span class="chip">보도 10/14</span><span class="src"><a href="https://developers.openai.com/api/docs/deprecations">OpenAI Deprecations</a></span></span></li>
+    </ul>
+  </div>
+
+  <div class="prio-head"><span class="p">P4</span><h3>육아·정책</h3><span class="interest">육아·가족 정책</span></div>
+  <div class="story-list">
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">7</span>복지부, 아동수당·부모급여·첫만남이용권을 신청 없이 지급하는 시행령 개정 입법예고 — 오늘(10/30)부터 12/9까지 의견수렴</h4>
+      <div class="s-meta"><span class="chip">보도 10/29</span><span class="chip">P4 · 육아·정책</span><span class="chip track">추적 중 · 10/30부터</span><span class="chip verify">✓ 교차 확인</span></div>
+      <p class="lead">보건복지부가 사회보장급여법·국민기초생활보장법·아동수당법·장애인연금법 4개 법률의 시행령·시행규칙 일부개정안을 입법예고했다.</p>
+      <ul class="mini-tl">
+        <li><span class="tl-d">10/30</span>신규 등록(입법예고 2026-10-30~12-09·시행 2027-01-21)</li>
+        <li class="next"><span class="tl-d">다음 확인</span>12/10 입법예고 마감 직후 국민참여입법센터·복지부 보도자료로 원안 확정 여부 확인 (중간 점검 11/13)</li>
+      </ul>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>보건복지부가 사회보장급여법·국민기초생활보장법·아동수당법·장애인연금법 4개 법률의 시행령·시행규칙 일부개정안을 입법예고했다. 아동수당·부모급여·첫만남이용권은 보호자가 직접 신청하지 않아도 지급할 수 있도록 절차가 바뀐다.</p>
+      <p><b>조사 시점도 바뀐다.</b> 아동수당 조사 시점이 출생신고 접수·통보 또는 출생 사실을 인지한 시점으로 변경된다. 입법예고 기간은 10월 30일부터 12월 9일까지이고 관련 법률은 2027년 1월 21일 시행 예정이다.</p>
+      <p><b>상위 법률 단계는 교차 확인됐다.</b> 복지급여 신청주의를 개선하는 6개 법률 개정안이 국회 본회의를 통과했고, 국가가 보유한 정보로 수급 자격이 확인되면 바로 급여를 제공하는 방식으로 바뀐다는 내용이 별도 보도로 확인된다. 다만 입법예고 개시일과 의견수렴 마감일을 전한 매체는 한 곳이고, 복지부 보도자료 원문은 수집·검증 모두에서 열지 못했다.</p>
+      <p><span class="label">왜 중요</span><b>영유아를 키우는 가구가 "몰라서 못 받는" 경우를 없애려는 변경이다.</b> 지금은 아동수당·부모급여·첫만남이용권을 보호자가 각각 신청해야 받는다. 출생신고만으로 지급이 시작되면 신청 누락으로 몇 달치를 못 받는 일이 줄어든다. 시행은 2027년 1월 21일이라 지금 받고 있는 급여에 당장 변화가 생기지는 않는다.</p>
+      <p><b>지금 할 수 있는 일은 의견 제출이다.</b> 입법예고는 오늘부터 12월 9일까지 40일간이고, 이 기간이 지나면 원안 확정 여부가 갈린다. 다만 지급 기준월이 신청월에서 출생월 기준으로 바뀌는지는 수집 단계에서 기사 1건의 서술로만 나왔고 공식 확인이 되지 않았다 — 소급 지급 범위가 달라지는 대목이라 원안 확정 때 다시 봐야 한다.</p>
+      <p class="sources">출처: <a href="https://www.etoday.co.kr/news/view/2641460">이투데이</a>, <a href="https://biz.sbs.co.kr/amp/article/20000337939">SBS Biz</a>, <a href="https://www.mt.co.kr/policy/2026/05/12/2026051210101812724">머니투데이</a></p>
+    </div>
+  </details>
+  </div>
+
+  <div class="prio-head"><span class="p low">공통</span><h3>세상</h3></div>
+  <div class="card rows">
+    <ul>
+      <li class="tr"><span class="t">이태원 참사 4주기 기억식에 이재명 대통령 참석 — 현직 대통령의 기억식 참석은 처음이고, 9월 개정 진상규명법으로 특별조사위 활동기간이 1년 연장됐다</span><span class="rm"><span class="chip">보도 10/29</span><span class="chip verify">✓</span><span class="src"><a href="https://www.fnnews.com/news/202610291107537713">파이낸셜뉴스</a></span></span></li>
+      <li class="tr"><span class="t">스페인 고속열차 충돌 사망 69명으로 늘어 사흘간 국가 애도 — 교통장관은 자동 제어 시스템이 사고 직전 운행에 간섭했다고 밝혔다</span><span class="rm"><span class="chip">보도 10/30</span><span class="chip single">⚠</span><span class="src"><a href="https://www.abc.net.au/news/2026-10-30/brk-spain-train-updated/107325814">ABC News</a></span></span></li>
+    </ul>
+  </div>
+  </section>
+
+  <section class="week" id="week" aria-label="이번 주 일정">
+    <div class="card">
+      <div class="sec-head"><h2>이번 주 일정</h2></div>
+      <ul>
+        <li><span class="wd">10/30 금</span><span>아마존 메커니컬 터크 요청자 보너스 지급 마지막 날 — 미처리 HIT은 자동 승인되고 선불 잔액은 종료일로부터 30일 내 환불이라, 의존이 있으면 오늘 요청자 포털의 결제 정보를 확인해야 한다</span></li>
+        <li><span class="wd">10/30 금</span><span>아마존 3분기 실적·2027년 캐펙스 가이던스 — 작성 시점 미발표이고, 메모리 수요의 다음 근거다</span></li>
+        <li><span class="wd">10/31 토</span><span>OpenAI Evals 읽기 전용 전환 — 평가 기록 반출이 필요하면 이날이 분기점이고 최종 종료는 11/30이다</span></li>
+        <li><span class="wd">10/31 토</span><span>수도권 주택공급 제2차 정례브리핑·9월 부동산 종합대책·8·13 신규택지 3곳 — 광명·서남권 사업장이 목록에 들어가는지가 한 날에 겹친다</span></li>
+        <li><span class="wd">10/31 토</span><span>중국 DUV 노광장비 국산화 — SMIC·화훙반도체 3분기 공시의 장비 도입 언급으로 확인한다</span></li>
+        <li><span class="wd">11/1 일</span><span>Claude Design 단독 서비스 종료(2026-12-14) 중간 점검 — 종료일 유지와 작업물 이관 경로를 확인한다</span></li>
+        <li><span class="wd">11/2 월</span><span>광명 하안주공 10·11단지 재건축 시공자 현장설명회 — 광명 거주 가구의 이주·시세에 직접 닿는 일정이고 입찰 마감은 12/17이다</span></li>
+        <li><span class="wd">11/2 월</span><span>아마존 3분기 실적 확인, 메커니컬 터크 창구 폐쇄·잔액 환불 집행, GitHub Copilot 정책 변경, 오픈AI의 Cursor 모델 공급 종료(11/12 차단) 중간 점검 — 실무 마감이 한 회차에 묶인다</span></li>
+        <li><span class="wd">11/2 월</span><span>광명·시흥 3기 신도시 군사철도(3군지사선) 존치 갈등 — 국방부·국토부 협의 진전 여부</span></li>
+        <li><span class="wd">11/3 화</span><span>부모급여·아동수당 확대·아이돌봄서비스 개선·인구전략기본법 시행령 — 영유아 양육 가구의 현금 지원 축이 한 날에 열린다</span></li>
+        <li><span class="wd">11/3 화</span><span>한미 AI 서밋 반도체 협력 — 삼성-브로드컴 MOU·SK-엔비디아 LOI의 본계약 전환 여부를 DART 공시로 확인한다</span></li>
+        <li><span class="wd">11/4 수</span><span>SK하이닉스 솔리다임 증설 재원 조달 방식, 중동 확전 리스크·브렌트 종가 재확인</span></li>
+        <li><span class="wd">11/5 목</span><span>신생아특례대출·정책대출 규제, 은행별 추가 대출여력 30조원 배분, 부동산 세제개편 입법, 재건축 규제 완화 — 대출·세제 축이 한 날에 묶인다</span></li>
+        <li><span class="wd">11/5 목</span><span>미국 반도체 관세 확대·HBM 대중 수출규제·USTR 301조 — 연방관보 전수 조회를 한 회차에 집행한다</span></li>
+        <li><span class="wd">11/6 금</span><span>삼성전자 테일러 파운드리, 성과급 협약 논란, 솔리다임 다롄 공장, 두산-SK실트론, 마이크론 대만 파업, 미 FOMC 12월 일정 — 미회수 사안 6건을 한 회차에 재확인한다</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tracking" id="tracking" aria-label="추적 관리">
+    <div class="sec-head"><h2>추적 관리</h2><span class="sub">추적 원장 · 04:30 갱신</span></div>
+    <div class="card track-summary">
+    <p class="ts-head">지켜보는 사안 <b>49건</b></p>
+    <ul class="ts-kinds">
+      <li>예정일 있는 사안 <b>36건</b> — 가장 가까운 확인: <b>10/31</b> <span class="ts-case">OpenAI API 모델·플랫폼 종료 일정(Evals 읽기 전용 전환)</span> 외 4건</li>
+      <li>상시 관찰 <b>13건</b> <span class="ts-hint">(시세·금리처럼 계속 보는 것)</span></li>
+    </ul>
+    <p class="ts-today">오늘 결과를 확인한 사안 <b>5건</b> · 새로 추적 시작 <b>2건</b> · 상시 관찰 중 오늘 움직임 <b>5건</b></p>
+    </div>
+  <section class="today">
+    <h2 class="sec-h">오늘 확인한 결과</h2>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-ok">확인됨</span><span class="res-title">삼성전자 3분기 확정실적·컨퍼런스콜(10월 말 — 사업부별 실적·순이익)</span><span class="res-reg">예고 10/12</span></div>
+    <p class="res-line">10/29 발표</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>(종결)</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">매출 195.3조원·영업이익 107.4조원으로 분기 영업이익 100조원을 처음 넘었고, DS 영업이익 106.5조원(분기 최대)·DX 0.8조원 적자다 (주요 뉴스 1번) — 컨퍼런스콜에서 HBM4 매출이 전분기 대비 3배 이상 늘고 HBM 매출 중 HBM4 비중이 60%, 2027년 HBM 물량은 목표 가격 수준에서 완판됐다고 밝혔다. 회수 항목에 넣어 둔 순이익과 '메모리 마진 정점론'에 대한 직접 설명은 확인되지 않아 미회수로 남긴다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/12</span><span class="tl-t">등록(10월 말 확정실적 예고)</span></li>
+        <li><span class="tl-d">10/30</span><span class="tl-t">결과 확인·종결</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-part">일부 확인</span><span class="res-title">삼성전자 2026년 주주환원 구체안 확정(10월 말 이사회·2027년 1월 이사회)</span><span class="res-reg">예고 8/22</span></div>
+    <p class="res-line">3분기 배당 주당 4,601원(총 약 30조원)과 2026년 총 주주환원 90~110조원이 확정됐고, 잔여 55~75조원은 2027년 1월 말 이사회로 넘어갔다 (주요 뉴스 1번)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>2027-01-29 전후 1월 말 이사회(중간 점검 11/27 DART 분기보고서)</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">이미 집행·확정된 금액이 약 35조원이고 2026년 시설투자는 84.4조원(DS 76.8조)이다. 증권가 전망 약 80조원(KB증권)은 계획 하단 90조원에도 못 미쳤다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">8/22</span><span class="tl-t">등록</span></li>
+        <li><span class="tl-d">10/30</span><span class="tl-t">앞쪽 이사회 회수</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-part">일부 확인</span><span class="res-title">SK하이닉스 40조원 자사주 취득·소각 집행(취득기간 8/20~11/19)</span><span class="res-reg">예고 8/21</span></div>
+    <p class="res-line">10/28 컨퍼런스콜에서 약 100조원 주주환원(현금배당 30조원 이상 + 자사주 매입·소각 60조원 이상)이 공개돼 40조원이 더 큰 틀 안으로 들어갔다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/20 취득기간 종료 직후 DART 소각 결정 공시 조회</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">소각 결의·공시와 실제 소각 주식 수(2,407만주인지 약 2,369만주인지)는 여전히 미확인이고 취득기간이 11/19까지 남아 있다. 표적 검색은 8/19 이사회 계열만 반환했다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">8/21</span><span class="tl-t">등록</span></li>
+        <li><span class="tl-d">10/30</span><span class="tl-t">환원 틀 공개</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-part">일부 확인</span><span class="res-title">빅테크 3분기 실적·AI 캐펙스 가이던스(마이크로소프트·아마존)</span><span class="res-reg">예고 10/23</span></div>
+    <p class="res-line">마이크로소프트만 나왔다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/2 아마존 IR 보도자료로 3분기 실적·2027년 캐펙스 확인</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">FY27 1분기 매출 923억달러(+19%)·Azure +48%이고, 아마존은 실행 시점(현지 10/29 15:30 ET)에 미발표다 (주요 뉴스 3번) — 같은 국면에서 알파벳이 3분기 매출 1,276억달러(+25%)·2027년 자본지출 3,000억달러 이상을 내놓고 주가가 약 12% 빠졌다. 아마존은 직전 분기에 2026년 캐펙스를 2,200억달러로 올리면서 상향 사유로 메모리 비용 상승을 들었다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/23</span><span class="tl-t">등록</span></li>
+        <li><span class="tl-d">10/30</span><span class="tl-t">MS 회수</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-part">일부 확인</span><span class="res-title">아마존 메커니컬 터크 서비스 종료 — 보너스 지급 마감</span><span class="res-reg">예고 8/27</span></div>
+    <p class="res-line">10/30 보너스 지급 마감이 연기 없이 유지되고, 미처리 HIT은 그날 자동 승인되며 선불 잔액은 30일 내 전액 환불된다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/2 MTurk 공식 헬프 페이지로 창구 폐쇄·환불 집행 확인</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">거래 내역 열람은 2027-01-28까지다. 다만 실행 시각이 현지 10/29라 마감이 실제로 지났는지는 아직 확인할 수 없고, 아마존 공식 FAQ 원문은 대조하지 못했다(카네기멜런대 연구윤리실 안내 PDF가 가장 구체적인 근거)</p>
+      <ul class="timeline">
+        <li><span class="tl-d">8/27</span><span class="tl-t">등록</span></li>
+        <li><span class="tl-d">9/30</span><span class="tl-t">작업 접수 종료(일부 확인)</span></li>
+        <li><span class="tl-d">10/30</span><span class="tl-t">마감 유지 확인</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-mid">진행 중</span><span class="res-title">HBM4 3사 경쟁 구도(SK 점유율 하락 전망 검증)</span><span class="res-reg">예고 7/30</span></div>
+    <p class="res-line">두 컨퍼런스콜로 SK는 2029년까지 D램·HBM 사실상 완판·2027~2028년 캐파의 50% 이상이 14개 고객사 LTA 물량, 삼성은 HBM 점유율을 D램 전체 점유율 수준까지 끌어올렸다는 숫자가 한꺼번에 들어왔다 (주요 뉴스 2번)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/13 마이크론 HBM4 일정·엔비디아 HBM4E 사양</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">SK는 3분기 매출 104조6,155억원·영업이익 83조3,338억원(이익률 79.7%)으로 컨센서스를 웃돌았고 4분기에는 HBM4 출하가 HBM3E를 넘어선다고 봤다. 점유율이 내려가도 물량·가격이 장기계약으로 묶이는 국면이라 관전 항목을 '점유율 %'에서 'LTA 물량 비중과 가격'으로 옮긴다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">9/3</span><span class="tl-t">가격 축 일부 회수(HBM 평균 수출가 76.13달러)</span></li>
+        <li><span class="tl-d">10/30</span><span class="tl-t">3사 중 2사 숫자 확인</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-mid">진행 중</span><span class="res-title">SK하이닉스 용인 Y2·청주 M17 증설 투자 집행</span><span class="res-reg">예고 8/10</span></div>
+    <p class="res-line">컨퍼런스콜에서 청주 M15X 캐파를 연말까지 최대로 올리고, 내년 용인 1기 팹이 가동을 시작하며, 내년 투자를 대폭 늘린다고 밝혔다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/20 2027년 캐펙스 금액 제시 여부</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">'용인 1기 팹'은 이 사안이 추적하는 Y2(2기)와 다른 라인이고, Y2 착공 예정은 2027-07 그대로다. 2027년 캐펙스 금액은 제시되지 않았고 약 100조원 주주환원과 재원이 경합한다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">8/24</span><span class="tl-t">착공 일정 확정(M17 2027-02·Y2 2027-07)</span></li>
+        <li><span class="tl-d">10/30</span><span class="tl-t">내년 투자 확대 확인</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-mid">진행 중</span><span class="res-title">SK하이닉스 솔리다임 미국 상장 검토 중단</span><span class="res-reg">예고 10/24</span></div>
+    <p class="res-line">곽노정 사장이 10/28 컨퍼런스콜에서 상장 철회를 직접 설명했고 내년 투자 확대 방침을 함께 밝혔다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/4 IR 자료·DART 출자·차입 공시</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">증설 재원을 무엇으로 대는지(자체 현금·차입·자산 매각)는 여전히 언급되지 않았다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/24</span><span class="tl-t">등록(IPO 철회 보도)</span></li>
+        <li><span class="tl-d">10/30</span><span class="tl-t">회사 공식 설명</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-mid">진행 중</span><span class="res-title">OpenAI API 모델·플랫폼 종료 일정</span><span class="res-reg">예고 10/19</span></div>
+    <p class="res-line">공식 Deprecations 페이지 직접 확인 결과 10/31 Evals 읽기 전용·11/30 Evals와 Agent Builder 종료가 변경 없이 유지되고, 2027-01-14 GPT-4o·4.1 계열 제거도 그대로다 (IT·개발 제목 행)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>10/31 Evals 전환 당일</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">Evals는 '데이터 회수 마감' 유형이라 11/30이 지나면 평가 기록을 되돌릴 수 없다. 10/23 레거시 스냅샷 항목이 'Past deprecations'로 내려갔는지만 내일 회차에 가리면 된다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/19</span><span class="tl-t">등록</span></li>
+        <li><span class="tl-d">10/23</span><span class="tl-t">세 묶음 일정 유지 확인</span></li>
+        <li><span class="tl-d">10/30</span><span class="tl-t">재확인</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-mid">진행 중</span><span class="res-title">중동 확전 리스크·유가 급등의 시장 파급</span><span class="res-reg">예고 7/25</span></div>
+    <p class="res-line">이란이 유조선 3척이 호르무즈 해협에서 기뢰에 부딪혀 화재가 났다고 밝혔고, WTI는 10/28 102.78달러(+3%), 브렌트는 111.64달러(+2.04%)로 110달러선을 다시 넘었다 (주요 뉴스 5번)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/4 브렌트 종가 계열·호르무즈 협상</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">선박명·인명 피해는 비공개이고 수치는 이란 측 주장이라 독립 확인되지 않았다. 10/27에는 평화 회담 기대로 WTI가 99.90달러까지 내렸던 터라 이틀 만에 방향이 뒤집혔다</p>
+      <ul class="timeline">
+        <li><span class="tl-d"></span><span class="tl-t">10/26~10/27 브렌트 110달러선 하향 이탈</span></li>
+        <li><span class="tl-d">10/30</span><span class="tl-t">재돌파와 기뢰 사고</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">SK하이닉스 솔리다임 다롄 낸드 공장 미국산 장비 반입 허가</span><span class="res-reg">예고 10/20</span></div>
+    <p class="res-line">결과 미확인 (2026-10-20부터 추적)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/6 SK하이닉스 IR 자료·BIS 보도자료 직접 조회</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">회수 지점으로 지정한 10/28 컨퍼런스콜은 열렸으나 다롄·미국산 장비 반입을 전하는 대목이 0건이었다. 조회 예산을 시장 데이터 정산과 실적 회수에 써서 BIS·로이터 축은 열지 못했다</p>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">두산-SK실트론 인수(SK그룹 자산 매각·HBM 재투자)</span><span class="res-reg">예고 8/4</span></div>
+    <p class="res-line">결과 미확인 (2026-08-04부터 추적)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/6 DART 타법인 주식 취득·처분 결정 공시 조회</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">SK하이닉스 3분기 실적 회차에서 매각 대금의 HBM 재투자 경로가 언급되지 않았고 거래 종결 공시 항목도 수집 0건이다</p>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">퀄컴 칩 가격 두 자릿수 인상(9/1 시행)의 전가 여부</span><span class="res-reg">예고 8/6</span></div>
+    <p class="res-line">결과 미확인 (2026-08-06부터 추적)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/13 스마트폰 신제품 출고가·퀄컴 분기 실적의 판가 코멘트</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">같은 회차에 메모리 계약가 전망(4분기 D램 10~15%·낸드 15~20% 상승)은 들어왔으나 AP 인상분이 세트 출고가에 반영됐다는 보도는 0건이다. 메모리와 AP는 다른 품목이라 전가 증거로 쓰지 않는다</p>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">마이크론 대만 노조 파업 예고(HBM4 공급 로드맵 변수)</span><span class="res-reg">예고 9/3</span></div>
+    <p class="res-line">결과 미확인 (2026-09-03부터 추적)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/6 로이터·대만 현지 매체·마이크론 IR 직접 조회</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">chips 수집이 "피어 각도는 7일 이내 기사를 확인하지 못했다"고 자기 보고했고 이 사안 항목은 0건이다. 10/22 파업 개시 선언 이후 8일째 결과가 비어 있다</p>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">삼성전자 테일러 파운드리 1공장 가동·2공장 착공</span><span class="res-reg">예고 8/18</span></div>
+    <p class="res-line">결과 미확인 (2026-08-18부터 추적)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/6 삼성전자 IR 실적발표 자료의 파운드리 부문 설명 직접 열람</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">"회사 설명회가 가장 확실한 회수 지점"이라고 적어 둔 10/29 컨퍼런스콜이 열렸는데 테일러 언급이 없었다. 표적 검색은 2026-07 계열(2공장 올해 말 착공·2030년 양산 목표)만 반환했다</p>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">삼성전자·SK하이닉스 성과급 협약 논란(주식 지급 전환·배임 고발)</span><span class="res-reg">예고 8/20</span></div>
+    <p class="res-line">결과 미확인 (2026-08-20부터 추적)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/6 노조 공지·교섭 경과와 고발 건 처분 보도로 축 전환</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">두 회사 모두 사상 최대 실적을 내놨는데도 성과급·노사 교섭·배임 고발 항목이 수집 20건에 0건이다. 설명은 주주환원과 설비투자 쪽에만 집중됐다</p>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">싱가포르 테마섹의 삼성전자·SK하이닉스 직접 투자</span><span class="res-reg">예고 8/13</span></div>
+    <p class="res-line">결과 미확인 (2026-08-13부터 추적·등록 후 78일째 지분 취득 공시 0건)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/13 DART 대량보유상황보고서·테마섹 공식 뉴스룸으로 경로 고정</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">표적 검색이 네 회차 연속 2026-08-12 최초 보도만 반환했고 테마섹의 공식 확인은 지금까지 없다. 매체마다 '결정'과 '검토'로 표현이 갈린다</p>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">미국 HBM 대중 추가 수출규제 검토</span><span class="res-reg">예고 7/20</span></div>
+    <p class="res-line">결과 미확인 (2026-07-20부터 추적)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/5 관세·USTR 사안과 묶어 연방관보 API 집행</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">수집 20건에 수출통제 항목이 0건이고, 조회 예산을 시장 데이터 정산과 실적 회수에 전부 배분해 연방관보 API를 집행하지 못했다. '부재를 확인했다'가 아니라 '확인을 집행하지 못했다'이다</p>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">미 USTR 과잉생산 301조 조사(반도체 포함 여부)</span><span class="res-reg">예고 8/7</span></div>
+    <p class="res-line">결과 미확인 (2026-08-07부터 추적)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/5 연방관보 API·ustr.gov 보도자료 목록</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">USTR·301조 항목이 수집 0건이고 연방관보 1차 조회는 이번 회차에 집행하지 못했다. 10/29에 확인한 '최근 USTR 게재물은 2026-07-28 강제노동 301조 공고이고 10월 게재물은 없다'는 사실은 유지된다</p>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">2026년 세제개편안 육아 세제 조항(보육수당 비과세 확대·출산지원금 비과세 기간 확대)</span><span class="res-reg">예고 8/23</span></div>
+    <p class="res-line">결과 미확인 (2026-08-23부터 추적)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/13 국회 의안정보시스템에서 접수·회부·상정 단계 직접 확인</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">표적 검색이 8/3 세제개편안 발표 계열과 이미 시행 중인 2025-12 개정 법령만 반환했고, 정기국회 회기 중인데도 소득세법 개정안의 기획재정위원회 심사 단계가 공개 자료로 확인되지 않는다</p>
+    </details>
+  </article>
+  </section>
+  <section class="upcoming">
+    <h2 class="sec-h">다가오는 확인</h2>
+    <div class="up-group">
+      <p class="up-date">10/31 <span class="up-dow">(토)</span></p>
+      <ul class="up-list">
+        <li>OpenAI API 모델·플랫폼 종료 일정 — Evals가 실제로 읽기 전용으로 바뀌는 당일. 공식 Deprecations 페이지로 전환 시행과 11/30 종료 일정 유지를 확인한다<span class="up-act">대응 시점 — Evals에 쌓아 둔 모델 평가 기록은 11/30 전에 내보내야 되돌릴 수 있다</span></li>
+        <li>수도권 주택공급 정례브리핑 — 제2차 브리핑이 10월 말에 실제로 열리고 사업장별 착공·분양·입주 실적이 공개되는지<span class="up-act">대응 시점 — 경기 서남권·광명 사업장이 목록에 있으면 재건축 이주 수요와 신규 입주 시점을 처음으로 대조할 수 있다</span></li>
+        <li>9월 부동산 종합대책 — 정책브리핑·기획재정부 보도자료로 '부동산관계장관회의' 개최와 대책 발표 여부 확인</li>
+        <li>8·13 부동산 공급대책 — 신규택지 3곳(서울 강서 염창·경기 남양주 와부·경기 광주 장지)이 정례브리핑 사업장 목록에 들어 있는지</li>
+        <li>중국 DUV 노광장비 국산화 — SMIC·화훙반도체 3분기 공시에서 장비 도입·국산 장비 언급 확인</li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/1 <span class="up-dow">(일)</span></p>
+      <ul class="up-list">
+        <li>Claude Design 단독 서비스 종료 — Anthropic 공식 changelog로 2026-12-14 종료일 유지와 작업물 이관 경로 확인</li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/2 <span class="up-dow">(월)</span></p>
+      <ul class="up-list">
+        <li>아마존 메커니컬 터크 서비스 종료 — 10/30 보너스 마감 후 창구가 실제로 닫혔는지와 잔액 환불 집행<span class="up-act">대응 시점 — 선불 잔액이 남아 있으면 요청자 포털의 결제 정보를 확인해 둬야 환불이 처리된다</span></li>
+        <li>오픈AI의 Cursor 모델 공급 계약 종료 — 11/12 접속 차단이 확정일로 굳었는지와 Cursor 측 이관 안내 게재 여부<span class="up-act">대응 시점 — Cursor에서 오픈AI 모델을 쓰고 있으면 11/12 전에 대체 모델로 설정을 옮겨야 한다</span></li>
+        <li>GitHub Copilot 정책·과금 변경 — 9/28 Chat 통합 정책과 코드 리뷰 기본값 전환의 시행 상태 확인</li>
+        <li>빅테크 3분기 실적·AI 캐펙스 가이던스 — 아마존 3분기 실적과 2027년 캐펙스 가이던스 공개 여부</li>
+        <li>광명 하안주공 10·11단지 재건축 시공자 선정 — 11/2 현장설명회 개최와 참여 건설사<span class="up-act">대응 시점 — 광명 거주 가구의 이주·시세에 직접 닿는 일정이다(입찰 마감 12/17)</span></li>
+        <li>광명·시흥 3기 신도시 군사철도(3군지사선) 존치 갈등 — 국방부·국토부 협의 진전 여부</li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/3 <span class="up-dow">(화)</span></p>
+      <ul class="up-list">
+        <li>부모급여 — 국회 의안정보시스템에서 수당 3법 개정안 접수·회부 확인, 신청주의 개선 6법의 공포일로 시행일 산정</li>
+        <li>아동수당 확대 — 2027년도 예산안 복지위 심사에서 아동기본수당(월 20만원)이 유지되는지</li>
+        <li>아이돌봄서비스 개선 — 돌봄수당 인상·비용 부담 경감 검토의 진행 단계</li>
+        <li>인구전략기본법 시행령 전부개정 — 입법예고·시행 일정 확인</li>
+        <li>한미 AI 서밋 반도체 협력 — DART 단일판매·공급계약 공시로 삼성-브로드컴 MOU·SK-엔비디아 LOI의 본계약 전환 확인</li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/4 <span class="up-dow">(수)</span></p>
+      <ul class="up-list">
+        <li>SK하이닉스 솔리다임 미국 상장 검토 중단 — IR 자료·DART 공시에서 증설 재원 조달 방식 확인</li>
+        <li>중동 확전 리스크·유가 급등 — 브렌트 종가 계열과 호르무즈 협상 진전</li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/5 <span class="up-dow">(목)</span></p>
+      <ul class="up-list">
+        <li>미국 반도체 관세 확대 검토 — 연방관보 API를 2026-10-01 이후로 좁혀 전수 조회<span class="up-act">대응 시점 — 대상 품목에 서버·데이터센터 장비가 들어가는지가 메모리 주문에 닿는 첫 관문이다</span></li>
+        <li>미국 HBM 대중 추가 수출규제 검토 — 연방관보·BIS 채널 직접 조회(관세 사안과 한 회차)</li>
+        <li>미 USTR 과잉생산 301조 조사 — 연방관보 USTR 게재분·ustr.gov 보도자료 목록</li>
+        <li>8·13 대책 후속 — 은행별 추가 대출여력 30조원 배분의 집행 상황</li>
+        <li>부동산 세제개편 입법 — 정기국회 제출·심사 단계 확인</li>
+        <li>신생아특례대출·정책대출 규제 — 요건·금리 변경 여부<span class="up-act">대응 시점 — 신생아특례대출 이용 중인 가구는 요건 변경이 상환 조건에 닿는다</span></li>
+        <li>재건축 규제 완화 건의 — 조합원 지위 양도·용적률·임대주택 의무비율 처리 결과</li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/6 <span class="up-dow">(금)</span></p>
+      <ul class="up-list">
+        <li>삼성전자 테일러 파운드리 1공장 가동·2공장 착공 — 삼성전자 IR 파운드리 부문 설명 직접 열람</li>
+        <li>삼성전자·SK하이닉스 성과급 협약 논란 — 노조 공지·교섭 경과와 배임 고발 건 처분</li>
+        <li>SK하이닉스 솔리다임 다롄 낸드 공장 미국산 장비 반입 허가 — IR 자료·BIS 보도자료</li>
+        <li>두산-SK실트론 인수 — DART 타법인 주식 취득·처분 결정 공시</li>
+        <li>마이크론 대만 노조 파업 예고 — 로이터·대만 현지 매체·마이크론 IR</li>
+        <li>미 FOMC 12월 금리 결정 — 연준 공식 일정표로 12월 회의 날짜 특정<span class="up-act">대응 시점 — 12월 인상이 굳으면 원달러·외국인 수급·반도체 밸류에이션의 세 경로로 보유 종목에 닿는다</span></li>
+        <li>MCP 스펙 개편 — AAIF 공식 블로그의 폐기 정책 본문에 날짜가 있는지 확인</li>
+      </ul>
+    </div>
+  </section>
+    <p class="track-foot"><a href="https://junho5541-bit.github.io/daily-briefing/tracking.html">전체 추적 현황 보기 — 상시 사안·연대기 포함 →</a></p>
+  </section>
+
+  <footer class="meta">
+    <p><strong>수집 메타</strong></p>
+    <p>수집 카테고리: stocks(4건)·chips(5건)·macro(6건)·estate(1건)·tech(8건)·parenting(1건)·general(5건) / 누락: 없음</p>
+    <p>수집 상태: stocks·macro는 부분 실패다 — 검색 상한 6회를 소진하고도 국내 10/29~10/30 시세를 확보하지 못했고, 국내 시세 공백은 추적 단계의 시세 사이트 직접 조회로 메웠다</p>
+    <p>수집 상태: chips는 피어·장비·수출통제 각도의 7일 이내 기사를 확인하지 못했고, general은 2차 재시도 회차인데도 연합뉴스·한겨레·경향·중앙 기사가 검색에 나오지 않았다</p>
+    <p>수집 상태: estate는 조용한 날로 보고돼 시세 통계 1건뿐이고 정책·대출 규제·세제·광명 지역 개발의 당일 신규 발표는 0건이다. parenting도 1건이다</p>
+    <p>미게재(중복): SK하이닉스 3분기 실적·컨퍼런스콜 본체(영업이익 83.3조·2029년 완판·LTA 14개사·솔리다임 철회·M15X 연말 풀 캐파)는 전일판 카드 1·2번에 이미 실려 오늘 카드를 만들지 않고 "내 종목 오늘" 참고 포인트와 추적 관리로만 다뤘다</p>
+    <p>미게재(중복): 미 연준 10/28 기준금리 동결은 전일판 카드 5번과 같은 내용이라 제외하고, 12월 인상 확률 83~85%는 유가 카드의 배경으로만 썼다</p>
+    <p>미게재(발행일 미확인): 삼성전자 사업부별 분해·배당을 전한 시사뉴스 기사는 발행일이 확인되지 않아 단독 대표 출처로 쓰지 않고, 발행일이 확정된 10/29 보도와 추적 회수 기록에 묶어 실었다</p>
+    <p>미게재(본문 미확인): 서울경제의 삼성전자 팹투자 84조원·LTA 2배 확대 보도는 제목 스니펫만 확인돼 독립 항목으로 올리지 않고 카드 2번 본문에 한계와 함께 적었다</p>
+    <p>미게재(계수 제외): Mistral Large 4 공개는 집계 사이트 단독이고 1차 출처(Mistral 공식)를 확인하지 못해 내렸다</p>
+    <p>미게재(상한): 이스라엘 총선 교착과 국회 운영위 국감 파행은 제목 행 하루 10건 상한에서 밀렸다</p>
+    <p>검증 무효 3건: 삼성전자 확정실적·마이크로소프트 FY27 1분기 실적·Gemini 4 Carbon의 교차 검증 검색이 과거 연도 자료나 다른 모델만 반환해 판정에 쓰지 못했고, 마커는 수집 기록의 인정 매체 계수로 발급했다</p>
+    <p>검증 보강: 복지부 건 검색에서 '신청주의 개선 6법'의 국회 본회의 통과와 아동수당·부모급여·첫만남이용권의 무신청 지급 전환이 별도 2개 매체로 확인돼 카드 7번의 교차 근거로 반영했다</p>
+    <p>추적: 회수 5건(확인 1·일부 확인 4) · 신규 등록 2건 · 상시 변동 5건 · 수동 확인 필요: 2026-09-01~10-09 일별 값 백필 정체(다음 재시도 11/2), 삼성전자 10/29 종가 계열 재대조</p>
+    <p>추적 한계: 광명 재건축·재개발(철산·하안 등)의 '다음 확인'이 2026-09-11로 고착돼 50일째 재지정되지 않았다고 다이제스트가 보고했다</p>
+    <p>검증: 카드 ✓ 6건 · ⚠ 1건 · 검증 미수행 0건 / 제목 행 ✓ 2건 · ⚠ 6건 · 교차 검증 검색 4회(실패 3회)</p>
+    <p>상충 병기: 삼성전자 10/29 종가 — 시세 사이트 조회값은 232,000원(-4.13%), 파이낸셜뉴스 마감 기사의 -4.75%를 역산하면 230,500원이다</p>
+    <p>상충 병기: 10/29 코스피 외국인 수급 — 파이낸셜뉴스는 3,077억원 순매도, EBN·필드뉴스는 721억원 순매수, 베타뉴스는 1,221억원 순매수</p>
+    <p>상충 병기: 원/달러 10/29 — 보도 계열 1,336.30원(-7.20원), 시세 사이트 계열 1,338.80원(조회 시점 미완결)</p>
+    <p>상충 병기: 삼성전자 HBM 매출 중 HBM4 비중 — 아시아경제는 60%, 서울경제 제목은 70%로 적었고 시점이 다를 수 있다</p>
+    <p>상충 병기: 호르무즈 기뢰 접촉 유조선 수 — AP는 3척, 일부 보도는 4척</p>
+    <p>상충 병기: Gemini 4 — VentureBeat는 Carbon이 지능지수 59점으로 1위라 전했고, 교차 검증에서는 2026년 9월 출시된 Gemini 4 Argon(53점)만 확인돼 모델명과 순위를 대조하지 못했다</p>
+    <p>섹션 미생성: 주간 리캡 — 기준일이 토요일이 아니다</p>
+    <p>신선도 창: 카드 10/29~10/29 · 제목 행 10/28~10/30 · 추적 예외 2건 (OpenAI Evals 공지 6/3, GPT-4o·4.1 제거 공지 10/14)</p>
+    <p>생성 시각: 2026-10-30 04:30 KST</p>
+    <p>고지: 본 브리핑은 보도 내용을 정리한 것으로 투자 자문이 아닙니다.</p>
+    <p class="disclaimer">본 페이지는 보도 내용을 정리한 것으로 투자 자문이 아닙니다.</p>
+  </footer>
+</div>
