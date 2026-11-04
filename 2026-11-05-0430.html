@@ -1,0 +1,1040 @@
+<title>데일리 뉴스 브리핑 — 2026-11-05</title>
+<style>
+  :root {
+    --paper: #F1F3F6;
+    --surface: #FFFFFF;
+    --ink: #141B26;
+    --muted: #5D6774;
+    --faint: #8A94A1;
+    --accent: #1D55C6;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E9EFFA;
+    --hairline: #E2E6EC;
+    --chip-bg: #EEF1F5;
+    --up: #D8402F;
+    --up-soft: #FBEBE8;
+    --down: #1E5AD0;
+    --down-soft: #E9EFFA;
+    --ok: #17784A;
+    --ok-soft: #E4F3EA;
+    --warn: #9A6A00;
+    --warn-soft: #F7EFDC;
+    --shadow: 0 1px 2px rgba(20,27,38,0.05), 0 10px 30px -18px rgba(20,27,38,0.25);
+    --sans: "Pretendard", "Pretendard Variable", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0B0F15;
+      --surface: #161D28;
+      --ink: #E9EDF3;
+      --muted: #9AA4B0;
+      --faint: #68727E;
+      --accent: #7AA2FF;
+      --accent-ink: #0B0F15;
+      --accent-soft: #1B2638;
+      --hairline: #232C38;
+      --chip-bg: #1E2733;
+      --up: #FF7B6E;
+      --up-soft: #2E1A17;
+      --down: #7AA2FF;
+      --down-soft: #1B2638;
+      --ok: #5CC98F;
+      --ok-soft: #142720;
+      --warn: #E3B341;
+      --warn-soft: #2A2413;
+      --shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0B0F15;
+    --surface: #161D28;
+    --ink: #E9EDF3;
+    --muted: #9AA4B0;
+    --faint: #68727E;
+    --accent: #7AA2FF;
+    --accent-ink: #0B0F15;
+    --accent-soft: #1B2638;
+    --hairline: #232C38;
+    --chip-bg: #1E2733;
+    --up: #FF7B6E;
+    --up-soft: #2E1A17;
+    --down: #7AA2FF;
+    --down-soft: #1B2638;
+    --ok: #5CC98F;
+    --ok-soft: #142720;
+    --warn: #E3B341;
+    --warn-soft: #2A2413;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4);
+  }
+  :root[data-theme="light"] {
+    --paper: #F1F3F6;
+    --surface: #FFFFFF;
+    --ink: #141B26;
+    --muted: #5D6774;
+    --faint: #8A94A1;
+    --accent: #1D55C6;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E9EFFA;
+    --hairline: #E2E6EC;
+    --chip-bg: #EEF1F5;
+    --up: #D8402F;
+    --up-soft: #FBEBE8;
+    --down: #1E5AD0;
+    --down-soft: #E9EFFA;
+    --ok: #17784A;
+    --ok-soft: #E4F3EA;
+    --warn: #9A6A00;
+    --warn-soft: #F7EFDC;
+    --shadow: 0 1px 2px rgba(20,27,38,0.05), 0 10px 30px -18px rgba(20,27,38,0.25);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+  }
+  .page { max-width: 44rem; margin: 0 auto; padding: 0 0.95rem 3.5rem; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+  /* 제호 */
+  .masthead { padding: 1.5rem 0 1rem; }
+  .masthead .kicker { margin: 0 0 0.2rem; font-size: 0.66rem; letter-spacing: 0.18em; color: var(--accent); font-weight: 800; }
+  .masthead h1 { margin: 0; font-size: 1.5rem; font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; }
+  .masthead .dateline { margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .masthead .ed {
+    display: inline-block; margin-right: 0.4rem; padding: 0.05rem 0.5rem;
+    border-radius: 999px; background: var(--accent); color: var(--accent-ink);
+    font-size: 0.7rem; font-weight: 800;
+  }
+
+  /* 퀵내비 */
+  .quicknav {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; gap: 0.4rem; overflow-x: auto;
+    padding: 0.6rem 0.95rem; margin: 0 -0.95rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--hairline);
+    scrollbar-width: none;
+  }
+  .quicknav::-webkit-scrollbar { display: none; }
+  .quicknav a {
+    flex: none; padding: 0.26rem 0.75rem; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--hairline);
+    color: var(--muted); font-size: 0.76rem; font-weight: 700; white-space: nowrap;
+  }
+  .quicknav a:hover { text-decoration: none; color: var(--accent); border-color: var(--accent); }
+  .quicknav a.track-link { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+  /* 공통 */
+  section { margin-top: 1.7rem; scroll-margin-top: 3.4rem; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 16px;
+    padding: 1rem 1.1rem;
+    box-shadow: var(--shadow);
+  }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; margin: 0 0 0.7rem; }
+  .sec-head h2 { margin: 0; font-size: 1.06rem; font-weight: 800; letter-spacing: -0.01em; }
+  .sec-head .sub { font-size: 0.72rem; color: var(--faint); font-variant-numeric: tabular-nums; text-align: right; }
+  .sec-note { margin: 0.5rem 0 0; font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+  .fold-sum { cursor: pointer; user-select: none; font-size: 0.76rem; font-weight: 700; color: var(--accent); list-style: none; }
+  .fold-sum::-webkit-details-marker { display: none; }
+  .fold-sum::before { content: "▸ "; }
+  details[open] > .fold-sum::before { content: "▾ "; }
+
+  /* 오늘의 핵심 */
+  .lede .card { background: linear-gradient(180deg, var(--accent-soft), var(--surface) 140%); border-color: transparent; }
+  .lede ol { margin: 0; padding: 0; list-style: none; counter-reset: lede; display: flex; flex-direction: column; gap: 0.65rem; }
+  .lede li {
+    counter-increment: lede;
+    /* grid 금지 — 본문의 인라인 <b> 등이 각자 grid item이 되어 1열(1.5rem)에 갇힌다 (2026-07-30·31판 깨짐) */
+    position: relative; padding-left: 2rem;
+    font-size: 0.92rem; line-height: 1.58; font-weight: 500;
+  }
+  .lede li::before {
+    content: counter(lede);
+    position: absolute; left: 0; top: 0.13rem;
+    width: 1.25rem; height: 1.25rem;
+    border-radius: 999px; background: var(--accent); color: var(--accent-ink);
+    font-size: 0.72rem; font-weight: 800; display: grid; place-items: center;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* 오늘 체크 */
+  .today-check ul { margin: 0; padding: 0; list-style: none; }
+  .today-check li { padding: 0.5rem 0; border-top: 1px solid var(--hairline); font-size: 0.87rem; line-height: 1.6; }
+  .today-check li:first-child { border-top: 0; padding-top: 0.1rem; }
+  .tc-time { display: inline-block; min-width: 3.6rem; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; font-size: 0.82rem; }
+
+  /* 주간 리캡 (토요일판) */
+  .weekly p { margin: 0 0 0.65rem; font-size: 0.89rem; line-height: 1.65; }
+  .weekly p:last-child { margin-bottom: 0; }
+
+  /* 시장 — 가로 스크롤 카드 */
+  .market-row {
+    display: flex; gap: 0.5rem; overflow-x: auto;
+    padding: 0.1rem 0.95rem 0.5rem; margin: 0 -0.95rem;
+    scroll-snap-type: x proximity; scrollbar-width: none;
+  }
+  .market-row::-webkit-scrollbar { display: none; }
+  .m-cell {
+    flex: none; min-width: 7rem; scroll-snap-align: start;
+    background: var(--surface); border: 1px solid var(--hairline); border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 0.6rem 0.75rem;
+    display: flex; flex-direction: column; gap: 0.02rem;
+  }
+  .m-cell .k { font-size: 0.66rem; color: var(--faint); font-weight: 700; letter-spacing: 0.05em; white-space: nowrap; }
+  .m-cell .v { font-size: 1.02rem; font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; letter-spacing: -0.01em; }
+  .m-cell .c { font-size: 0.76rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .c.up, .chg.up { color: var(--up); }
+  .c.down, .chg.down { color: var(--down); }
+  .c.flat, .chg.flat { color: var(--muted); }
+
+  /* 내 종목 — 숫자 히어로 + 스파크라인 */
+  .stock-cards { display: flex; flex-direction: column; gap: 0.65rem; }
+  .stock-card { padding: 1rem 1.1rem 0.9rem; }
+  .stock-id { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; }
+  .stock-id .name { font-size: 0.86rem; font-weight: 700; color: var(--muted); }
+  .stock-id .price { font-size: 0.78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .stock-hero { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.1rem; }
+  .stock-hero .chg { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; line-height: 1.15; }
+  .stock-hero .cume { font-size: 0.76rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .stock-hero .cume b.up { color: var(--up); } .stock-hero .cume b.down { color: var(--down); }
+  .spark { margin-top: 0.55rem; }
+  .spark svg { display: block; width: 100%; height: 46px; }
+  .spark .line { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .spark .area { opacity: 0.12; }
+  .spark.up .line, .spark.up .dot { stroke: var(--up); } .spark.up .area { fill: var(--up); }
+  .spark.down .line, .spark.down .dot { stroke: var(--down); } .spark.down .area { fill: var(--down); }
+  .spark.flat .line, .spark.flat .dot { stroke: var(--muted); } .spark.flat .area { fill: var(--muted); }
+  .spark .dot { fill: var(--surface); stroke-width: 2; }
+  .spark-cap { margin: 0.25rem 0 0; font-size: 0.68rem; color: var(--faint); font-variant-numeric: tabular-nums; display: flex; justify-content: space-between; gap: 0.5rem; }
+  .stock-why { margin: 0.6rem 0 0; font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+  .stock-card details { margin-top: 0.55rem; }
+  .stock-points { margin: 0.5rem 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+  .stock-points li { font-size: 0.82rem; line-height: 1.55; }
+  .pt {
+    display: inline-block; margin-right: 0.4rem; padding: 0.02rem 0.42rem;
+    border-radius: 5px; background: var(--chip-bg); color: var(--muted);
+    font-size: 0.68rem; font-weight: 700; white-space: nowrap; vertical-align: 0.08em;
+  }
+  .pt-src { font-size: 0.74rem; color: var(--faint); white-space: nowrap; }
+
+  /* 주요 뉴스 */
+  .prio-head { display: flex; align-items: center; gap: 0.5rem; margin: 1.6rem 0 0.55rem; }
+  .prio-head .p {
+    flex: none; padding: 0.08rem 0.48rem; border-radius: 6px;
+    background: var(--accent); color: var(--accent-ink);
+    font-size: 0.7rem; font-weight: 800; font-variant-numeric: tabular-nums;
+  }
+  .prio-head .p.low { background: var(--chip-bg); color: var(--muted); }
+  .prio-head h3 { margin: 0; font-size: 0.98rem; font-weight: 800; }
+  .prio-head .interest { font-size: 0.72rem; color: var(--faint); }
+  .story-list { display: flex; flex-direction: column; gap: 0.6rem; }
+  .story { padding: 0.85rem 1.05rem; }
+  .story summary { cursor: pointer; user-select: none; list-style: none; }
+  .story summary::-webkit-details-marker { display: none; }
+  .story h4 { margin: 0; font-size: 0.96rem; font-weight: 750; line-height: 1.45; text-wrap: balance; }
+  .story h4 .rank { color: var(--faint); font-weight: 800; font-size: 0.82rem; margin-right: 0.35rem; font-variant-numeric: tabular-nums; }
+  .story .s-meta { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.45rem 0 0; }
+  .chip {
+    display: inline-block; padding: 0.04rem 0.48rem; border-radius: 999px;
+    background: var(--chip-bg); color: var(--muted);
+    font-size: 0.68rem; font-weight: 600; white-space: nowrap;
+  }
+  .chip.track { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+  .chip.verify { background: var(--ok-soft); color: var(--ok); font-weight: 700; }
+  .chip.single { background: var(--warn-soft); color: var(--warn); font-weight: 700; }
+  .chip.probe { background: var(--chip-bg); color: var(--muted); font-weight: 700; margin-right: 0.35rem; }
+  .impact-tag {
+    display: inline-block; padding: 0.04rem 0.48rem; border-radius: 6px;
+    font-size: 0.68rem; font-weight: 700; white-space: nowrap;
+  }
+  .impact-tag.pos { background: var(--up-soft); color: var(--up); }
+  .impact-tag.neg { background: var(--down-soft); color: var(--down); }
+  .impact-tag.neu { background: var(--chip-bg); color: var(--muted); }
+  .badge {
+    display: inline-block; padding: 0.04rem 0.42rem; border-radius: 6px;
+    font-size: 0.64rem; font-weight: 800; letter-spacing: 0.05em; white-space: nowrap;
+  }
+  .badge.new { background: var(--accent); color: var(--accent-ink); }
+  .badge.update { border: 1px solid var(--accent); color: var(--accent); }
+  .story .lead { margin: 0.45rem 0 0; font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+  .story .more { display: inline-block; margin-top: 0.4rem; font-size: 0.76rem; font-weight: 700; color: var(--accent); }
+  .story .more::before { content: "▸ 자세히"; }
+  .story[open] .more::before { content: "▾ 접기"; }
+  .story .detail { margin-top: 0.6rem; border-top: 1px solid var(--hairline); padding-top: 0.6rem; }
+  .story .detail p { margin: 0 0 0.5rem; font-size: 0.86rem; line-height: 1.6; }
+  .story .detail p:last-child { margin-bottom: 0; }
+  .story .label { font-weight: 800; color: var(--accent); font-size: 0.78em; margin-right: 0.3rem; }
+  .story .impact { font-size: 0.82rem; color: var(--muted); }
+  .story .sources { font-size: 0.78rem; color: var(--muted); line-height: 1.8; }
+
+  /* 미니 연대기 — 추적 중 사안 */
+  .mini-tl { margin: 0.55rem 0 0; padding: 0.55rem 0 0; list-style: none; border-top: 1px dashed var(--hairline); }
+  .mini-tl li {
+    position: relative; padding: 0 0 0.15rem 1.1rem;
+    font-size: 0.78rem; line-height: 1.5; color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .mini-tl li::before {
+    content: ""; position: absolute; left: 0.22rem; top: 0.42rem;
+    width: 7px; height: 7px; border-radius: 999px; background: var(--faint);
+  }
+  .mini-tl li + li::after {
+    content: ""; position: absolute; left: 0.4rem; top: -0.45rem;
+    width: 1.5px; height: 0.75rem; background: var(--hairline);
+  }
+  .mini-tl li.next { color: var(--accent); font-weight: 700; }
+  .mini-tl li.next::before { background: var(--accent); }
+  .mini-tl .tl-d { font-weight: 700; margin-right: 0.35rem; }
+
+  /* 제목 행 — 카드에 들지 못한 게재 후보 */
+  .rows { margin-top: 0.6rem; padding: 0.35rem 1.05rem; }
+  .rows ul { margin: 0; padding: 0; list-style: none; }
+  .rows li { padding: 0.6rem 0; border-top: 1px solid var(--hairline); font-size: 0.87rem; line-height: 1.5; }
+  .rows li:first-child { border-top: 0; }
+  .rows .t { font-weight: 700; }
+  .rows .rm {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem;
+    margin-top: 0.22rem; font-size: 0.74rem; color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .rows .src { color: var(--muted); }
+  .rows li.probe .t { font-weight: 600; color: var(--muted); }
+
+  /* 추적 관리 — tracking.html과 같은 칩·타임라인 체계 */
+  .tracking .track-summary { border-top: 3px solid var(--accent); font-variant-numeric: tabular-nums; }
+  .tracking .track-summary b { font-weight: 800; }
+  .ts-head { margin: 0; font-size: 1.02rem; font-weight: 750; letter-spacing: -0.01em; }
+  .ts-kinds { margin: 0.35rem 0 0; padding: 0; list-style: none; }
+  .ts-kinds li {
+    position: relative; padding-left: 0.85rem; margin-top: 0.2rem;
+    font-size: 0.86rem; color: var(--muted); line-height: 1.55;
+  }
+  .ts-kinds li::before { content: "·"; position: absolute; left: 0.2rem; color: var(--faint); }
+  .ts-kinds b { color: var(--ink); }
+  .ts-hint { color: var(--faint); font-size: 0.78rem; }
+  .ts-today {
+    margin: 0.6rem 0 0; padding-top: 0.55rem; border-top: 1px dashed var(--hairline);
+    font-size: 0.85rem; color: var(--muted);
+  }
+  .ts-today b { color: var(--accent); }
+  .tracking section { margin-top: 0.9rem; }
+  .sec-h {
+    margin: 1.1rem 0 0.1rem; font-size: 0.74rem; font-weight: 800;
+    letter-spacing: 0.07em; color: var(--faint);
+  }
+  .result { margin-top: 0.6rem; }
+  .res-head { display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap; }
+  .res-title { font-size: 0.93rem; font-weight: 750; line-height: 1.45; text-wrap: balance; }
+  .res-reg { font-size: 0.72rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .chip.v-ok { background: var(--accent); color: var(--accent-ink); font-weight: 800; }
+  .chip.v-part { background: var(--accent-soft); color: var(--accent); font-weight: 800; }
+  .chip.v-none { background: var(--up-soft); color: var(--up); font-weight: 800; }
+  .chip.v-mid { background: var(--chip-bg); color: var(--muted); font-weight: 800; }
+  .res-line { margin: 0.45rem 0 0; font-size: 0.89rem; line-height: 1.6; }
+  .res-next { margin: 0.45rem 0 0; font-size: 0.82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .next-tag {
+    display: inline-block; vertical-align: 0.08em; margin-right: 0.4rem;
+    padding: 0.02rem 0.45rem; border-radius: 5px;
+    background: var(--accent-soft); color: var(--accent);
+    font-size: 0.69rem; font-weight: 800; white-space: nowrap;
+  }
+  .res-act { margin: 0.4rem 0 0; font-size: 0.84rem; }
+  .act-tag {
+    display: inline-block; vertical-align: 0.08em; margin-right: 0.45rem;
+    padding: 0.02rem 0.45rem; border-radius: 5px;
+    background: var(--up-soft); color: var(--up);
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 0.03em; white-space: nowrap;
+  }
+  .res-more { margin-top: 0.35rem; }
+  .res-why { margin: 0.15rem 0 0; font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+  .timeline { margin: 0.5rem 0 0; padding: 0.5rem 0 0; list-style: none; border-top: 1px dashed var(--hairline); }
+  .timeline li {
+    position: relative; padding: 0 0 0.2rem 1.1rem;
+    font-size: 0.8rem; line-height: 1.55; color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .timeline li::before {
+    content: ""; position: absolute; left: 0.22rem; top: 0.45rem;
+    width: 7px; height: 7px; border-radius: 999px; background: var(--faint);
+  }
+  .timeline li + li::after {
+    content: ""; position: absolute; left: 0.4rem; top: -0.45rem;
+    width: 1.5px; height: 0.8rem; background: var(--hairline);
+  }
+  .timeline .tl-d { font-weight: 700; margin-right: 0.35rem; }
+  .up-group {
+    margin-top: 0.55rem; padding: 0.7rem 0.9rem; background: var(--surface);
+    border: 1px solid var(--hairline); border-radius: 14px; box-shadow: var(--shadow);
+  }
+  .up-date { margin: 0; font-size: 0.86rem; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .up-dow { color: var(--faint); font-weight: 700; }
+  .up-list { margin: 0.3rem 0 0; padding: 0; list-style: none; }
+  .up-list li {
+    position: relative; padding-left: 0.85rem; margin-top: 0.22rem;
+    font-size: 0.86rem; line-height: 1.55;
+  }
+  .up-list li::before { content: "·"; position: absolute; left: 0.2rem; color: var(--faint); }
+  .up-act { display: block; font-size: 0.78rem; color: var(--faint); }
+  .track-foot { margin: 0.9rem 0 0; font-size: 0.79rem; font-weight: 700; }
+
+  /* 일정 */
+  .week ul { margin: 0; padding: 0; list-style: none; }
+  .week li {
+    display: grid; grid-template-columns: 4.2rem 1fr; gap: 0.55rem;
+    padding: 0.55rem 0; border-top: 1px solid var(--hairline);
+    font-size: 0.85rem; line-height: 1.5;
+  }
+  .week li:first-child { border-top: 0; padding-top: 0.1rem; }
+  .week .wd { font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; font-size: 0.8rem; }
+
+  .meta { margin-top: 2.2rem; font-size: 0.76rem; color: var(--faint); line-height: 1.7; }
+  .meta p { margin: 0 0 0.35rem; }
+
+  @media (min-width: 640px) {
+    .stock-cards { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+  }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<div class="page">
+  <header class="masthead">
+    <p class="kicker">DAILY NEWS BRIEFING</p>
+    <h1>데일리 뉴스 브리핑</h1>
+    <p class="dateline">2026년 11월 5일 (목) · 04:30 KST 생성 · 주요 7건 + 제목 행 11건 · <a href="https://junho5541-bit.github.io/daily-briefing/archive.html">지난 브리핑</a></p>
+  </header>
+
+  <nav class="quicknav" aria-label="빠른 이동">
+    <a href="#lede">핵심</a><a href="#today">오늘 체크</a><a href="#market">시장</a><a href="#stocks">내 종목</a><a href="#stories">주요 뉴스</a><a href="#week">일정</a><a href="#tracking" class="track-link">추적 관리 53건</a>
+  </nav>
+
+  <section class="lede" id="lede" aria-label="오늘의 핵심">
+    <div class="card">
+      <div class="sec-head"><h2>오늘의 핵심</h2></div>
+      <ol>
+        <li><b>미국 중간선거에서 민주당이 상·하원을 모두 가져갔다.</b> 시장이 먼저 읽은 것은 관세나 수출통제가 아니라 AI 데이터센터 규제였다. 11월 4일 국내 장은 장중 3%대까지 밀렸다가 코스피 +0.62%로 되돌렸고, 보유 2종목은 약보합으로 마쳤다.</li>
+        <li><b>같은 선거에서 데이터센터를 막는 주민투표가 무더기로 통과했다.</b> 최소 29개 관할에서 금지·제한안이 통과했고 CNBC 집계로는 한 곳을 뺀 전부에서 규제 쪽이 이겼다. 추적은 이 경로를 새 사안으로 등록했고 첫 확인일은 11월 12일이다.</li>
+        <li><b>브렌트가 100달러선도 내줬다.</b> 11월 4일 장중 95.02달러로 닷새 만에 약 22달러가 빠졌다. 원인으로 지목된 것은 지정학이 아니라 선거 결과와 이란 전쟁 종결 기대다.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="today-check" id="today" aria-label="오늘 체크">
+    <div class="card">
+      <div class="sec-head"><h2>오늘 체크</h2></div>
+      <ul>
+        <li><span class="tc-time">06:00</span>미국 11/4 정규장 마감 — 장중 -3.63%였던 필라델피아 반도체지수가 종가로 확정되는지. 오늘 국내 개장이 받는 입력이다</li>
+        <li><span class="tc-time">09:00</span>국내 증시 개장 — 지수는 오르고 반도체만 빠진 11/4 미 세션의 분화가 처음 반영된다</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="market" id="market" aria-label="시장 한눈에">
+    <div class="sec-head"><h2>시장 한눈에</h2><span class="sub">국내 11/4(수) 마감 · 미국 지수·미10년·브렌트는 11/3(화) 정산</span></div>
+    <div class="market-row">
+      <div class="m-cell"><span class="k">코스피</span><span class="v">5,683.80</span><span class="c up">+0.62%</span></div>
+      <div class="m-cell"><span class="k">나스닥</span><span class="v">25,372.01</span><span class="c up">+0.83%·11/3</span></div>
+      <div class="m-cell"><span class="k">SOX</span><span class="v">10,600.4</span><span class="c up">+2.63%·11/3</span></div>
+      <div class="m-cell"><span class="k">원달러</span><span class="v">1,341.5원</span><span class="c up">+0.5원</span></div>
+      <div class="m-cell"><span class="k">유가(브렌트)</span><span class="v">103.60달러</span><span class="c down">-1.12%·11/3</span></div>
+      <div class="m-cell"><span class="k">국고3년</span><span class="v">3.726%</span><span class="c down">-1.8bp</span></div>
+      <div class="m-cell"><span class="k">미10년</span><span class="v">4.950%</span><span class="c up">+1.14%·11/3</span></div>
+    </div>
+    <p class="sec-note"><b>이 표의 미국 칸은 11/3 정산치다.</b> 생성 시각 04:30 KST는 미국 11/4 정규장 마감(한국시간 11/5 06:00) 전이라 11/4 종가가 존재하지 않는다. 추적이 직접 조회한 11/4 장중값은 나스닥 25,906.04(+2.10%)·SOX 10,215.1(-3.63%)·미10년 4.893%·브렌트 95.02달러이고, 모두 미완결 수치다.</p>
+    <p class="sec-note"><b>같은 세션 안에서 지수와 반도체가 갈렸다.</b> 나스닥은 2%대로 오르는데 반도체지수만 3%대로 빠지는 분화는 전일판에는 없던 모습이다.</p>
+    <p class="sec-note"><b>국고3년 3.726%는 8월 말 이후 최저권이다.</b> 유가 급락으로 물가 상방 압력이 줄면서 채권 쪽이 완화 방향으로 더 기울었다.</p>
+  </section>
+
+  <section class="stocks" id="stocks" aria-label="내 종목 오늘">
+    <div class="sec-head"><h2>내 종목 오늘</h2><span class="sub">11/4(수) 종가 기준</span></div>
+    <div class="stock-cards">
+  <div class="card stock-card">
+    <div class="stock-id"><span class="name">SK하이닉스</span><span class="price">1,396,000원</span></div>
+    <div class="stock-hero">
+      <span class="chg down">-0.14%</span>
+      <span class="cume">이번 주 -1.55% (10/30 종가 대비) · 연초 대비 +106.2% · 종가 고점(6/22 2,919,000원) 대비 -52.2%</span>
+    </div>
+    <div class="spark up" aria-label="최근 종가 추이">
+      <svg viewBox="0 0 120 36" preserveAspectRatio="none" role="img">
+        <path class="area" d="M4,27.7 L15.2,33 L26.4,26 L37.6,33 L48.8,27.7 L60,27.9 L71.2,21.3 L82.4,6.9 L93.6,3 L104.8,13.7 L116,15.9 L116,36 L4,36 Z"/>
+        <polyline class="line" points="4,27.7 15.2,33 26.4,26 37.6,33 48.8,27.7 60,27.9 71.2,21.3 82.4,6.9 93.6,3 104.8,13.7 116,15.9"/>
+        <circle class="dot" cx="116" cy="15.9" r="3"/>
+      </svg>
+      <p class="spark-cap"><span>10/19 127.7만</span><span>종가 시리즈 11거래일 · 끝점은 브리핑 기재값</span><span>11/4 139.6만</span></p>
+    </div>
+    <p class="stock-why">장중 1,476,000원까지 올랐다가 1,303,000원까지 밀리는 17만원대 폭을 그린 끝에 약보합으로 마쳤다. 장중 낙폭의 원인으로는 미 중간선거 개표에서 민주당 우세가 굳어지며 부각된 AI 데이터센터 규제 우려가 지목됐다.</p>
+    <details>
+      <summary class="fold-sum">참고 포인트 4건</summary>
+      <ul class="stock-points">
+        <li><span class="pt">수급</span>11/4 유가증권시장에서 외국인이 2조5,071억원을 순매도했고 개인 1조136억원·기관 1조1,442억원이 받아냈다 <span class="pt-src">(<a href="https://www.g-enews.com/article/Securities/2026/11/202611041548433345923c501012_1">글로벌이코노믹</a>)</span></li>
+        <li><span class="pt">수급</span>11/4 공매도 거래대금 2.28조원 가운데 삼성전자와 합산 7,525억원이 두 종목에 집중된 것으로 보도됐다. 단일 매체 수치다 <span class="pt-src">(<a href="https://www.topstarnews.net/news/articleView.html?idxno=16268492">톱스타뉴스</a>)</span></li>
+        <li><span class="pt">컨센서스</span>한국투자증권 320만원 제시·투자의견 매수 유지, IBK투자증권 400만→320만원 하향, KB증권 350만원 유지, 교보증권 400만원 유지다. 증권사 추정치이며 확정치가 아니다 (11/2~11/3 집계 · <a href="https://www.dt.co.kr/article/12092932">디지털타임스</a>)</li>
+        <li><span class="pt">관찰</span>14개 주요 고객과 2027~2028년 생산능력 절반 이상에 대한 장기공급계약을 맺었다는 보도가 있고, 가격 조정 주기·최소 구매 의무 같은 조건은 공개되지 않았다 <span class="pt-src">(<a href="https://kpenews.com/View.aspx?No=4293274">한국정경신문</a>)</span></li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="card stock-card">
+    <div class="stock-id"><span class="name">삼성전자</span><span class="price">218,000원</span></div>
+    <div class="stock-hero">
+      <span class="chg down">-0.68%</span>
+      <span class="cume">이번 주 -3.11% (10/30 종가 대비) · 연초 대비 +69.6% · 장중 고점(6/19 374,500원) 대비 -41.8%</span>
+    </div>
+    <div class="spark flat" aria-label="최근 종가 추이">
+      <svg viewBox="0 0 120 36" preserveAspectRatio="none" role="img">
+        <path class="area" d="M4,26.6 L15.2,33 L26.4,21.2 L37.6,30 L48.8,29.1 L60,31.5 L71.2,22.7 L82.4,3 L93.6,12.8 L104.8,19.7 L116,26.6 L116,36 L4,36 Z"/>
+        <polyline class="line" points="4,26.6 15.2,33 26.4,21.2 37.6,30 48.8,29.1 60,31.5 71.2,22.7 82.4,3 93.6,12.8 104.8,19.7 116,26.6"/>
+        <circle class="dot" cx="116" cy="26.6" r="3"/>
+      </svg>
+      <p class="spark-cap"><span>10/19 21.8만</span><span>종가 시리즈 11거래일 · 끝점은 브리핑 기재값</span><span>11/4 21.8만</span></p>
+    </div>
+    <p class="stock-why">같은 흐름이고 장중 저점은 208,000원이다. 11/3 -4.15% 급락에 이어 이틀 연속 하락이지만 낙폭은 크게 줄었다.</p>
+    <details>
+      <summary class="fold-sum">참고 포인트 2건</summary>
+      <ul class="stock-points">
+        <li><span class="pt">컨센서스</span>한국투자증권이 11/3 57만원에서 44만원으로 낮췄고 사유로 '메모리 가격 상승세 둔화 가능성'을 들었다. KB증권은 11/2 60만원을 유지하며 11~12월 'W자 반등'을 전망했고 교보증권은 50만원을 유지했다 (11/2~11/3 집계 · <a href="https://www.dt.co.kr/article/12092932">디지털타임스</a>)</li>
+        <li><span class="pt">수급</span>11/4 종목별 분해 수치는 보도에 없고, 공매도만 SK하이닉스와 합산으로 집계돼 보도됐다 <span class="pt-src">(<a href="https://www.topstarnews.net/news/articleView.html?idxno=16268492">톱스타뉴스</a>)</span></li>
+      </ul>
+    </details>
+  </div>
+    </div>
+  </section>
+
+  <section class="stories" id="stories" aria-label="주요 뉴스">
+    <div class="sec-head"><h2>주요 뉴스</h2><span class="sub">섹션 순서 고정 · 카드 뒤에 제목 행</span></div>
+    <div class="prio-head"><span class="p">P1</span><h3>내 종목 직접</h3><span class="interest">주식·투자</span></div>
+  <div class="story-list">
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">1</span>코스피 11월 4일 장중 400포인트 널뛰기 끝 +0.62% 마감 — 외국인은 2조5천억원을 팔았고 보유 2종목은 약보합</h4>
+      <div class="s-meta"><span class="chip">보도 11/4</span><span class="chip">P1 · 내 종목 직접</span><span class="impact-tag neu">중립 · 직접</span><span class="chip verify">✓ 교차 확인</span></div>
+      <p class="lead">11월 4일 코스피는 35.01포인트(0.62%) 오른 5,683.80에 마감했다.</p>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>11월 4일 코스피는 35.01포인트(0.62%) 오른 5,683.80에 마감했다. 장중 고점 5,828.13과 저점 5,421.72 사이 폭이 400포인트를 넘었다. 코스닥은 714.95로 1.50% 올랐다. 삼성전자는 -0.68%(218,000원), SK하이닉스는 -0.14%(1,396,000원)로 둘 다 약보합이다.</p>
+      <p><b>장중 방향을 꺾은 것은 선거였다.</b> 지수는 5,786(+2.43%)으로 출발했다가 미국 중간선거 개표에서 민주당 우세가 굳어지자 AI 데이터센터 규제 강화 우려가 부각되며 3%대까지 밀렸고, 이후 낙폭을 되돌렸다. 삼성전자와 SK하이닉스도 장중 4% 이상 빠졌다가 회복했다.</p>
+      <p><b>수급은 한 방향이었다.</b> 외국인은 유가증권시장에서 2조5,071억원을 순매도했고 개인 1조136억원·기관 1조1,442억원이 받아냈다. 11/3 기사 기준으로 11월 들어 외국인 순매도 누적은 약 20조6,540억원으로 보도됐는데 집계 기간 표기는 검색 요약 기준이다.</p>
+      <p><span class="label">왜 중요</span><b>어제 브리핑의 1번 항목과 반대 방향이다.</b> 전일판은 11/3 코스피 -3.59%와 보유 2종목의 4~5% 급락을 다뤘다. 11월 4일은 같은 매도 압력이 외국인 2.5조원으로 남았는데도 주가 반영은 멈췄고, 이틀 치를 합치면 주간 누적은 SK하이닉스 -1.55%·삼성전자 -3.11%다.</p>
+      <p><b>장중 변동폭 자체가 신호다.</b> 코스피 400포인트, SK하이닉스 17만원대의 하루 폭은 재료가 확정되지 않은 구간에서 포지션이 급하게 움직인다는 뜻이다. 오늘 개장은 11/4 미국 세션의 결과를 처음 받는데, 그 세션은 지수가 오르는 동안 반도체지수만 장중 -3.63%로 빠진 날이다.</p>
+      <p class="impact"><span class="impact-tag neu">중립 · 직접</span>경로: 선거발 AI 데이터센터 규제 우려가 장중 3%대 낙폭을 만들었으나 저가 매수와 미 증시 급등이 상쇄해 두 종목은 약보합으로 마쳤다. 전일판은 같은 두 종목에 악재(직접)를 달았는데, 오늘 라벨이 바뀐 이유는 매도 주체(외국인)는 그대로인데 주가 반영이 멈췄기 때문이다.</p>
+      <p class="sources">출처: <a href="https://www.g-enews.com/article/Securities/2026/11/202611041548433345923c501012_1">글로벌이코노믹</a>, <a href="https://www.lcnews.co.kr/news/articleView.html?idxno=210851">라이센스뉴스</a>, <a href="https://www.sisajournal.com/news/articleView.html?idxno=392867">시사저널</a>, <a href="https://www.hanyangeconomy.com/news/articleView.html?idxno=10563">한양경제</a>, <a href="https://fnnews.com/news/202611031346392060">파이낸셜뉴스</a>, 뉴스핌, 신아일보, 스페셜타임스, Businesskorea</p>
+    </div>
+  </details>
+  </div>
+  <div class="card rows">
+    <ul>
+      <li class="tr"><span class="t">증권사 목표가가 갈렸다 — 한국투자증권·IBK는 하향, KB·교보는 유지하며 'W자 반등' 전망</span><span class="rm"><span class="chip">보도 11/3</span><span class="src"><a href="https://www.dt.co.kr/article/12092932">디지털타임스</a></span></span></li>
+    </ul>
+  </div>
+
+  <div class="prio-head"><span class="p">P1</span><h3>반도체 생태계</h3><span class="interest">주식·투자</span></div>
+  <div class="story-list">
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">2</span>미 중간선거와 함께 데이터센터 제한 주민투표가 무더기 통과 — 최소 29개 관할, 연방 차원 조치는 아직 0건</h4>
+      <div class="s-meta"><span class="chip">보도 11/4</span><span class="chip">P1 · 반도체 생태계</span><span class="impact-tag neg">악재 · 간접</span><span class="chip track">추적 중 · 11/5부터</span><span class="chip verify">✓ 교차 확인</span></div>
+      <p class="lead">11월 3일 미국 선거에서 지방자치단체 단위의 데이터센터 금지·제한 안건이 대거 통과했다.</p>
+      <ul class="mini-tl">
+        <li><span class="tl-d">11/5</span>민주당 상·하원 장악과 최소 29개 관할의 주민투표 통과 확인, 연방 차원 규제 조치는 0건</li>
+        <li class="next"><span class="tl-d">다음 확인</span>11/12(목) 주민투표 통과 관할의 조례 시행 시점과 규제 형태, 민주당 지도부의 입법 의제화 여부</li>
+      </ul>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>11월 3일 미국 선거에서 지방자치단체 단위의 데이터센터 금지·제한 안건이 대거 통과했다. 워싱턴포스트는 최소 29개 관할에서 통과했고 전국 41개 안건 중 33개가 통과 또는 우세라고 보도했다. 포춘은 오하이오에서 21개 안건 중 최소 14개 지자체가 제한을 통과시켰다고 전했다.</p>
+      <p><b>교차 검증에서 범위가 더 넓게 확인됐다.</b> CNBC는 노스다코타 하우드 한 곳을 뺀 모든 안건에서 유권자가 데이터센터에 반대하는 쪽으로 투표했다고 보도했고, 볼로트피디아는 10개 주 41건으로 집계했다. 규제 형태는 전면 금지, 한시 유예, 전력 사용 제한, 착공 전 주민투표 의무화까지 다양하다. 플로리다 에지워터는 77% 넘는 찬성으로 신규 데이터센터를 막는 시 헌장 개정안을 통과시켰고, 뉴햄프셔 캔터베리는 83.6%로 금지안을 통과시켰다.</p>
+      <p><b>연방 차원은 아직 움직이지 않았다.</b> 추적 단계가 확정한 사실은 민주당의 상·하원 장악과 주민투표 통과까지이고, 연방 차원의 규제 조치는 0건이다. 일부 집계는 아직 갱신 중이라 최종 숫자는 달라질 수 있다.</p>
+      <p><span class="label">왜 중요</span><b>11월 4일 국내 장을 흔든 우려가 실제 투표 결과로 뒷받침된 날이다.</b> 그동안 '민주당이 이기면 AI 규제가 강해질 것'은 전망이었는데, 같은 날 지방 단위에서 입지 규제가 실제로 통과했다. 데이터센터를 못 짓거나 늦게 지으면 그 안에 들어갈 HBM과 서버 메모리의 수요 시점도 밀린다.</p>
+      <p><b>다만 경로는 길고 아직 비어 있는 칸이 많다.</b> 조례 시행 시점, 규제 형태, 연방·주 차원의 입법 의제화 여부가 모두 미정이다. 어제까지 반도체 하락의 이유로 지목되던 'AI 투자 수익성 논쟁'과는 다른 축이고, 수요 자체가 아니라 수요를 담을 그릇을 제약하는 쪽이다.</p>
+      <p class="impact"><span class="impact-tag neg">악재 · 간접</span>경로: 데이터센터 입지 제한이 지방 단위로 확산 → 빅테크 AI 인프라 증설 속도 제약 → HBM·서버 메모리 수요 전망의 하향 우려. 전일판의 "AI 투자 수익성 논쟁" 경로와는 다른 축이고, 오늘 새로 붙은 것은 돈이 아니라 땅과 전력이라는 제약이다.</p>
+      <p class="sources">출처: <a href="https://www.washingtonpost.com/technology/2026/11/04/voters-pass-over-20-ballot-measures-ban-or-restrict-data-centers/">Washington Post</a>, <a href="https://www.cnbc.com/2026/11/04/data-center-ballot-measures-2026-midterm.html">CNBC</a>, <a href="https://fortune.com/2026/11/04/ohio-data-center-ballot-measures-midterm-elections/">Fortune</a>, <a href="https://stateline.org/2026/11/04/voters-across-the-country-reject-data-centers/">Stateline</a>, Ballotpedia</p>
+    </div>
+  </details>
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">3</span>AMD는 시간외 7% 급등, 반도체지수는 장중 -3.63% — 11월 4일 미 세션은 수요 신호와 가격이 갈렸다</h4>
+      <div class="s-meta"><span class="chip">보도 11/4</span><span class="chip">P1 · 반도체 생태계</span><span class="impact-tag pos">호재 · 간접</span><span class="chip track">추적 중 · 10/23부터</span><span class="chip single">⚠ 단일 출처</span></div>
+      <p class="lead">11월 3일 미국 장 마감 후 AMD가 실적과 매출 전망을 모두 시장 기대 위로 내놓으며 시간외 거래에서 7% 넘게 올랐다.</p>
+      <ul class="mini-tl">
+        <li><span class="tl-d">10/31</span>아마존 2026년 캐펙스 2,200억 달러 유지 확인</li>
+        <li><span class="tl-d">11/2</span>SOX 10월 월간 낙폭 15% 초과</li>
+        <li><span class="tl-d">11/5</span>AMD 시간외 급등·데이터센터 규제 변수 추가</li>
+        <li class="next"><span class="tl-d">다음 확인</span>11/6(금) 아마존·마이크로소프트 IR과 10-Q 원문에서 2027년 캐펙스 문구 확인</li>
+      </ul>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>11월 3일 미국 장 마감 후 AMD가 실적과 매출 전망을 모두 시장 기대 위로 내놓으며 시간외 거래에서 7% 넘게 올랐다. 세부 수치는 확보한 보도에 없다.</p>
+      <p><b>그런데 다음 세션의 가격은 반대로 갔다.</b> 추적 단계가 직접 조회한 11월 4일 장중값은 나스닥 25,906.04(+2.10%)인데 필라델피아 반도체지수는 10,215.1(-3.63%)이다. 지수가 2%대로 오르는 동안 반도체만 3%대로 빠졌다. 둘 다 미 동부 시간 13:30~14:15 조회의 장중 수치이고 종가가 아니다.</p>
+      <p><b>정작 확인해야 할 숫자는 아직 비어 있다.</b> 추적이 회수 대상으로 잡은 마이크로소프트·아마존의 2027년 캐펙스 수치는 오늘도 들어오지 않았다. 아마존의 2026년 캐펙스 2,200억 달러 유지만 10월 31일에 확인된 상태다.</p>
+      <p><span class="label">왜 중요</span><b>수요 신호와 주가가 갈리는 국면이다.</b> AI 가속기를 파는 회사가 기대를 웃도는 실적을 내놓았는데 반도체 섹터 전체는 빠졌다. AMD의 실적은 AI 서버 수요가 HBM·서버 메모리 수요로 이어지는 간접 신호이고, 같은 세션의 반도체지수 하락은 2번 항목의 규제 변수가 가격에 먼저 반영된 것으로 읽힌다.</p>
+      <p><b>분기점은 내일이다.</b> 11월 6일 아마존·마이크로소프트의 IR 자료와 10-Q에서 2027년 캐펙스 문구가 확인되면 수요 축의 숫자가 처음 들어온다.</p>
+      <p class="impact"><span class="impact-tag pos">호재 · 간접</span>경로: AMD의 실적·가이던스 상회가 AI 가속기 수요 유지를 가리키고, 그 수요는 HBM·서버 메모리 주문으로 이어진다. 다만 같은 세션에서 반도체지수가 장중 3%대로 빠져 수요 신호가 주가로 이어지지는 않았다.</p>
+      <p class="sources">출처: <a href="https://en.sedaily.com/finance/2026/11/04/samsung-sk-hynix-jump-over-3-percent-in-premarket-on-us">서울경제(영문판)</a>, investing.com 시세 직접 조회 (추적 단계 1차 조회 · 매체 보도 아님)</p>
+    </div>
+  </details>
+  </div>
+  <div class="card rows">
+    <ul>
+      <li class="tr"><span class="t">10월 반도체 수출 564억 달러로 전년 대비 259.4% 증가 — SK하이닉스는 14개 고객과 2027~2028년 캐파 절반 이상 장기공급계약 보도</span><span class="rm"><span class="chip">보도 11/2</span><span class="chip single">⚠</span><span class="src"><a href="https://kpenews.com/View.aspx?No=4293274">한국정경신문</a></span></span></li>
+    </ul>
+  </div>
+
+  <div class="prio-head"><span class="p">P1</span><h3>거시·시장</h3><span class="interest">주식·투자</span></div>
+  <div class="story-list">
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">4</span>브렌트가 100달러선도 내줬다 — 11월 4일 장중 95.02달러, 닷새 만에 약 22달러 하락</h4>
+      <div class="s-meta"><span class="chip">보도 11/4</span><span class="chip">P1 · 거시·시장</span><span class="impact-tag pos">호재 · 간접</span><span class="chip track">추적 중 · 7/25부터</span><span class="chip verify">✓ 교차 확인</span></div>
+      <p class="lead">브렌트유가 11월 4일 장중 95.02달러(-8.28%)까지 밀렸다.</p>
+      <ul class="mini-tl">
+        <li><span class="tl-d">11/2</span>유가 7%대 급락·미-이란 외교 재개 보도</li>
+        <li><span class="tl-d">11/4</span>110달러선 이탈 확정·관전선을 100달러로 하향</li>
+        <li><span class="tl-d">11/5</span>100달러선도 이탈·중국 보증 변수 등장</li>
+        <li class="next"><span class="tl-d">다음 확인</span>11/11(수) 관전 기준선을 90달러로 내리고 브렌트 11/4 정산가 확정과 케심섬 공격 보도의 1차 확인</li>
+      </ul>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>브렌트유가 11월 4일 장중 95.02달러(-8.28%)까지 밀렸다. 10월 30일 117.64달러에서 닷새 만에 약 22달러가 빠졌고, 11월 2일에 110달러선을 내준 데 이어 100달러선도 이탈했다. 서부텍사스산 원유도 7.2% 내려 89달러대가 됐다.</p>
+      <p><b>직접 원인으로 지목된 것은 지정학이 아니다.</b> 보도가 든 이유는 미국 중간선거 결과와 이란 전쟁 종결 기대다. 같은 날 다우는 약 2.9% 올라 19개월 만의 최대 상승폭을 기록했다.</p>
+      <p><b>외교 축에서 새 변수가 들어왔다.</b> 중재자들이 이란의 핵 양보에 대한 대가로 미국의 제재 완화 이행을 중국이 보증하는 방안을 검토 중이라는 보도가 처음 나왔다. 이란 측은 간접 접촉에 돌파구가 없고 7개 조건을 고수한다고 밝혔다. 이 보도의 매체는 성향상 유보가 필요하고 1군 통신사 교차 확인은 아직이다.</p>
+      <p><span class="label">왜 중요</span><b>주식 쪽에서는 물가·금리의 상방 압력이 줄어드는 경로다.</b> 10월 소비자물가를 끌어올린 것이 석유류였는데, 그 요인이 11월 들어 두 주 만에 방향을 완전히 바꿨다. 국고3년이 11월 4일 3.726%로 8월 말 이후 최저권에 간 것도 같은 흐름이다.</p>
+      <p><b>대출 쪽에서는 정책대출 상환 중인 가구에 간접적으로 닿는다.</b> 유가가 수입물가를 거쳐 한국은행 기준금리 경로와 주택담보대출 금리로 이어진다. 다만 10월 소비자물가 결과 자체가 세 회차 연속 확인되지 않아, 11월 26일 금융통화위원회를 물가 수치 없이 기다리는 상태다.</p>
+      <p><b>관전 기준선이 또 내려갔다.</b> 110달러에서 100달러로 내린 지 하루 만에 그 선도 깨져 다음 회차부터는 90달러가 기준이다.</p>
+      <p class="impact"><span class="impact-tag pos">호재 · 간접</span>경로: 유가 하락이 물가·금리의 상방 압력을 덜어 성장주 밸류에이션과 대출금리 환경 양쪽에 우호적으로 작용한다. 전일판과 라벨은 같지만 국면이 바뀌었다 — 어제는 110달러선 이탈이 쟁점이었고 오늘은 100달러선마저 깨졌으며, 하락 동인이 외교 기대에서 선거 결과와 종전 기대로 넓어졌다.</p>
+      <p class="sources">출처: <a href="https://bnnbloomberg.ca/markets/2026/11/04/us-futures-sharply-higher-after-democratic-route-in-midterm-elections">BNN Bloomberg</a>, <a href="https://www.cnbc.com/2026/11/03/treasury-yields-fall-as-democrats-win-big-in-us-midterm-elections.html">CNBC</a>, <a href="https://iranintl.com/en/202611047153">Iran International</a>, Benzinga, investing.com 시세 직접 조회</p>
+    </div>
+  </details>
+  </div>
+  <div class="card rows">
+    <ul>
+      <li class="tr"><span class="t">미 10년물 국채금리 약 4.90%로 하락, 30년물은 약 5.30% — 민주당 승리와 유가 하락을 함께 반영</span><span class="rm"><span class="chip">보도 11/3</span><span class="chip single">⚠</span><span class="src"><a href="https://www.cnbc.com/2026/11/03/treasury-yields-fall-as-democrats-win-big-in-us-midterm-elections.html">CNBC</a></span></span></li>
+    </ul>
+  </div>
+
+  <div class="prio-head"><span class="p">P2</span><h3>부동산·주거</h3><span class="interest">부동산·주거·대출</span></div>
+  <div class="story-list">
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">5</span>금융위 "주택가격 상승세 계속, 대출규제 유지 불가피" — 추가 규제 검토설은 부인</h4>
+      <div class="s-meta"><span class="chip">보도 11/4</span><span class="chip">P2 · 부동산·주거</span><span class="chip track">추적 중 · 7/14부터</span><span class="chip single">⚠ 단일 출처</span></div>
+      <p class="lead">금융위원회가 주택가격 상승세가 당분간 이어질 것으로 보고 현행 대출규제를 유지할 수밖에 없다는 입장을 밝혔다고 보도됐다.</p>
+      <ul class="mini-tl">
+        <li><span class="tl-d">10/29</span>한도 6억·4억·2억과 총부채원리금상환비율 유지 재확인</li>
+        <li><span class="tl-d">11/3</span>"변동 없음이 아니라 확인 불가"로 기록</li>
+        <li><span class="tl-d">11/5</span>당국 입장으로 규제 유지 확인</li>
+        <li class="next"><span class="tl-d">다음 확인</span>11/12(목) 금융위원회 보도자료 원문 대조와 '기존 분양계약자 대출' 대통령 지시 보도(24일째 미확인)</li>
+      </ul>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>금융위원회가 주택가격 상승세가 당분간 이어질 것으로 보고 현행 대출규제를 유지할 수밖에 없다는 입장을 밝혔다고 보도됐다. 수도권 주택담보대출 6억원 한도가 유지 대상에 포함된다. 추가 규제를 검토한다는 설에 대해서는 사실이 아니라고 부인했고, 시장 상황에 따라 대응하겠다는 입장이다.</p>
+      <p><b>원 보도는 한 매체 단독이고 본문이 온전히 확보되지 않았다.</b> 확보한 것은 포털 재게시본이며 본문 인코딩이 깨져 세부 인용은 복원하지 못했다. 교차 검증 검색에서는 11월 4일 당일 보도를 찾지 못했고, 대신 10월 국정감사에서 금융위원장이 추가 대출규제설을 부인하면서 현행 기조 유지를 밝힌 보도가 확인됐다.</p>
+      <p><b>정책대출의 디에스아르(총부채원리금상환비율) 확대 여부는 이 보도에 없다.</b></p>
+      <p><span class="label">왜 중요</span><b>이 가구에는 '달라지는 게 없다'가 결론이다.</b> 대환이나 추가 대출을 검토한다면 한도 6억원, 담보인정비율 40%, 총부채원리금상환비율 40%가 그대로 걸린다. 신생아특례대출 이용 중인 상태에서 조건이 더 나빠질 신호도, 좋아질 신호도 아니다.</p>
+      <p><b>추적 기록에서는 성격이 다른 날이다.</b> 이 사안은 8월 이후 "규제 축 무변동"을 수집가의 부재 보고로만 적어 왔는데, 오늘은 당국이 능동적으로 방향을 밝혔다. 어제 다룬 대통령의 집값 급락 대비 발언과 합치면 정부 기조는 공급 확대, 규제 유지, 급락 대비 세 갈래로 벌어져 있다.</p>
+      <p><b>그래서 9월 종합대책의 '실수요자 핀셋 대출완화'는 사실상 닫히는 쪽으로 기울었다.</b> 70일째 패키지 발표가 없는 상태에서 검토 항목 하나가 당국 입장으로 막힌 셈이다.</p>
+      <p class="sources">출처: <a href="https://m.news.nate.com/view/20261104n27250">동아일보(포털 재게시본)</a>, <a href="https://economist.co.kr/article/view/ecn202610230041">이코노미스트(10/23 국정감사 보도 · 교차 검증)</a></p>
+    </div>
+  </details>
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">6</span>서울 아파트값 90주 연속 상승인데 강남3구는 하락 — 매물 34.4% 증가, 9월 거래량 42.4% 감소</h4>
+      <div class="s-meta"><span class="chip">보도 11/4</span><span class="chip">P2 · 부동산·주거</span><span class="chip single">⚠ 단일 출처</span></div>
+      <p class="lead">한국부동산원 집계로 10월 넷째 주 서울 아파트값은 0.09% 올라 90주 연속 상승했고, 강남3구를 뺀 22개 구가 모두 올랐다.</p>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>한국부동산원 집계로 10월 넷째 주 서울 아파트값은 0.09% 올라 90주 연속 상승했고, 강남3구를 뺀 22개 구가 모두 올랐다. 강남3구는 8월 3일 이후 매물이 34.4% 늘면서 하락 중이고 강남 -0.38%, 서초 -0.35%, 송파 -0.22%다. 강남권 하락폭 수치는 검색 요약에서만 확인됐다.</p>
+      <p><b>거래는 크게 줄었다.</b> 서울 9월 아파트 거래량은 전년 동월 대비 42.4% 감소했다.</p>
+      <p><b>배경에 대통령 발언이 있다.</b> 이재명 대통령이 11월 3일 국무회의에서 서울 아파트 매물이 급속히 늘고 주요 지역 가격이 크게 떨어졌다고 언급하며 급락 시 공공임대용 매입 등 대응을 준비 중이라고 밝혔다. 이 발언 자체는 전일판 6번 항목에서 다뤘다.</p>
+      <p><span class="label">왜 중요</span><b>광명 자가 1주택 실거주 가구가 서 있는 자리가 어느 쪽인지가 이 수치에 들어 있다.</b> 지금 시장은 '서울 전체 하락'이 아니라 '강남 하락, 나머지 상승'으로 갈려 있다. 광명은 서울 외곽 인접권이라 상승 쪽 구도의 영향권이고, 전일 대통령 발언을 하락 신호로 읽으면 방향을 거꾸로 잡게 된다.</p>
+      <p><b>다만 거래량 42.4% 감소는 양쪽 모두에 걸리는 숫자다.</b> 가격이 오르는 구간에서도 거래가 말라 있으면 실제로 팔거나 갈아타려 할 때 호가와 체결가의 차이가 커진다. 이 기사에 광명 개별 시세 수치는 없다.</p>
+      <p class="sources">출처: <a href="https://www.newspim.com/news/view/20261104001080">뉴스핌</a></p>
+    </div>
+  </details>
+  </div>
+  <div class="card rows">
+    <ul>
+      <li class="tr"><span class="t">광명 하안주공 10·11단지 재건축 시공자 현설에 롯데건설만 참석해 유찰 — 한국자산신탁 재공고 예정, 하안 일대 다섯 번째 단독 응찰</span><span class="rm"><span class="chip">보도 11/2</span><span class="chip verify">✓</span><span class="src"><a href="https://www.arunews.com/news/articleView.html?idxno=68939">위클리한국주택경제신문</a></span></span></li>
+      <li class="tr"><span class="t">재건축 조합원 지위 양도 제한 완화, 정부 입법예고 대신 의원입법 2건으로 국회에 발의</span><span class="rm"><span class="chip">보도 10/27</span><span class="chip single">⚠</span><span class="src"><a href="https://wowtv.co.kr/NewsCenter/News/Read?articleId=A202610270043">한국경제TV</a></span></span></li>
+    </ul>
+  </div>
+
+  <div class="prio-head"><span class="p">P3</span><h3>IT·개발</h3><span class="interest">IT·개발</span></div>
+  <div class="card rows">
+    <ul>
+      <li class="tr"><span class="t">Postman 데스크톱 12.33.4가 Claude Code·Codex 설정에 동의 없이 플러그인과 세션 시작 훅을 설치했다는 이슈 — 제거 명령으로도 완전히 되돌아가지 않는다</span><span class="rm"><span class="chip">보도 11/3</span><span class="chip verify">✓</span><span class="src"><a href="https://thenewstack.io/postman-plugin-coding-agents/">The New Stack</a></span></span></li>
+      <li class="tr"><span class="t">OpenAI가 Pierre Computer를 인수해 Codex에 Git 백엔드(Code Storage)를 통합 — 오픈소스 프로젝트는 유지, 인수 조건 비공개</span><span class="rm"><span class="chip">보도 11/4</span><span class="chip single">⚠</span><span class="src"><a href="https://www.axios.com/2026/11/04/openai-pierre-computer-github">Axios</a></span></span></li>
+      <li class="tr"><span class="t">Check Point, Codex의 전역 식별 파일에 광고를 영구 삽입하는 '프롬프트 애드웨어'를 탈옥 번들에서 발견</span><span class="rm"><span class="chip">보도 11/3</span><span class="chip single">⚠</span><span class="src"><a href="https://research.checkpoint.com/2026/free-the-model-sell-the-gateway-prompt-adware-hidden-in-jailbreak-bundles/">Check Point Research</a></span></span></li>
+      <li class="tr"><span class="t">Tencent, 770B 오픈웨이트 모델 Hy4 정식 공개 — 비전·컴퓨터 조작 지원, 컨텍스트 1M 토큰</span><span class="rm"><span class="chip">보도 11/4</span><span class="chip single">⚠</span><span class="src"><a href="https://www.chaincatcher.com/en/article/2301641">ChainCatcher</a></span></span></li>
+    </ul>
+  </div>
+
+  <div class="prio-head"><span class="p">P4</span><h3>육아·정책</h3><span class="interest">육아·가족 정책</span></div>
+  <div class="card rows">
+    <ul>
+      <li class="tr probe"><span class="t"><span class="chip probe">점검</span>11/4~11/5 발행된 부모급여·아동수당·육아휴직·보육·영유아 안전 관련 신규 보도 없음. 2027년 수당 개편안은 국회 심의 단계이고 현행 제도(부모급여 0세 월 100만원·1세 월 50만원, 아동수당 월 10만원)는 변동 없음 — 다음 변경 11/10 복지위 예산 심사</span><span class="rm"><span class="when">점검 11/5</span></span></li>
+    </ul>
+  </div>
+
+  <div class="prio-head"><span class="p low">공통</span><h3>세상</h3></div>
+  <div class="story-list">
+  <details class="story card">
+    <summary>
+      <h4><span class="rank">7</span>미 중간선거, 민주당이 상·하원을 모두 가져갔다 — 미 증시는 급등하고 반도체는 거꾸로 갔다</h4>
+      <div class="s-meta"><span class="chip">보도 11/4</span><span class="chip">공통 · 세상</span><span class="impact-tag neu">중립 · 간접</span><span class="chip track">추적 중 · 11/3부터</span><span class="chip verify">✓ 교차 확인</span></div>
+      <p class="lead">11월 3일 치러진 미국 중간선거에서 민주당이 하원과 상원 다수당을 모두 확보했다.</p>
+      <ul class="mini-tl">
+        <li><span class="tl-d">11/4</span>투표 진행 중·개표 미개시</li>
+        <li><span class="tl-d">11/5</span>민주당 상·하원 장악 확정·사안 종결</li>
+        <li class="next"><span class="tl-d">다음 확인</span>승계 사안 『AI 데이터센터 규제 확산』이 11/12(목)에 이어받는다</li>
+      </ul>
+      <span class="more"></span>
+    </summary>
+    <div class="detail">
+      <p><span class="label">무슨 일</span>11월 3일 치러진 미국 중간선거에서 민주당이 하원과 상원 다수당을 모두 확보했다. 상원에서는 캔자스·아이오와·텍사스·오하이오·메인·노스캐롤라이나·사우스캐롤라이나 7개 주에서 의석이 뒤집혔다. 하킴 제프리스 원내대표가 재선에 성공해 하원의장 유력 후보가 됐으나, 의장 선출 표결은 새 의회가 소집될 때 이뤄진다.</p>
+      <p><b>의석수는 매체마다 다르고 아직 확정되지 않았다.</b> 상원은 민주 54석(추적 다이제스트·CBS)과 최소 51석(CNN 투영)으로 갈리고 두 곳이 미확정이다. 하원은 251~268석(CBS 추정)과 250 대 160(MS NOW)으로 집계가 다르며 68개 선거구가 아직 호명되지 않았다. 알래스카와 미시시피 등 일부 경합은 미확정이다.</p>
+      <p><b>시장 반응은 두 갈래였다.</b> 다우는 약 2.9% 올라 19개월 만의 최대 상승폭을 기록했고 S&amp;P500은 1.8%, 나스닥100은 1.3% 올랐다. 반면 국내 반도체주는 AI 데이터센터 규제 우려로 장중 눌렸고, 브렌트유는 8%대로 급락했다.</p>
+      <p><span class="label">왜 중요</span><b>예상했던 경로와 실제 경로가 달랐다.</b> 이 사안은 등록 당시 관세와 대중 반도체 수출통제 기조의 변수로 추적됐는데, 통상 기조 변화를 다수당 교체와 연결한 보도는 수집 7종과 표적 검색 어디에도 없었다. 시장이 실제로 읽은 경로는 AI 데이터센터 규제였고(2번 항목), 추적도 회수되지 않은 절반을 그 축으로 옮겨 새로 등록했다.</p>
+      <p><b>통상 쪽 규제가 조여 온다는 서술에는 반례가 쌓여 있다.</b> 추적이 미국 연방관보를 직접 전수 조회한 결과 10월 이후 반도체 관세 확대 0건, 9월 이후 상무부 산업안보국(BIS)의 대중 수출통제 규칙 0건, 미 무역대표부(USTR)의 과잉생산 301조 판정 0건이다. 멈춘 것은 무역대표부 전체가 아니라 이 조사뿐이고, 해운·조선 301조와 지식재산 301조는 같은 기간 진행됐다.</p>
+      <p class="impact"><span class="impact-tag neu">중립 · 간접</span>경로: 의회 권력 교체가 보유 2종목에 닿는 길은 두 갈래로 엇갈린다. 유가 급락과 금리 하락은 밸류에이션에 우호적이고, AI 데이터센터 규제 우려는 메모리 수요 전망을 누른다. 관세·수출통제 기조 변화를 다수당 교체와 연결한 보도는 아직 없다.</p>
+      <p class="sources">출처: <a href="https://www.cbsnews.com/live-updates/house-election-results-2026/">CBS News</a>, <a href="https://www.nbcwashington.com/elections/election-day-after-2026-midterms-congress-results-live-updates/4177248/">NBC Washington</a>, <a href="https://variety.com/2026/politics/news/midterm-election-results-democrats-win-house-senate-1236938473/">Variety</a>, <a href="https://bnnbloomberg.ca/markets/2026/11/04/us-futures-sharply-higher-after-democratic-route-in-midterm-elections">BNN Bloomberg</a>, CNBC, Fox News, TIME, MS NOW</p>
+    </div>
+  </details>
+  </div>
+  <div class="card rows">
+    <ul>
+      <li class="tr"><span class="t">국회 법사위, '조작기소 특검법' 상정에 국민의힘 전원 퇴장해 파행</span><span class="rm"><span class="chip">보도 11/4</span><span class="chip single">⚠</span><span class="src"><a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008830116">SBS</a></span></span></li>
+    </ul>
+  </div>
+  </section>
+
+  <section class="week" id="week" aria-label="이번 주 일정">
+    <div class="card">
+      <div class="sec-head"><h2>이번 주 일정</h2></div>
+      <ul>
+        <li><span class="wd">11/6 금</span><span>미국 10월 고용보고서와 12월 연방공개시장위원회 인상 확률 — 금리 경로는 성장주 밸류에이션과 주택담보대출 금리에 동시에 닿는다</span></li>
+        <li><span class="wd">11/6 금</span><span>빅테크 3분기 실적·AI 캐펙스 — 아마존·마이크로소프트의 IR과 10-Q에서 2027년 캐펙스 문구를 확인한다. 2번·3번 항목의 수요 축이 숫자로 채워지는 자리다</span></li>
+        <li><span class="wd">11/6 금</span><span>삼성전자 테일러 파운드리 가동·2공장 착공, SK하이닉스 솔리다임 다롄 공장 장비 반입 허가, 마이크론 대만 노조 파업, 두산-SK실트론 인수, 성과급 협약 논란 — 보유 2종목의 공급·노무 축이 한꺼번에 도래한다</span></li>
+        <li><span class="wd">11/6 금</span><span>MCP(Model Context Protocol) 스펙 개편 — 폐기 정책 본문에 날짜가 박히는지. 실무 마감으로 이어질지가 갈린다</span></li>
+        <li><span class="wd">11/7 토</span><span>CXMT 증설 — 4F² 서버용 D램 샘플·수율·고객사와 349억위안 신규 투자 공시 대조. 중국 메모리 공급 확대는 가격 사이클의 하방 변수다</span></li>
+        <li><span class="wd">11/8 일</span><span>Anthropic Opus 4.8 fast mode 제거(11/30·D-22), Claude Design 단독 서비스 종료(12/14) — 쓰는 도구의 전환 기한이다</span></li>
+        <li><span class="wd">11/9 월</span><span>오픈AI의 Cursor 모델 공급 차단(11/12·D-3), GitHub Copilot 일부 모델 지원 종료(11/16·D-7) — Claude 계열 상위 모델을 실무에 쓰고 있다면 11/16 전에 대체 모델을 정해야 한다</span></li>
+        <li><span class="wd">11/9 월</span><span>OpenAI API 종료 일정 — Evals 평가 기록은 11/30이 지나면 되돌릴 수 없다</span></li>
+        <li><span class="wd">11/9 월</span><span>수도권 토지거래허가구역 지정 만료 — 10/29 발표의 '해제 방향'이 광명이 걸린 10·15 대책 주거용 구역을 가리키는지. 연말 결정 전에 거래 계획을 세울 자리다</span></li>
+        <li><span class="wd">11/10 화</span><span>부동산 세제개편 조세소위 심사 결과 — 1세대 1주택 기본공제 14억원 상향과 공정시장가액비율 70% 상향의 합으로 실효 세부담이 정해진다</span></li>
+        <li><span class="wd">11/10 화</span><span>2027년도 예산안 복지위 심사 — 부모급여 1~6월 출생아 소급(약 2,500억원), 아동기본수당 편성액, 아이돌봄 단가가 걸려 있다. 현재 영유아 자녀는 현행 제도 유지 대상이다</span></li>
+        <li><span class="wd">11/11 수</span><span>유가 관전선 90달러와 미·이란 협상의 중국 보증 변수 / SK하이닉스 솔리다임 증설 재원 조달 방식 — 세 회차 연속 이월된 과제다</span></li>
+        <li><span class="wd">11/12 목</span><span>부동산 정책 6건과 AI 데이터센터 규제 확산의 첫 확인이 겹친다</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tracking" id="tracking" aria-label="추적 관리">
+    <div class="sec-head"><h2>추적 관리</h2><span class="sub">추적 원장 · 04:30 갱신</span></div>
+    <div class="card track-summary">
+    <p class="ts-head">지켜보는 사안 <b>53건</b></p>
+    <ul class="ts-kinds">
+      <li>예정일 있는 사안 <b>40건</b> — 가장 가까운 확인: <b>11/6</b> <span class="ts-case">MCP 스펙 개편</span> 외 7건</li>
+      <li>상시 관찰 <b>13건</b> <span class="ts-hint">(시세·금리처럼 계속 보는 것)</span></li>
+    </ul>
+    <p class="ts-today">오늘 결과를 확인한 사안 <b>4건</b> · 새로 추적 시작 <b>1건</b> · 상시 관찰 중 오늘 움직임 <b>3건</b></p>
+    </div>
+  <section class="today">
+    <h2 class="sec-h">오늘 확인한 결과</h2>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-ok">확인됨</span><span class="res-title">미국 중간선거 결과 — 하원 전원·상원 33석의 다수당이 관세·대중 반도체 정책 기조의 변수다 (주요 뉴스 7번)</span><span class="res-reg">예고 11/3</span></div>
+    <p class="res-line">민주당이 하원·상원 다수당을 모두 확보했고 알래스카·미시시피 등 일부 상원 경합은 미확정이다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>승계 사안 『AI 데이터센터 규제 확산』이 11/12에 이어받는다</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">상원은 민주 54 대 공화 44로 7개 주에서 의석이 뒤집혔고 하원은 민주 약 250 대 공화 160으로 추정된다. 다만 관세·수출통제 기조 변화를 다수당 교체와 연결한 보도는 수집 7종과 표적 검색 어디에도 없었고, 시장이 실제로 읽은 경로는 AI 데이터센터 규제 쪽이었다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">11/3</span><span class="tl-t">등록 — 투표 진행 중이라 개표 결과가 존재하지 않음</span></li>
+        <li><span class="tl-d">11/4</span><span class="tl-t">트리거 도래했으나 실행 시각 04:30 KST가 미 동부 투표 마감 전이라 결과 미확인</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">민주당 상·하원 장악 확정 — 종결, 통상 축의 미확인분은 승계 등록</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-ok">확인됨</span><span class="res-title">광명 하안주공 10·11단지 재건축 — 11/2 현장설명회에 몇 곳이 들어오는지가 다음 국면을 가른다</span><span class="res-reg">예고 10/27</span></div>
+    <p class="res-line">11/2 현설이 실제로 열렸고 롯데건설이 단독 참석해 유찰됐으며 한국자산신탁이 조만간 재공고를 낼 예정이다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/12 — 한국자산신탁 재공고 여부와 새 입찰 마감일(12/17과 2027-01-11 두 표기가 공존한다)</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">원장이 11/3에 "광명 하안 일대는 경쟁입찰이 아니라 단독 응찰·수의계약으로 반복 수렴한다"고 적고 12/17 입찰 마감 결과로 확인하겠다고 유보했는데, 마감을 기다릴 것도 없이 현설 단계에서 같은 패턴이 다섯 번째로 재현됐다. 예정 공사비는 3.3㎡당 800만원이고 총액 표기는 보도마다 갈린다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">11/2</span><span class="tl-t">현설 당일이나 실행 시각 04:30이라 결과 확인 불가</span></li>
+        <li><span class="tl-d">11/3</span><span class="tl-t">사업 구조 확인·인접 단지 단독 입찰 패턴 기록</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">현설 유찰 확인</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-part">일부 확인</span><span class="res-title">신생아특례대출·정책대출 규제 — 정책·대출 규제의 확정·시행 여부를 상시로 지켜본다 (주요 뉴스 5번)</span><span class="res-reg">예고 7/14</span></div>
+    <p class="res-line">금융위원회가 주택가격 상승세를 이유로 현행 대출규제를 유지할 수밖에 없다고 밝히고 추가 규제 검토설은 사실이 아니라고 부인했다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/12 — 금융위원회 보도자료 원문 대조와 '기존 분양계약자 대출' 대통령 지시 보도(24일째 미확인)</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">원장은 8월 이후 '규제 축 무변동'을 수집가의 부재 보고로만 적어 왔는데 오늘은 당국이 능동적으로 방향을 밝혔다는 점에서 성격이 다르다. 다만 원 보도가 단독이고 확보본의 본문 인코딩이 깨져 세부 인용을 복원하지 못했다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/29</span><span class="tl-t">한도 6억·4억·2억과 총부채원리금상환비율 유지 재확인</span></li>
+        <li><span class="tl-d">10/31</span><span class="tl-t">부동산원 10월 4주 시세 확보</span></li>
+        <li><span class="tl-d">11/3</span><span class="tl-t">"변동 없음이 아니라 확인 불가"로 기록</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">당국 입장으로 규제 유지 확인</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-part">일부 확인</span><span class="res-title">재건축 규제 완화 건의 — 조합원 지위 양도·용적률·임대주택 의무비율의 수용 여부</span><span class="res-reg">예고 8/21</span></div>
+    <p class="res-line">정부 입법예고는 아직 0건이고, 대신 같은 내용의 도시정비법 개정안 두 건이 국회에 발의된 것이 확인됐다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/12 — 국회 의안정보시스템에서 두 개정안의 의안번호·회부일·소위 상정 여부</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">김정재 의원 등 10명이 10/20 투기과열지구 내 조합원 지위 양도 제한을 3년간 한시 적용 제외하는 안을, 황희 의원이 10/27 매수자 실수요 요건과 불가피한 이주 사유 예외를 시행령에 위임하는 안을 각각 발의했고 둘 다 국토교통위원회 심사 단계다. 회수해야 할 자리가 부처에서 국회로 옮겨간다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/29</span><span class="tl-t">홍지선 국토교통부 장관의 국정감사 검토 표명 확인</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">의원입법 2건 발의 확인·검토 표명 날짜 10/23으로 특정</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">미국 반도체 관세 확대 검토 — 노트북·서버·게임콘솔 등 반도체 탑재 완제품이 관세 대상에 들어가는지</span><span class="res-reg">예고 8/28</span></div>
+    <p class="res-line">결과 미확인 (2026-08-28부터 추적)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/19 — 같은 조건으로 11/01 이후 전수 재조회</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">10/29 회차가 "다음에는 기간을 좁혀 전수를 본다"고 못 박은 대로 연방관보 API를 2026-10-01 이후로 조회해 반환 24건을 전수 확인했고, Section 232 반도체 관세도 완제품 품목 확대도 하나도 없었다. 다만 'semiconductor'라는 단어가 걸린 문서의 전수이므로 품목표만으로 공고된 조치가 있다면 걸리지 않는다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/22</span><span class="tl-t">한국어 검색이 2024-12 계열만 반환</span></li>
+        <li><span class="tl-d">10/29</span><span class="tl-t">연방관보 1페이지 조회로 10월 게재 0건 확인</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">10/01 이후 전수 24건에 0건 확정</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">미국 HBM 대중 추가 수출규제 검토</span><span class="res-reg">예고 7/20</span></div>
+    <p class="res-line">결과 미확인 (2026-07-20부터 추적·108일째)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/19 — 같은 조건으로 11/01 이후 게재분 전수 재조회</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">10/29·10/30 두 회차가 미루던 상무부 산업안보국 채널을 오늘 열어 발행기관 기준으로 2026-09-01 이후 게재분 9건을 전수 확인했고, HBM·첨단컴퓨팅·대중 반도체 수출통제 규칙은 0건이었다. 게재분은 임시 수출거부명령 갱신·기록보존 통지·폴리실리콘 비축 제한·관세 지침뿐이었다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">8/18</span><span class="tl-t">연방관보로 '부재'를 1차 출처 확정</span></li>
+        <li><span class="tl-d">10/22</span><span class="tl-t">한국어 검색이 2024-12 계열만 반환</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">산업안보국 9~10월 게재분 전수에 0건</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">미 무역대표부 과잉생산 301조 조사 — 반도체가 조치 대상에 들어가는지</span><span class="res-reg">예고 8/7</span></div>
+    <p class="res-line">결과 미확인 (2026-08-07부터 추적·90일째)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/19 — 같은 조건으로 11/01 이후 게재분 전수 재조회</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">무역대표부 게재분을 2026-09-01 이후 전수 확인한 결과 과잉생산 301조 판정은 0건인데, 같은 기간 해운·물류·조선 301조 조치의 추가 유예 의견수렴(10/26)과 기술이전·지식재산 301조 조치의 계속 결정(10/7)은 나왔다. 무역대표부가 멈춘 것이 아니라 이 조사만 멈춰 있다는 것이 1차 출처로 드러났다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">8/21</span><span class="tl-t">조사 대상 섹터에 반도체가 명시된 사실 1차 출처 확인</span></li>
+        <li><span class="tl-d">10/26</span><span class="tl-t">그리어 대표의 '7월 전 결론 희망'이 넉 달 지난 상태 확인</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">9~10월 게재분 전수에 0건·다른 301조 축은 진행 중</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">8·13 대책 후속 — 은행별 추가 대출여력 30조원 배분</span><span class="res-reg">예고 8/19</span></div>
+    <p class="res-line">결과 미확인 (2026-08-19부터 추적·78일째 배분표 0건)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/12 — 은행연합회 소비자포털 공시 직접 열람</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">10/24 이후 1순위 과제로 적어 둔 은행연합회 공시 채널 직접 열람을 네 회차 연속 집행하지 못했다. 다만 금융위원회가 11/4에 현행 규제 유지 입장을 밝혀 총량 확대분 자체가 뒤집히지 않는다는 전제는 한 겹 더 단단해졌다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/24</span><span class="tl-t">금융위 보도자료로 총량목표 3.0% 상향을 1차 출처 확인</span></li>
+        <li><span class="tl-d">10/29</span><span class="tl-t">SC제일·경남은행 모기지신용보험 취급 재개</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">배분표 0건·공시 채널 미열람</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">9월 부동산 종합대책 — 그린벨트 해제·보유세 개편·핀셋 대출완화 등 여덟 항목</span><span class="res-reg">예고 8/27</span></div>
+    <p class="res-line">결과 미확인 (2026-08-27부터 추적·70일째)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/12 — 정책브리핑(korea.kr) 보도자료 목록 직접 열람</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">패키지 발표는 여전히 없지만 검토 항목 가운데 '실수요자 핀셋 대출완화'는 금융위원회의 현행 유지 입장으로 사실상 닫히는 쪽으로 기울었다. 정부 기조가 공급 확대·규제 유지·급락 대비 세 갈래로 벌어져 있어 그 셋을 하나로 묶은 패키지가 나올 자리는 좁아진다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/31</span><span class="tl-t">검토 항목 2개가 8·13 후속으로 집행되는 정황 확인</span></li>
+        <li><span class="tl-d">11/4</span><span class="tl-t">대통령의 집값 급락 대비 공공임대 매입 발언</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">핀셋 대출완화가 당국 입장으로 사실상 닫힘</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-none">아직 결과 없음</span><span class="res-title">수도권 주택공급 정례브리핑 — 제2차에서 사업장별 착공·분양·입주 실적이 공개되는지</span><span class="res-reg">예고 10/24</span></div>
+    <p class="res-line">결과 미확인 (2026-10-24부터 추적·제2차 개최 자료 0건)</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/12 — 정책브리핑·국무조정실 보도자료 직접 열람</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">제2차·11월 브리핑이 열렸다는 자료를 찾지 못했다. 대신 연말 전망이 처음 숫자로 들어왔는데 연말까지 수도권 착공이 21만8,000~23만5,000호로 연 목표 26만8,000호에 약 3만3,000호 미달한다는 내용이다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/31</span><span class="tl-t">제1차 브리핑 내용이 복수 매체로 교차</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">연말 전망 미달 확인·사업장별 실적은 여전히 0건</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-mid">진행 중</span><span class="res-title">중동 확전 리스크·유가 급등의 시장 파급 (주요 뉴스 4번)</span><span class="res-reg">예고 7/25</span></div>
+    <p class="res-line">브렌트가 11/4 장중 95.02달러까지 밀려 원장이 어제 관전선으로 내린 100달러선마저 이탈했다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/11 — 관전 기준선을 90달러로 내리고 브렌트 11/4 정산가 확정과 케심섬 공격 보도의 1차 확인</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">10/30 117.64달러에서 닷새 만에 약 22달러가 빠졌고 직접 원인으로 지목된 것은 지정학이 아니라 미 중간선거 결과와 이란 전쟁 종결 기대다. 외교 축에서는 중재자들이 이란의 핵 양보 대가로 미국의 제재 완화 이행을 중국이 보증하는 방안을 검토 중이라는 보도가 처음 들어왔다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">11/2</span><span class="tl-t">유가 7%대 급락·미-이란 외교 재개 보도</span></li>
+        <li><span class="tl-d">11/4</span><span class="tl-t">110달러선 이탈 확정·관전선을 100달러로 하향</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">100달러선도 이탈·중국 보증 변수 등장</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-mid">진행 중</span><span class="res-title">빅테크 3분기 실적·AI 캐펙스 가이던스 — 2027년 캐펙스가 상향인지 속도 조절인지 (주요 뉴스 3번)</span><span class="res-reg">예고 10/23</span></div>
+    <p class="res-line">수요 쪽에서 AMD가 실적·가이던스 상회로 시간외 7% 넘게 올랐고, 공급 제약 쪽에서는 데이터센터 입지 규제라는 새 변수가 붙었다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/6 — 아마존·마이크로소프트 IR과 10-Q 원문에서 2027년 캐펙스 문구 확인</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">회수 대상인 마이크로소프트·아마존의 2027년 캐펙스 숫자는 오늘도 비어 있다. 11/4 미 세션은 지수가 오르는 동안 반도체지수만 장중 -3.63%로 빠지는 분화를 보였다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/31</span><span class="tl-t">아마존 2026년 캐펙스 2,200억 달러 유지 확인</span></li>
+        <li><span class="tl-d">11/2</span><span class="tl-t">SOX 10월 월간 낙폭 15% 초과</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">AMD 시간외 급등·데이터센터 규제 변수 추가</span></li>
+      </ul>
+    </details>
+  </article>
+  <article class="result card">
+    <div class="res-head"><span class="chip v-mid">진행 중</span><span class="res-title">한국은행 11월 금융통화위원회 — 연내 마지막 회의에서 인상이 재개되는지</span><span class="res-reg">예고 10/23</span></div>
+    <p class="res-line">중간 입력으로 잡아 둔 10월 소비자물가가 발표 예정일(11/2)로부터 사흘이 지나도록 원장에 들어오지 않았다</p>
+    <p class="res-next"><span class="next-tag">다음 확인</span>11/26 금융통화위원회 — 그 전 첫 과제는 통계청 소비자물가동향 보도자료 직접 열람</p>
+    <details class="res-more">
+      <summary class="fold-sum">경위·연대기 보기</summary>
+      <p class="res-why">물가 결과를 모르는 채로 11/26 결정을 기다리는 상태다. 시장 지표는 완화 쪽으로 더 기울어 국고3년이 11/4 3.726%로 8월 말 이후 최저권이고 유가 급락으로 물가 상방 압력도 줄었다</p>
+      <ul class="timeline">
+        <li><span class="tl-d">10/24</span><span class="tl-t">11/2 소비자물가를 중간 입력으로 지정</span></li>
+        <li><span class="tl-d">10/31</span><span class="tl-t">국고3년 최저권 경신</span></li>
+        <li><span class="tl-d">11/5</span><span class="tl-t">10월 소비자물가 세 회차 연속 미회수·유가발 압력 반전</span></li>
+      </ul>
+    </details>
+  </article>
+  </section>
+  <section class="upcoming">
+    <h2 class="sec-h">다가오는 확인</h2>
+    <div class="up-group">
+      <p class="up-date">11/6 <span class="up-dow">(금)</span></p>
+      <ul class="up-list">
+        <li>[it-dev] MCP 스펙 개편 — AAIF 공식 블로그 글에서 폐기 정책 본문에 날짜가 있는지를 확인한다</li>
+        <li>[stocks] 미 FOMC 12월 금리 결정 — 연준 공식 일정표로 12/9 회의일을 확정하고 11/6 고용보고서 결과와 인상 확률 변동을 함께 본다</li>
+        <li>[stocks] 빅테크 3분기 실적·AI 캐펙스 가이던스 — 아마존·마이크로소프트 IR과 10-Q에서 2027년 캐펙스 문구를 확인한다</li>
+        <li>[stocks] 마이크론 대만 노조 파업 예고 — 10/22 파업의 실제 개시 여부와 생산 차질 규모를 대만 현지 매체·로이터로 확인한다</li>
+        <li>[stocks] SK하이닉스 솔리다임 다롄 낸드 공장 미국산 장비 반입 허가 — SK하이닉스 IR 자료와 BIS 공고를 직접 연다</li>
+        <li>[stocks] 삼성전자 테일러 파운드리 1공장 가동·2공장 착공 — 삼성전자 IR·뉴스룸에서 가동률과 착공 일정을 찾는다</li>
+        <li>[stocks] 삼성전자·SK하이닉스 성과급 협약 논란 — 노조 공지·교섭 경과와 배임 고발 건의 처분 보도를 찾는다</li>
+        <li>[stocks] 두산-SK실트론 인수 — DART에서 타법인 주식 취득 결정의 정정·종결 공시를 확인한다</li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/7 <span class="up-dow">(토)</span></p>
+      <ul class="up-list">
+        <li>[stocks] CXMT 증설·중국 메모리 공급 확대 — 4F² 서버용 D램의 샘플 공급·수율·고객사와 349억위안 신규 투자의 원 공시를 대조한다</li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/8 <span class="up-dow">(일)</span></p>
+      <ul class="up-list">
+        <li>[it-dev] Anthropic Opus 4.8 fast mode 제거 — 11/30 제거일의 유지·연기 여부와 Opus 5.5 전환 시 요금·한도 변화 (제거 D-22)</li>
+        <li>[it-dev] Claude Design 단독 서비스 종료 — 12/14 종료 공지의 유지 여부와 작업물 내보내기·이관 경로 (등록 14일째 이관 안내 0건)</li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/9 <span class="up-dow">(월)</span></p>
+      <ul class="up-list">
+        <li>[it-dev] 오픈AI의 Cursor 모델 공급 계약 종료 — 11/12 차단일이 확정되는지와 Cursor 측 이관 안내 (차단 D-3)</li>
+        <li>[it-dev] GitHub Copilot 일부 모델 지원 종료 — Claude Opus 4.8·Opus 5·GPT-5.6 Terra의 11/16 종료가 유지되는지 (종료 D-7)<span class="up-act">대응 시점 — 이 가구는 Claude 계열 상위 모델을 실무에 쓰므로 11/16 전에 대체 모델 전환이 필요하다</span></li>
+        <li>[it-dev] GitHub Copilot 정책·과금 변경 — docs.github.com 제품 문서에서 좌석 선결제와 Chat 대화 보존 기간의 현재 상태를 확인한다</li>
+        <li>[it-dev] OpenAI API 모델·플랫폼 종료 일정 — 10/31 Evals 읽기 전용 전환의 집행 여부와 11/30 마감 묶음 세 건<span class="up-act">대응 시점 — Evals 평가 기록은 11/30이 지나면 되돌릴 수 없다</span></li>
+        <li>[estate] 수도권 토지거래허가구역 지정 만료 — 10/29 발표의 '해제 방향'이 광명이 걸린 10·15 대책 주거용 구역을 가리키는지<span class="up-act">대응 시점 — 광명 자가 1주택 가구는 연말 결정 전에 거래 계획을 세우는 것이 대응 지점이다</span></li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/10 <span class="up-dow">(화)</span></p>
+      <ul class="up-list">
+        <li>[estate] 부동산 세제개편 입법 — 11/2 조세소위 심사 결과를 국회 의안정보시스템에서 확인한다<span class="up-act">대응 시점 — 1세대 1주택 기본공제 14억원 상향과 공정시장가액비율 70% 상향의 합으로 실효 세부담을 판단한다</span></li>
+        <li>[stocks] 한미 AI 서밋 반도체 협력 — DART·SEC에서 삼성-브로드컴 MOU와 SK-엔비디아 LOI의 본계약 전환 공시를 찾는다</li>
+        <li>[parenting] 부모급여 — 2027년도 예산안 복지위 심사에서 1~6월 출생아 소급(약 2,500억원)이 반영되는지<span class="up-act">대응 시점 — 현재 영유아 자녀는 2027-06-30 이전 출생이라 현행 제도 유지 대상이다</span></li>
+        <li>[parenting] 아동수당 확대 — 아동기본수당 편성액이 1,835억원인지 2조9,272억원인지를 기획재정부 예산안 상세자료로 특정한다</li>
+        <li>[parenting] 아이돌봄서비스 개선 — 성평등가족부 보도자료와 예산안 부처별 상세자료에서 돌봄수당 단가·본인부담 경감을 확인한다</li>
+        <li>[parenting] 인구전략기본법 시행령 전부개정 — 국가법령정보센터에서 시행령 공포일·공포번호와 조문 원문을 확인한다</li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/11 <span class="up-dow">(수)</span></p>
+      <ul class="up-list">
+        <li>[stocks] 중동 확전 리스크·유가 급등의 시장 파급 — 브렌트 90달러선과 미·이란 협상의 중국 보증 변수</li>
+        <li>[stocks] SK하이닉스 솔리다임 미국 상장 검토 중단 — IR 컨퍼런스콜 전문과 DART 공시에서 증설 재원 조달 방식을 찾는다</li>
+      </ul>
+    </div>
+    <div class="up-group">
+      <p class="up-date">11/12 <span class="up-dow">(목)</span></p>
+      <ul class="up-list">
+        <li>[estate] 신생아특례대출·정책대출 규제 — 11/4 금융위 입장의 원문 대조와 '기존 분양계약자 대출' 대통령 지시 보도<span class="up-act">대응 시점 — 대환·추가 대출을 검토한다면 한도 6억·LTV 40%·DSR 40%가 그대로 걸린다</span></li>
+        <li>[estate] 8·13 대책 후속 30조원 배분 — 은행연합회 소비자포털 공시 직접 열람</li>
+        <li>[estate] 9월 부동산 종합대책 — 종합대책이 항목별로 흡수된 것인지 패키지가 남아 있는지를 정책브리핑으로 가린다</li>
+        <li>[estate] 재건축 규제 완화 건의 — 국회 의안정보시스템에서 도시정비법 개정안 2건의 심사 단계 확인</li>
+        <li>[estate] 수도권 주택공급 정례브리핑 — 11월 브리핑 개최 여부와 사업장별 실적 공개</li>
+        <li>[estate] 광명 하안주공 10·11단지 재건축 시공자 선정 — 한국자산신탁 재공고 여부와 새 입찰 마감일</li>
+        <li>[stocks] AI 데이터센터 규제 확산 (신규) — 주민투표 통과 관할의 조례 시행 시점과 규제 형태, 민주당 지도부의 입법 의제화 여부</li>
+      </ul>
+    </div>
+  </section>
+    <p class="track-foot"><a href="https://junho5541-bit.github.io/daily-briefing/tracking.html">전체 추적 현황 보기 — 상시 사안·연대기 포함 →</a></p>
+  </section>
+
+  <footer class="meta">
+    <p><strong>수집 메타</strong></p>
+    <p>수집 카테고리: stocks(5건)·chips(5건)·macro(5건)·estate(3건)·tech(8건)·parenting(0건)·general(6건) / 누락: 없음</p>
+    <p>추적: 회수 4건(확인 2·일부 확인 2) · 신규 등록 1건 · 상시 변동 3건 · 수동 확인 필요: series.md의 11/2~11/4 세 거래일(델타 계약에 수치 시리즈 경로가 없어 tracker가 쓰지 못했다)</p>
+    <p>검증: 카드 ✓ 4건 · ⚠ 3건 · 검증 미수행 0건 / 제목 행 ✓ 2건 · ⚠ 7건 · 교차 검증 검색 7회(실패 3회) · 원문 직접 조회 2회</p>
+    <p>검증 결과: 중간선거는 CBS·NBC·Variety(CNN 투영)로 확인됐고 하원의장 선출은 새 의회 소집 때 표결한다는 점이, 데이터센터 주민투표는 CNBC·Stateline·Ballotpedia로 확인되며 규제 형태와 통과율이, 광명 하안주공은 원문 조회로 예정 공사비 3.3㎡당 800만원이 각각 보강됐다</p>
+    <p>검증 실패: 11/4 코스피 마감과 금융위 11/4 당일 보도는 교차 검증 검색이 2025년 또는 10월 기사만 반환해 확인하지 못했다 — 전자는 수집 파일의 인정 매체 6곳이 같은 수치를 적어 ✓, 후자는 단독 보도 상태라 ⚠로 남겼다</p>
+    <p>미게재(신선도): 10월 PC용 DDR4 고정거래가 27.5달러(10/30)는 제목 행 3일 창 밖이고 추적 사안도 아니다</p>
+    <p>미게재(발행일 미확인): general의 북한 미상 발사체 속보는 포털 랭킹 헤드라인으로만 확인돼 발행일을 특정하지 못했다</p>
+    <p>미게재(제목 행 10건 상한): 공매도 집중(참고 포인트에 반영)·서울 아파트 월세 7.68%(11/2)·Anthropic 워터마크·Gemini 학습 정책 변경·대통령 시정연설·전용기 탑승자 정보 유출을 내렸다</p>
+    <p>수집 상태: parenting은 standard·extended 양쪽 검색으로 교차 확인한 실제 0건이다 — 검색 실패가 아니라 조용한 날이고, 조용한 날 규칙대로 점검 1줄을 실었다</p>
+    <p>수집 상태: macro는 한국은행 11월 금융통화위원회 일정·10월 소비자물가·가계대출 통계를 확인하지 못했고, stocks·chips는 공시·HBM 계약·수출통제의 당일 신규 건이 없었다. "변동 없음"이 아니라 "미확인"이다</p>
+    <p>수집 상태: 수집 파일 다수의 항목이 "검색 요약 기준, 원문 미확인"으로 보고돼, 복수 매체가 있어도 원문을 대조하지 못한 항목에는 ✓를 발급하지 않았다 (증권사 목표가 제목 행은 마커 없이 실었다)</p>
+    <p>시장 데이터: 생성 시각 04:30은 국내 장 개장 전이자 미국 11/4 정규장 마감(한국시간 06:00) 전이다 — 모든 국내 수치는 11/4 마감 기준이고 11/5 장중 데이터는 존재하지 않으며, 미국 지수·미10년·브렌트는 11/3 정산치다</p>
+    <p>상충 병기: 11/4 코스피 장중 저점 — 국내 마감 시황은 5,421.72, Kotak Neo는 10:33 기준 5,553.67(-1.64%)과 장중 최대 -3.7%로 적는다</p>
+    <p>상충 병기: 미 하원 의석 — CBS는 민주 251~268석 추정, MS NOW는 250 대 160으로 적고 68개 선거구가 미호명이다</p>
+    <p>상충 병기: 미 상원 의석 — 추적 다이제스트와 CBS는 민주 54석, CNN 투영은 최소 51석이다</p>
+    <p>상충 병기: 데이터센터 주민투표 집계 — 워싱턴포스트는 41개 안건 중 33개 통과·최소 29개 관할, Ballotpedia는 10개 주 41건(다른 집계는 44~49건), 포춘은 오하이오 21건 중 최소 14건으로 범위가 다르다</p>
+    <p>상충 병기: 하안주공 10·11단지 예정 공사비 — 추적 다이제스트는 총액 약 2조6,067억원, 원문은 3.3㎡당 800만원, 검색 요약의 다른 보도는 약 1조4,909억원이다</p>
+    <p>상충 병기: 하안주공 10·11단지 입찰 마감일 — 12/17과 2027-01-11 두 표기가 공존한다</p>
+    <p>상충 병기: 브렌트 11/4 — macro 수집(BNN Bloomberg)은 약 8.5% 내린 94달러대 중반, 추적의 investing 1차 조회는 장중 95.02달러(-8.28%)다</p>
+    <p>신선도 창: 카드 11/4~11/4 · 제목 행 11/2~11/4 · 추적 예외 1건 (재건축 조합원 지위 양도 개정안 10/27)</p>
+    <p>생성 시각: 2026-11-05 04:30 KST</p>
+    <p>고지: 본 브리핑은 보도 내용을 정리한 것으로 투자 자문이 아닙니다.</p>
+    <p class="disclaimer">본 페이지는 보도 내용을 정리한 것으로 투자 자문이 아닙니다.</p>
+  </footer>
+</div>
